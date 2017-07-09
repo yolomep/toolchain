@@ -1,7 +1,14 @@
+# Special for doxygen
+tools/
+src/
+examples/
+*.md
+license
+makefile
+
 # backups and ide stuff
 *~
 .idea/
-
 
 # generated documentation
 doxygen/
