@@ -1,8 +1,4 @@
 var searchData=
 [
-  ['tile_5fheight',['tile_height',['../structgfx__tilemap__t.html#ae1b88df485af33051d48558c3010b805',1,'gfx_tilemap_t']]],
-  ['tile_5fwidth',['tile_width',['../structgfx__tilemap__t.html#a2c40cc816fcf0f691eac1041d848f5f2',1,'gfx_tilemap_t']]],
-  ['tiles',['tiles',['../structgfx__tilemap__t.html#a164f38a386c700b0537fb119dc4eca7c',1,'gfx_tilemap_t']]],
-  ['type_5fheight',['type_height',['../structgfx__tilemap__t.html#a18dbcf332a669525cac3856ded67aee2',1,'gfx_tilemap_t']]],
-  ['type_5fwidth',['type_width',['../structgfx__tilemap__t.html#a71ae1e272a832df252d801026f923578',1,'gfx_tilemap_t']]]
+  ['height',['height',['../structgfx__sprite__t.html#a25b687d1d45d86e9ae29318f8f135cf4',1,'gfx_sprite_t::height()'],['../structgfx__rletsprite__t.html#a08e8d294d6fe298330f0e5fde0ed817d',1,'gfx_rletsprite_t::height()'],['../structgfx__tilemap__t.html#aa69f824ad3ff8665a4d4fc0f47c239a9',1,'gfx_tilemap_t::height()']]]
 ];

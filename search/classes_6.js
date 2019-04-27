@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['string_5ft',['string_t',['../structstring__t.html',1,'']]]
+  ['real_5ft',['real_t',['../structreal__t.html',1,'']]]
 ];

@@ -339,7 +339,7 @@ Shaun "Methsoft" McFall </dd></dl>
 <p>Keypad scanning is idle </p>
 </td></tr>
 <tr><td class="fieldname"><a class="anchor" id="af86f29e15b4b14d3aa66ced481a63424aed87e811fb621ebe07f303a28b1e9f5e"></a>MODE_1_INDISCRIMINATE&#160;</td><td class="fielddoc">
-<p>Indiscriminate key detection. Data registers are invalid, but whenever any key is pressed, interrupt KB_MODE_1_PRESS is set (and cannot be cleared until the key is released). </p>
+<p>Indiscriminate key detection. Data registers are invalid, but when any key is pressed, interrupt KB_MODE_1_PRESS is set (and cannot be cleared until the key is released). </p>
 </td></tr>
 <tr><td class="fieldname"><a class="anchor" id="af86f29e15b4b14d3aa66ced481a63424ab79420dfbec0f787f896b02d753b1bd7"></a>MODE_2_SINGLE&#160;</td><td class="fielddoc">
 <p>Single scan. The keypad is scanned once, and then the mode returns to MODE_0_IDLE. </p>
@@ -382,7 +382,7 @@ Shaun "Methsoft" McFall </dd></dl>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Resets the keyboard </p><dl class="section note"><dt>Note</dt><dd>Only use if you modify keyboard timers or number of rows </dd></dl>
+<p>Resets the keyboard before returning to the TI-OS </p><dl class="section note"><dt>Note</dt><dd>Only use the keyboard timers or number of rows have been modified </dd></dl>
 
 </div>
 </div>

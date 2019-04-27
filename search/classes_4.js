@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['matrix_5ft',['matrix_t',['../structmatrix__t.html',1,'']]]
+  ['list_5ft',['list_t',['../structlist__t.html',1,'']]]
 ];

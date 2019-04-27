@@ -18,5 +18,6 @@ var searchData=
   ['debug_2eh',['debug.h',['../debug_8h.html',1,'']]],
   ['delay',['delay',['../tice_8h.html#acfd12579679c85d5f1c716509b2587f6',1,'tice.h']]],
   ['draw_5fheight',['draw_height',['../structgfx__tilemap__t.html#a5dd664c5691e669782e067cbe6ba0ad8',1,'gfx_tilemap_t']]],
-  ['draw_5fwidth',['draw_width',['../structgfx__tilemap__t.html#a15929def589462587871049ab6ce4e98',1,'gfx_tilemap_t']]]
+  ['draw_5fwidth',['draw_width',['../structgfx__tilemap__t.html#a15929def589462587871049ab6ce4e98',1,'gfx_tilemap_t']]],
+  ['drawchar',['drawChar',['../structfont.html#a506945419fe06f4366890185bbd53ae6',1,'font']]]
 ];

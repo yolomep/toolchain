@@ -114,6 +114,9 @@ Data Structures</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvar__t.html">var_t</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure of miscellaneous variable type.  <a href="structvar__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfont.html">font</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure of font description.  <a href="structfont.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
@@ -133,6 +136,10 @@ Macros</h2></td></tr>
 <tr class="separator:af31f77eb16adfccf31a00072554c48c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a085b3ccef49b2e3eb7c7e6d6c24507f5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tice_8h.html#a085b3ccef49b2e3eb7c7e6d6c24507f5">os_ClrHomeFull</a>()</td></tr>
 <tr class="separator:a085b3ccef49b2e3eb7c7e6d6c24507f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:affcbdd2a87eba7c1dc19d60ec1e34315"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tice_8h.html#affcbdd2a87eba7c1dc19d60ec1e34315">os_SmallFont</a></td></tr>
+<tr class="separator:affcbdd2a87eba7c1dc19d60ec1e34315"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9db5af494b520cf19f331cfea623e541"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tice_8h.html#a9db5af494b520cf19f331cfea623e541">os_LargeFont</a></td></tr>
+<tr class="separator:a9db5af494b520cf19f331cfea623e541"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1c4d012bb446e1f6df9dde69bcdd8843"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tice_8h.html#a1c4d012bb446e1f6df9dde69bcdd8843">os_TextShadow</a></td></tr>
 <tr class="separator:a1c4d012bb446e1f6df9dde69bcdd8843"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad1718876e77b610a987e8a837b49adce"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tice_8h.html#ad1718876e77b610a987e8a837b49adce">os_PenCol</a></td></tr>
@@ -164,6 +171,9 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
+<tr class="memitem:a93118d90758c2728d236ed886f3e9bca"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structfont.html">font</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tice_8h.html#a93118d90758c2728d236ed886f3e9bca">font_t</a></td></tr>
+<tr class="memdesc:a93118d90758c2728d236ed886f3e9bca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure of font description.  <a href="#a93118d90758c2728d236ed886f3e9bca">More...</a><br /></td></tr>
+<tr class="separator:a93118d90758c2728d236ed886f3e9bca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a00720cc284eb71e50d278b521c32b123"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a00720cc284eb71e50d278b521c32b123"></a>
 typedef uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tice_8h.html#a00720cc284eb71e50d278b521c32b123">sk_key_t</a></td></tr>
 <tr class="memdesc:a00720cc284eb71e50d278b521c32b123"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scan code type. <br /></td></tr>
@@ -234,10 +244,10 @@ Functions</h2></td></tr>
 <tr class="separator:a0fcf624fd8a7b43375fd0aa925b02872"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a92cfe934f3c43d8235d678d97a9080b8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tice_8h.html#a92cfe934f3c43d8235d678d97a9080b8">os_GetCursorPos</a> (unsigned int *curRow, unsigned int *curCol)</td></tr>
 <tr class="separator:a92cfe934f3c43d8235d678d97a9080b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af511480e757ca22917e43543bf23f401"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tice_8h.html#af511480e757ca22917e43543bf23f401">os_FontSelect</a> (char id)</td></tr>
-<tr class="separator:af511480e757ca22917e43543bf23f401"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a84b27224b9c54e59fbf4ed932112e5b1"><td class="memItemLeft" align="right" valign="top">uint24_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tice_8h.html#a84b27224b9c54e59fbf4ed932112e5b1">os_FontGetID</a> (void)</td></tr>
-<tr class="separator:a84b27224b9c54e59fbf4ed932112e5b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6cf85044a75dc8122639287851b9c84a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tice_8h.html#a6cf85044a75dc8122639287851b9c84a">os_FontSelect</a> (<a class="el" href="tice_8h.html#a93118d90758c2728d236ed886f3e9bca">font_t</a> *<a class="el" href="structfont.html">font</a>)</td></tr>
+<tr class="separator:a6cf85044a75dc8122639287851b9c84a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af430adcf15f31b5b469286eb0690ff29"><td class="memItemLeft" align="right" valign="top"><a class="el" href="tice_8h.html#a93118d90758c2728d236ed886f3e9bca">font_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tice_8h.html#af430adcf15f31b5b469286eb0690ff29">os_FontGetID</a> (void)</td></tr>
+<tr class="separator:af430adcf15f31b5b469286eb0690ff29"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad6b8e1cdc5f402887b62c72d9f9fc0a2"><td class="memItemLeft" align="right" valign="top">uint24_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tice_8h.html#ad6b8e1cdc5f402887b62c72d9f9fc0a2">os_FontGetWidth</a> (const char *string)</td></tr>
 <tr class="separator:ad6b8e1cdc5f402887b62c72d9f9fc0a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3773dcdcedd131b11d48dda78c73e347"><td class="memItemLeft" align="right" valign="top">uint24_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tice_8h.html#a3773dcdcedd131b11d48dda78c73e347">os_FontGetHeight</a> (void)</td></tr>
@@ -540,6 +550,19 @@ Jacob "jacobly" Young </dd></dl>
 
 </div>
 </div>
+<a class="anchor" id="a9db5af494b520cf19f331cfea623e541"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define os_LargeFont</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>TIOS large font. </p><dl class="section see"><dt>See also</dt><dd>os_SelectFont </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="ad1718876e77b610a987e8a837b49adce"></a>
 <div class="memitem">
 <div class="memproto">
@@ -576,6 +599,19 @@ Jacob "jacobly" Young </dd></dl>
       </table>
 </div><div class="memdoc">
 <p>1023 bytes free ram </p>
+
+</div>
+</div>
+<a class="anchor" id="affcbdd2a87eba7c1dc19d60ec1e34315"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define os_SmallFont</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>TIOS small font. </p><dl class="section see"><dt>See also</dt><dd>os_SelectFont </dd></dl>
 
 </div>
 </div>
@@ -684,6 +720,22 @@ Jacob "jacobly" Young </dd></dl>
       </table>
 </div><div class="memdoc">
 <p>Gets a combination of the RTC time; useful for srand() </p>
+
+</div>
+</div>
+<h2 class="groupheader">Typedef Documentation</h2>
+<a class="anchor" id="a93118d90758c2728d236ed886f3e9bca"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structfont.html">font</a>  <a class="el" href="tice_8h.html#a93118d90758c2728d236ed886f3e9bca">font_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Structure of font description. </p>
+<dl class="section see"><dt>See also</dt><dd>os_SelectFont </dd></dl>
 
 </div>
 </div>
@@ -1737,12 +1789,12 @@ Jacob "jacobly" Young </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="a84b27224b9c54e59fbf4ed932112e5b1"></a>
+<a class="anchor" id="af430adcf15f31b5b469286eb0690ff29"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">uint24_t os_FontGetID </td>
+          <td class="memname"><a class="el" href="tice_8h.html#a93118d90758c2728d236ed886f3e9bca">font_t</a>* os_FontGetID </td>
           <td>(</td>
           <td class="paramtype">void&#160;</td>
           <td class="paramname"></td><td>)</td>
@@ -1779,15 +1831,15 @@ Jacob "jacobly" Young </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="af511480e757ca22917e43543bf23f401"></a>
+<a class="anchor" id="a6cf85044a75dc8122639287851b9c84a"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">void os_FontSelect </td>
           <td>(</td>
-          <td class="paramtype">char&#160;</td>
-          <td class="paramname"><em>id</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="tice_8h.html#a93118d90758c2728d236ed886f3e9bca">font_t</a> *&#160;</td>
+          <td class="paramname"><em>font</em></td><td>)</td>
           <td></td>
         </tr>
       </table>

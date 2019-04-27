@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['srandom',['srandom',['../tice_8h.html#a54cd8fd0f6b913a116bf0cbf21fab044',1,'tice.h']]]
+  ['zx7_5fdecompress',['zx7_Decompress',['../compression_8h.html#a10f8ff5421982d429101ad5ded5e10fd',1,'compression.h']]]
 ];
