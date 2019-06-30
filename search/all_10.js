@@ -21,6 +21,7 @@ var searchData=
   ['ti_5fmallocmatrix',['ti_MallocMatrix',['../fileioc_8h.html#acb6dc9a4c914da38f1c5cb70f63349c8',1,'fileioc.h']]],
   ['ti_5fmallocreal',['ti_MallocReal',['../fileioc_8h.html#ab110aae235a51761234627502a7650f4',1,'fileioc.h']]],
   ['ti_5fmallocstring',['ti_MallocString',['../fileioc_8h.html#aa9d259056c67884d8e9a7f30ba9bf535',1,'fileioc.h']]],
+  ['ti_5fmax_5fsize',['TI_MAX_SIZE',['../fileioc_8h.html#a849fc10227e9e30c0a4269d98338cff3',1,'fileioc.h']]],
   ['ti_5fopen',['ti_Open',['../fileioc_8h.html#a2842e9d72ce53bca7b41c22838881775',1,'fileioc.h']]],
   ['ti_5fopenvar',['ti_OpenVar',['../fileioc_8h.html#a75e6644985670553ff3e479d61ec788b',1,'fileioc.h']]],
   ['ti_5fputc',['ti_PutC',['../fileioc_8h.html#a5e4f8e1c166bd14e339c8d8457419343',1,'fileioc.h']]],
@@ -45,6 +46,7 @@ var searchData=
   ['timer2_5fivect',['TIMER2_IVECT',['../intce_8h.html#a30ea4194e1b4a5cd8704924c38601541',1,'intce.h']]],
   ['timer3_5fivect',['TIMER3_IVECT',['../intce_8h.html#a3a9c2c96e35e0ffdca11db51f877f511',1,'intce.h']]],
   ['timeros_5fivect',['TIMEROS_IVECT',['../intce_8h.html#a4051151c7071cee1282b22d5bdf1de6e',1,'intce.h']]],
+  ['total_5fglyphs',['total_glyphs',['../structfontlib__font__t.html#a43b39342c914354c7b2c9885042db16d',1,'fontlib_font_t']]],
   ['type_5fheight',['type_height',['../structgfx__tilemap__t.html#a18dbcf332a669525cac3856ded67aee2',1,'gfx_tilemap_t']]],
   ['type_5fwidth',['type_width',['../structgfx__tilemap__t.html#a71ae1e272a832df252d801026f923578',1,'gfx_tilemap_t']]]
 ];

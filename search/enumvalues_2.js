@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['mode_5f0_5fidle',['MODE_0_IDLE',['../keypadc_8h.html#af86f29e15b4b14d3aa66ced481a63424a80bc2d19c0dcae62e391b46134f63b47',1,'keypadc.h']]],
-  ['mode_5f1_5findiscriminate',['MODE_1_INDISCRIMINATE',['../keypadc_8h.html#af86f29e15b4b14d3aa66ced481a63424aed87e811fb621ebe07f303a28b1e9f5e',1,'keypadc.h']]],
-  ['mode_5f2_5fsingle',['MODE_2_SINGLE',['../keypadc_8h.html#af86f29e15b4b14d3aa66ced481a63424ab79420dfbec0f787f896b02d753b1bd7',1,'keypadc.h']]],
-  ['mode_5f3_5fcontinuous',['MODE_3_CONTINUOUS',['../keypadc_8h.html#af86f29e15b4b14d3aa66ced481a63424ab1c43d362b2ffc7e1b5b16f2abb7e1cb',1,'keypadc.h']]]
+  ['kb_5fdata_5fchanged',['KB_DATA_CHANGED',['../keypadc_8h.html#a563ca39e35b2a344a3ecef7f1c990e66a462e5c3f6ce21b0b4734f03bec1445ee',1,'keypadc.h']]],
+  ['kb_5fmode_5f1_5fpress',['KB_MODE_1_PRESS',['../keypadc_8h.html#a563ca39e35b2a344a3ecef7f1c990e66a2aae3e5b9909b0da4fd1524b484fb17b',1,'keypadc.h']]],
+  ['kb_5fscan_5fcomplete',['KB_SCAN_COMPLETE',['../keypadc_8h.html#a563ca39e35b2a344a3ecef7f1c990e66a00291a05f50f5e096d81e5bed54f0e3b',1,'keypadc.h']]]
 ];

@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['bitmaps',['bitmaps',['../structfontlib__font__t.html#a86166ce10e1a594edbd98c6291576ab1',1,'fontlib_font_t']]],
   ['boot_5fcheckonpressed',['boot_CheckOnPressed',['../tice_8h.html#ab2e816a24c2b94e7b10ec6ed83c1bf68',1,'tice.h']]],
   ['boot_5fclearvram',['boot_ClearVRAM',['../tice_8h.html#a677f306acf49dacc9901bc5f848bc344',1,'tice.h']]],
   ['boot_5fdebugprintf',['boot_DebugPrintf',['../tice_8h.html#ad44d57a7e88323c7de8db7989cef4b28',1,'tice.h']]],

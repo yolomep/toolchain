@@ -18,5 +18,6 @@ var searchData=
   ['int_5ftimeros',['INT_TIMEROS',['../intce_8h.html#ad5aa2c5ed711b515bc4aa11294897bba',1,'intce.h']]],
   ['int_5fusb',['INT_USB',['../intce_8h.html#a5dae4195f004e6899a36066e00dcd13d',1,'intce.h']]],
   ['int_5fwait',['int_Wait',['../intce_8h.html#a33a97bbfc0b2bc67a7fc08b89ddb7af9',1,'intce.h']]],
-  ['intce_2eh',['intce.h',['../intce_8h.html',1,'']]]
+  ['intce_2eh',['intce.h',['../intce_8h.html',1,'']]],
+  ['italic_5fspace_5fadjust',['italic_space_adjust',['../structfontlib__font__t.html#ad3aa19442a24737a0818a8f399e49712',1,'fontlib_font_t']]]
 ];

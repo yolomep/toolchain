@@ -1,16 +1,12 @@
 var searchData=
 [
-  ['gfx_5f8bpp',['gfx_8bpp',['../graphx_8h.html#ac8a344d0b351d3b909594c49acf35c8aa72556b3c952c903f59779c685fd843af',1,'graphx.h']]],
-  ['gfx_5fbuffer',['gfx_buffer',['../graphx_8h.html#a5128cb7aeab800d47dd9638244e75ed1ae01287e39b289d91ba0aa6b5bc20a659',1,'graphx.h']]],
-  ['gfx_5fscreen',['gfx_screen',['../graphx_8h.html#a5128cb7aeab800d47dd9638244e75ed1a7b630d0c81a13e5ed75fe05738ffcf29',1,'graphx.h']]],
-  ['gfx_5ftext_5fclip',['gfx_text_clip',['../graphx_8h.html#af41d73083fea940ead39f9449944f46aad7b1fc5b7c4fa2871a331d667627b786',1,'graphx.h']]],
-  ['gfx_5ftext_5fnoclip',['gfx_text_noclip',['../graphx_8h.html#af41d73083fea940ead39f9449944f46aa6bfcdaa3b95c8955b7a31b2f5cd6d094',1,'graphx.h']]],
-  ['gfx_5ftile_5f128_5fpixel',['gfx_tile_128_pixel',['../graphx_8h.html#aaecc15e367a802018e95bd780bdcc0d0a3dd5ff8c8bf1f08f5fcb66a7effe8082',1,'graphx.h']]],
-  ['gfx_5ftile_5f16_5fpixel',['gfx_tile_16_pixel',['../graphx_8h.html#aaecc15e367a802018e95bd780bdcc0d0a6bd7cc20c0a624f2a750ac327710f4e8',1,'graphx.h']]],
-  ['gfx_5ftile_5f2_5fpixel',['gfx_tile_2_pixel',['../graphx_8h.html#aaecc15e367a802018e95bd780bdcc0d0a4722541daa5812f2861e22fdb74c24dd',1,'graphx.h']]],
-  ['gfx_5ftile_5f32_5fpixel',['gfx_tile_32_pixel',['../graphx_8h.html#aaecc15e367a802018e95bd780bdcc0d0a676f30d0f3f757b677e4e57c0ef8868f',1,'graphx.h']]],
-  ['gfx_5ftile_5f4_5fpixel',['gfx_tile_4_pixel',['../graphx_8h.html#aaecc15e367a802018e95bd780bdcc0d0aa3c0ba100a23a950817cd59361b1734a',1,'graphx.h']]],
-  ['gfx_5ftile_5f64_5fpixel',['gfx_tile_64_pixel',['../graphx_8h.html#aaecc15e367a802018e95bd780bdcc0d0a912118eaaac9438a3e28ac825d183787',1,'graphx.h']]],
-  ['gfx_5ftile_5f8_5fpixel',['gfx_tile_8_pixel',['../graphx_8h.html#aaecc15e367a802018e95bd780bdcc0d0aae92ddca5026be91e8cd5f983c467a8a',1,'graphx.h']]],
-  ['gfx_5ftile_5fno_5fpow2',['gfx_tile_no_pow2',['../graphx_8h.html#aaecc15e367a802018e95bd780bdcc0d0a4d67f0659feca16f39195920374a396e',1,'graphx.h']]]
+  ['fontlib_5fauto_5fclear_5fto_5feol',['FONTLIB_AUTO_CLEAR_TO_EOL',['../fontlibc_8h.html#a33af52aa5db3dc2ad8357328b37a528ea6c8d826ba8e55ef46c828fc5e35c13c5',1,'fontlibc.h']]],
+  ['fontlib_5fauto_5fscroll',['FONTLIB_AUTO_SCROLL',['../fontlibc_8h.html#a33af52aa5db3dc2ad8357328b37a528eab37b9c2f4a5fdbef51312bfaede09fb4',1,'fontlibc.h']]],
+  ['fontlib_5fenable_5fauto_5fwrap',['FONTLIB_ENABLE_AUTO_WRAP',['../fontlibc_8h.html#a33af52aa5db3dc2ad8357328b37a528ea23b3a1adaf68cae60a390880e8fdcee6',1,'fontlibc.h']]],
+  ['fontlib_5fignore_5fline_5fspacing',['FONTLIB_IGNORE_LINE_SPACING',['../fontlibc_8h.html#af106266dcf020e47c6c902b49934376ca813669d134b6e1989e0580eb5775ca05',1,'fontlibc.h']]],
+  ['fontlib_5fitalic',['FONTLIB_ITALIC',['../fontlibc_8h.html#af74209031f5e28cfeb61e863db3dcdbcafc300af1a57629e8273e267a09ff65a3',1,'fontlibc.h']]],
+  ['fontlib_5fmonospaced',['FONTLIB_MONOSPACED',['../fontlibc_8h.html#af74209031f5e28cfeb61e863db3dcdbca71ecb196e7f4e20db0c4c9643bf3b373',1,'fontlibc.h']]],
+  ['fontlib_5foblique',['FONTLIB_OBLIQUE',['../fontlibc_8h.html#af74209031f5e28cfeb61e863db3dcdbcaa5a2e66b39e56d65f30f3ab82259230c',1,'fontlibc.h']]],
+  ['fontlib_5fpreclear_5fnewline',['FONTLIB_PRECLEAR_NEWLINE',['../fontlibc_8h.html#a33af52aa5db3dc2ad8357328b37a528ea373b823a7122a70d3918d2555e6000a7',1,'fontlibc.h']]],
+  ['fontlib_5fserif',['FONTLIB_SERIF',['../fontlibc_8h.html#af74209031f5e28cfeb61e863db3dcdbca0f14aae4ade2d7cb08027c1928285cb8',1,'fontlibc.h']]]
 ];

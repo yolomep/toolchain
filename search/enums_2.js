@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['os_5fcolors_5ft',['os_colors_t',['../tice_8h.html#a33b96d8def662e168dd4a51d8233b7be',1,'tice.h']]]
+  ['kb_5fint_5fsignal_5ft',['kb_int_signal_t',['../keypadc_8h.html#a563ca39e35b2a344a3ecef7f1c990e66',1,'keypadc.h']]],
+  ['kb_5fscan_5fmode_5ft',['kb_scan_mode_t',['../keypadc_8h.html#af86f29e15b4b14d3aa66ced481a63424',1,'keypadc.h']]]
 ];
