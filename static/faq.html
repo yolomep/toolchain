@@ -36,7 +36,7 @@
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Using printf functions" href="printf.html" />
+    <link rel="next" title="Using printf Functions" href="printf.html" />
     <link rel="prev" title="Getting Started" href="getting-started.html" /> 
 </head>
 
@@ -98,7 +98,8 @@
 </ul>
 <p class="caption"><span class="caption-text">Toolchain Documentation</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="printf.html">Using printf functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="printf.html">Using printf Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fileio.html">Using File I/O Functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../libraries/index.html">CE C Libraries</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../headers/index.html">CE C Toolchain Specific Headers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="debugging.html">Debugging</a></li>
@@ -194,7 +195,7 @@ The following graphic breaks down the address space.</p>
 <li><p>Any external functions called from the assembly source must be listed as being <cite>extern</cite>.</p></li>
 </ul>
 <p>Below is an example assembly source file that relies on an external function:</p>
-<div class="highlight-asm notranslate"><div class="highlight"><pre><span></span>    <span class="nf">public</span> <span class="no">_asm_func</span>
+<div class="highlight-asm notranslate"><div class="highlight"><pre><span></span>    <span class="nf">public</span>  <span class="no">_asm_func</span>
 
 <span class="nl">_asm_func:</span>
     <span class="nf">pop</span>     <span class="no">hl</span>
@@ -204,7 +205,7 @@ The following graphic breaks down the address space.</p>
     <span class="nf">call</span>    <span class="no">_external_func</span>
     <span class="nf">ret</span>
 
-    <span class="nf">extern</span> <span class="no">_external_func</span>
+    <span class="nf">extern</span>  <span class="no">_external_func</span>
 </pre></div>
 </div>
 <p>The C prototype is shown below:</p>
@@ -237,27 +238,27 @@ This table lists the locations relative to <em>sp</em> from within the called fu
 <td><p>sp + [3]</p></td>
 </tr>
 <tr class="row-odd"><td><p>short</p></td>
-<td><p>HL</p></td>
+<td><p>2 bytes</p></td>
 <td><p>sp + [3:4]</p></td>
 </tr>
 <tr class="row-even"><td><p>int</p></td>
-<td><p>HL</p></td>
+<td><p>3 bytes</p></td>
 <td><p>sp + [3:5]</p></td>
 </tr>
 <tr class="row-odd"><td><p>long</p></td>
-<td><p>E:HL</p></td>
+<td><p>4 bytes</p></td>
 <td><p>sp + [6]: sp + [3:5]</p></td>
 </tr>
 <tr class="row-even"><td><p>float</p></td>
-<td><p>E:HL</p></td>
+<td><p>4 bytes</p></td>
 <td><p>sp + [6]: sp + [3:5]</p></td>
 </tr>
 <tr class="row-odd"><td><p>double</p></td>
-<td><p>E:HL</p></td>
+<td><p>4 bytes</p></td>
 <td><p>sp + [6]: sp + [3:5]</p></td>
 </tr>
 <tr class="row-even"><td><p>pointer</p></td>
-<td><p>HL</p></td>
+<td><p>3 bytes</p></td>
 <td><p>sp + [3:5]</p></td>
 </tr>
 </tbody>
@@ -321,7 +322,7 @@ Note that for shorts, the upper byte does not matter.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="printf.html" class="btn btn-neutral float-right" title="Using printf functions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="printf.html" class="btn btn-neutral float-right" title="Using printf Functions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="getting-started.html" class="btn btn-neutral float-left" title="Getting Started" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

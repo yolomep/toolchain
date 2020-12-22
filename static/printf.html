@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Using printf functions &mdash; CE C Toolchain v9.0-devel documentation</title>
+  <title>Using printf Functions &mdash; CE C Toolchain v9.0-devel documentation</title>
   
 
   
@@ -36,7 +36,7 @@
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="CE C Libraries" href="../libraries/index.html" />
+    <link rel="next" title="Using File I/O Functions" href="fileio.html" />
     <link rel="prev" title="Frequently Asked Questions" href="faq.html" /> 
 </head>
 
@@ -90,11 +90,12 @@
 </ul>
 <p class="caption"><span class="caption-text">Toolchain Documentation</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Using printf functions</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Using printf Functions</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#what-s-the-deal-with-printf">What’s the deal with printf?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#using-the-printf-functions">Using the printf functions</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="fileio.html">Using File I/O Functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../libraries/index.html">CE C Libraries</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../headers/index.html">CE C Toolchain Specific Headers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="debugging.html">Debugging</a></li>
@@ -149,7 +150,7 @@
     
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>Using printf functions</li>
+      <li>Using printf Functions</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -167,10 +168,10 @@
            <div itemprop="articleBody">
             
   <div class="section" id="using-printf-functions">
-<span id="printf"></span><h1>Using printf functions<a class="headerlink" href="#using-printf-functions" title="Permalink to this headline">¶</a></h1>
+<span id="printf"></span><h1>Using printf Functions<a class="headerlink" href="#using-printf-functions" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="what-s-the-deal-with-printf">
 <h2>What’s the deal with printf?<a class="headerlink" href="#what-s-the-deal-with-printf" title="Permalink to this headline">¶</a></h2>
-<p>The <cite>printf</cite> and related functions (<cite>sprintf</cite>, <cite>vsprintf</cite>, etc.) are based on a relatively <a class="reference external" href="https://github.com/CE-Programming/toolchain/issues">small implementation</a>.
+<p>The <cite>printf</cite> and related functions (<cite>sprintf</cite>, <cite>vsprintf</cite>, etc.) are based on a relatively <a class="reference external" href="https://github.com/CE-Programming/toolchain/commit/fb0f546f0daa3fa33f6cefe764b8f3dc328de991">small implementation</a>.
 However, they contribute around 7.5KiB to the resultant program.
 It is highly recommended to not use <cite>printf</cite> and related functions at all because of this.
 If you insist on using these functions, this page details how to do so in the next section.</p>
@@ -219,7 +220,7 @@ For example, a horrid implementation of this function might look like the one be
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../libraries/index.html" class="btn btn-neutral float-right" title="CE C Libraries" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="fileio.html" class="btn btn-neutral float-right" title="Using File I/O Functions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="faq.html" class="btn btn-neutral float-left" title="Frequently Asked Questions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
