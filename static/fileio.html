@@ -176,7 +176,7 @@ These functions are meant to perform OS-level file access for reading and writin
 However, the CE doesn’t expose any sort of standard UNIX or similar file capabilities.</p>
 <p>To mitigate this, the CE C Toolchain includes these functions as wrappers around the <a class="reference internal" href="../libraries/fileioc.html#fileioc-h"><span class="std std-ref">fileioc library</span></a>.
 This allows native access to AppVars for read and write operations.</p>
-<p>For <code class="code docutils literal notranslate"><span class="pre">stdin</span></code>, <code class="code docutils literal notranslate"><span class="pre">stdout</span></code>, and <code class="code docutils literal notranslate"><span class="pre">stderr</span></code> file streams, the default implementation uses the <code class="code docutils literal notranslate"><span class="pre">getchar</span></code> and <code class="code docutils literal notranslate"><span class="pre">putchar</span></code> functions respectively.</p>
+<p>For <code class="code docutils literal notranslate"><span class="pre">stdin</span></code>, <code class="code docutils literal notranslate"><span class="pre">stdout</span></code>, and <code class="code docutils literal notranslate"><span class="pre">stderr</span></code> file streams, the default implementation uses the <cite>getchar</cite> and <cite>putchar</cite> functions respectively.</p>
 </div>
 <div class="section" id="using-custom-file-i-o">
 <h2>Using Custom File I/O<a class="headerlink" href="#using-custom-file-i-o" title="Permalink to this headline">¶</a></h2>

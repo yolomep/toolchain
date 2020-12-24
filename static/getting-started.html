@@ -180,8 +180,8 @@
 <li><p>On Windows, run the executable (.exe) as an administrator.</p></li>
 <li><p>On Linux or macOS:</p>
 <ul>
-<li><p>Extract the archive to a path <strong>without spaces</strong> (e.g. /home/).</p></li>
-<li><p>Add the environment variables with the install location to either <cite>.bashrc</cite> or <cite>.bash_profile</cite>:</p>
+<li><p>Extract the archive to a path <strong>without spaces</strong> (e.g. /opt/).</p></li>
+<li><p>Add the environment variables with the install location to either <cite>.bashrc</cite> or <cite>.bash_profile</cite>, using the extracted path:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">CEDEV</span><span class="o">=</span>/opt/CEdev
 <span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$CEDEV</span>/bin:<span class="nv">$PATH</span>
 </pre></div>
@@ -190,7 +190,10 @@
 </ul>
 </li>
 </ul>
-<p><strong>Note</strong>: If you have defined/overridden the <cite>CFLAGS</cite> or <cite>LDFLAGS</cite> variables in your shell, you may want to unset those.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you have defined/overridden the <cite>CFLAGS</cite> or <cite>LDFLAGS</cite> variables in your shell, you may want to unset those.</p>
+</div>
 </div>
 <div class="section" id="building-programs">
 <h2>Building Programs<a class="headerlink" href="#building-programs" title="Permalink to this headline">¶</a></h2>
@@ -213,7 +216,7 @@ The compiler and linker will be executed, and the program (named DEMO.8xp) will 
 <ul class="simple">
 <li><p><strong>src</strong>: This is the directory where all of your source files are. Sources are built automatically if they end in a <cite>.c</cite>/<cite>.cpp</cite> extension, and can be edited with any text editor (not Word).</p></li>
 <li><p><strong>bin</strong>: This is where the compiled program will be placed.</p></li>
-<li><p><strong>obj</strong>: Compiled C files are placed here, showing the assembly output.</p></li>
+<li><p><strong>obj</strong>: Compiled C/C++ files are placed here, showing the assembly output.</p></li>
 </ul>
 </div>
 <div class="section" id="files">
