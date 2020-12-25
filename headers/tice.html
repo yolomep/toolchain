@@ -582,6 +582,84 @@
 </dd></dl>
 
 <dl class="cpp macro">
+<dt id="c.TIMER_32K">
+<span class="target" id="tice_8h_1aa43d5737c4f25b5e7dc193507986856a"></span><code class="sig-name descname">TIMER_32K</code><a class="headerlink" href="#c.TIMER_32K" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Use the 32K clock for timer </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.TIMER_CPU">
+<span class="target" id="tice_8h_1a1bab2bfb1a5c83158ad85e90ed540322"></span><code class="sig-name descname">TIMER_CPU</code><a class="headerlink" href="#c.TIMER_CPU" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Use the CPU clock rate for timer </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.TIMER_0INT">
+<span class="target" id="tice_8h_1aa43a8074d7f31f3140e4622582a29960"></span><code class="sig-name descname">TIMER_0INT</code><a class="headerlink" href="#c.TIMER_0INT" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Enable an interrupt when 0 is reached for the timer </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.TIMER_NOINT">
+<span class="target" id="tice_8h_1a8fc77df9a73b89d0b4d2b21335aeb9c9"></span><code class="sig-name descname">TIMER_NOINT</code><a class="headerlink" href="#c.TIMER_NOINT" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Disable interrupts for the timer </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.TIMER_UP">
+<span class="target" id="tice_8h_1addc1518d1f46480d649464c06c85b867"></span><code class="sig-name descname">TIMER_UP</code><a class="headerlink" href="#c.TIMER_UP" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Timer counts up </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.TIMER_DOWN">
+<span class="target" id="tice_8h_1ace39e9ba355335d866481ba1fef7598f"></span><code class="sig-name descname">TIMER_DOWN</code><a class="headerlink" href="#c.TIMER_DOWN" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Timer counts down </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.TIMER_MATCH1">
+<span class="target" id="tice_8h_1ab69bc619f85a263aac3e0a895868eed7"></span><code class="sig-name descname">TIMER_MATCH1</code><a class="headerlink" href="#c.TIMER_MATCH1" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Timer hit the first match value </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.TIMER_MATCH2">
+<span class="target" id="tice_8h_1a198032bef58cf3c63729e7e482b0fc43"></span><code class="sig-name descname">TIMER_MATCH2</code><a class="headerlink" href="#c.TIMER_MATCH2" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Timer hit the second match value </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.TIMER_RELOADED">
+<span class="target" id="tice_8h_1a372e776923461c686132b445c936e516"></span><code class="sig-name descname">TIMER_RELOADED</code><a class="headerlink" href="#c.TIMER_RELOADED" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Timer was reloaded (Needs TIMER_0INT enabled) </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.timer_Enable">
+<span class="target" id="tice_8h_1ab1c8a0f621a66ae2820897da064f19a8"></span><code class="sig-name descname">timer_Enable</code><span class="sig-paren">(</span><em>n</em>, <em>rate</em>, <em>int</em>, <em>dir</em><span class="sig-paren">)</span><a class="headerlink" href="#c.timer_Enable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Enables timer <code class="docutils literal notranslate"><span class="pre">n</span></code> with the specified settings </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.timer_Disable">
+<span class="target" id="tice_8h_1a40b279c3b9b2941301a95f833e3b3330"></span><code class="sig-name descname">timer_Disable</code><span class="sig-paren">(</span><em>n</em><span class="sig-paren">)</span><a class="headerlink" href="#c.timer_Disable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Disables timer <code class="docutils literal notranslate"><span class="pre">n</span></code> </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.timer_AckInterrupt">
+<span class="target" id="tice_8h_1a758cc90ce87b261254237f8abcec9358"></span><code class="sig-name descname">timer_AckInterrupt</code><span class="sig-paren">(</span><em>n</em>, <em>type</em><span class="sig-paren">)</span><a class="headerlink" href="#c.timer_AckInterrupt" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Acknowledges an interrupt for timer <code class="docutils literal notranslate"><span class="pre">n</span></code> of type <code class="docutils literal notranslate"><span class="pre">type</span></code>. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.timer_CheckInterrupt">
+<span class="target" id="tice_8h_1a9327f07d7924e76a350c52d268066852"></span><code class="sig-name descname">timer_CheckInterrupt</code><span class="sig-paren">(</span><em>n</em>, <em>type</em><span class="sig-paren">)</span><a class="headerlink" href="#c.timer_CheckInterrupt" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Checks if an interrupt for timer <code class="docutils literal notranslate"><span class="pre">n</span></code> of type <code class="docutils literal notranslate"><span class="pre">type</span></code> has occurred. </p>
+</dd></dl>
+
+<dl class="cpp macro">
 <dt id="c.lcd_Ram">
 <span class="target" id="tice_8h_1a550fea7380cc26f7854121b5bfcc3f68"></span><code class="sig-name descname">lcd_Ram</code><a class="headerlink" href="#c.lcd_Ram" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Base address of memory-mapped RAM for the LCD </p>
