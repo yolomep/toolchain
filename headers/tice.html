@@ -188,20 +188,13 @@
 <h2><a class="toc-backref" href="#id2">API Documentation</a><a class="headerlink" href="#api-documentation" title="Permalink to this headline">¶</a></h2>
 <p>Core CE define file. </p>
 <p><dl class="simple">
-<dt><strong>Authors</strong></dt><dd><p>Matt “MateoConLechuga” Waltz </p>
-</dd>
-<dt><strong>Authors</strong></dt><dd><p>Jacob “jacobly” Young </p>
+<dt><strong>Authors</strong></dt><dd><p>Matt “MateoConLechuga” Waltz<p>Jacob “jacobly” Young </p>
+</p>
 </dd>
 </dl>
 </p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric">Defines</p>
-<dl class="cpp macro">
-<dt id="c.tiflags">
-<span class="target" id="tice_8h_1ab22405f80f66f6a6e3615a0f88099fcf"></span><code class="sig-name descname">tiflags</code><a class="headerlink" href="#c.tiflags" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Marks a function as needing the iy register to point to the OS flags before calling. </p>
-</dd></dl>
-
 <dl class="cpp macro">
 <dt id="c.randInt">
 <span class="target" id="tice_8h_1a8cdf5dc3371a6c80dd28003403a8f094"></span><code class="sig-name descname">randInt</code><span class="sig-paren">(</span><em>min</em>, <em>max</em><span class="sig-paren">)</span><a class="headerlink" href="#c.randInt" title="Permalink to this definition">¶</a><br /></dt>
@@ -209,454 +202,335 @@
 </dd></dl>
 
 <dl class="cpp macro">
-<dt id="c.rtc_Time">
-<span class="target" id="tice_8h_1a61765dd0a064283c74e97b24dcfedd67"></span><code class="sig-name descname">rtc_Time</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#c.rtc_Time" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Gets a combination of the RTC time; useful for srand() </p>
+<dt id="c.os_ClrHome">
+<span class="target" id="tice_8h_1af31f77eb16adfccf31a00072554c48c5"></span><code class="sig-name descname">os_ClrHome</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#c.os_ClrHome" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Resets the OS homescreen; accounts for split screen. </p>
 </dd></dl>
 
 <dl class="cpp macro">
-<dt id="c.RTC_UNFREEZE">
-<span class="target" id="tice_8h_1a3da6c434794a28e51894889f2b22292e"></span><code class="sig-name descname">RTC_UNFREEZE</code><a class="headerlink" href="#c.RTC_UNFREEZE" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp macro">
-<dt id="c.RTC_FREEZE">
-<span class="target" id="tice_8h_1ab857eac2e76bf86740ca5c5c9cd6090c"></span><code class="sig-name descname">RTC_FREEZE</code><a class="headerlink" href="#c.RTC_FREEZE" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp macro">
-<dt id="c.RTC_LOAD">
-<span class="target" id="tice_8h_1a4cf81e7c01b49ba761683e3909516673"></span><code class="sig-name descname">RTC_LOAD</code><a class="headerlink" href="#c.RTC_LOAD" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp macro">
-<dt id="c.RTC_ENABLE">
-<span class="target" id="tice_8h_1ad3b9760bb0975ff5f93d0d388f8e01bd"></span><code class="sig-name descname">RTC_ENABLE</code><a class="headerlink" href="#c.RTC_ENABLE" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp macro">
-<dt id="c.RTC_DISABLE">
-<span class="target" id="tice_8h_1a90474494d6043a3b1cbed752061c5001"></span><code class="sig-name descname">RTC_DISABLE</code><a class="headerlink" href="#c.RTC_DISABLE" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp macro">
-<dt id="c.rtc_Seconds">
-<span class="target" id="tice_8h_1abdf23d88ecf555286569e28be144a3f5"></span><code class="sig-name descname">rtc_Seconds</code><a class="headerlink" href="#c.rtc_Seconds" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Number of seconds stored in the RTC. </p>
+<dt id="c.os_ClrHomeFull">
+<span class="target" id="tice_8h_1a085b3ccef49b2e3eb7c7e6d6c24507f5"></span><code class="sig-name descname">os_ClrHomeFull</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#c.os_ClrHomeFull" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Resets the OS homescreen fully; ignores split screen mode. </p>
 </dd></dl>
 
 <dl class="cpp macro">
-<dt id="c.rtc_Minutes">
-<span class="target" id="tice_8h_1af8e4c18b56727e449acd6d88598a8e6e"></span><code class="sig-name descname">rtc_Minutes</code><a class="headerlink" href="#c.rtc_Minutes" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Number of minutes stored in the RTC. </p>
+<dt id="c.rtc_Enable">
+<span class="target" id="tice_8h_1af38bd3da371f5716dcb636a4d6b56652"></span><code class="sig-name descname">rtc_Enable</code><span class="sig-paren">(</span><em>int</em><span class="sig-paren">)</span><a class="headerlink" href="#c.rtc_Enable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Enables the Real-Time-Clock (RTC).</p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">int</span></code>: Interrupt mask to enable specific RTC interrupts. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
 </dd></dl>
 
 <dl class="cpp macro">
-<dt id="c.rtc_Hours">
-<span class="target" id="tice_8h_1abdd5bbe4dc80ec7acd84323cd33bff74"></span><code class="sig-name descname">rtc_Hours</code><a class="headerlink" href="#c.rtc_Hours" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Number of hours stored in the RTC. </p>
+<dt id="c.rtc_Set">
+<span class="target" id="tice_8h_1aab80d3dacdd411b50a40364553de96b4"></span><code class="sig-name descname">rtc_Set</code><span class="sig-paren">(</span><em>sec</em>, <em>min</em>, <em>hr</em>, <em>day</em><span class="sig-paren">)</span><a class="headerlink" href="#c.rtc_Set" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sets the Real-Time-Clock (RTC) with new values.</p>
+<p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>The set values do not take effect until the next RTC second. Verify the values have been loaded by waiting for <a class="reference internal" href="#tice_8h_1aa9ae5e22b622db44e86ec52249e879b5"><span class="std std-ref">rtc_IsBusy()</span></a> to be false. The RTC will also need to be enabled. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">sec</span></code>: Second value to load. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">min</span></code>: Minute value to load. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">hr</span></code>: Hour value to load. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">day</span></code>: Day value to load.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
 </dd></dl>
 
 <dl class="cpp macro">
-<dt id="c.rtc_Days">
-<span class="target" id="tice_8h_1a726fdd385318e31d8a7702d9c08c4523"></span><code class="sig-name descname">rtc_Days</code><a class="headerlink" href="#c.rtc_Days" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Number of days stored in the RTC. </p>
+<dt id="c.rtc_SetAlarm">
+<span class="target" id="tice_8h_1aa05424a8261e7d8df9f75981e7d5adcc"></span><code class="sig-name descname">rtc_SetAlarm</code><span class="sig-paren">(</span><em>sec</em>, <em>min</em>, <em>hr</em><span class="sig-paren">)</span><a class="headerlink" href="#c.rtc_SetAlarm" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sets the Real-Time-Clock (RTC) alarm with new values.</p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">sec</span></code>: Second alarm value. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">min</span></code>: Minute alarm value. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">hr</span></code>: Hour alarm value. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
 </dd></dl>
 
 <dl class="cpp macro">
-<dt id="c.rtc_Control">
-<span class="target" id="tice_8h_1a79b5cc38b5a0ee9dc03bc1c4f12ffdd2"></span><code class="sig-name descname">rtc_Control</code><a class="headerlink" href="#c.rtc_Control" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>RTC Control register. </p>
-</dd></dl>
-
-<dl class="cpp macro">
-<dt id="c.rtc_IntStatus">
-<span class="target" id="tice_8h_1a13f00ed17b2f4f9163c8e5d1d8a75ce1"></span><code class="sig-name descname">rtc_IntStatus</code><a class="headerlink" href="#c.rtc_IntStatus" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>RTC Interrupt Status register. </p>
-</dd></dl>
-
-<dl class="cpp macro">
-<dt id="c.rtc_IntAcknowledge">
-<span class="target" id="tice_8h_1a58b9431a5deffd765d903540fb69e5e7"></span><code class="sig-name descname">rtc_IntAcknowledge</code><a class="headerlink" href="#c.rtc_IntAcknowledge" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>RTC Interrupt Acknowledge register. </p>
+<dt id="c.rtc_Disable">
+<span class="target" id="tice_8h_1ab2d877622d393302d9e9ce537a8e020e"></span><code class="sig-name descname">rtc_Disable</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#c.rtc_Disable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Disables the Real-Time-Clock (RTC). </p>
 </dd></dl>
 
 <dl class="cpp macro">
 <dt id="c.rtc_IsBusy">
 <span class="target" id="tice_8h_1aa9ae5e22b622db44e86ec52249e879b5"></span><code class="sig-name descname">rtc_IsBusy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#c.rtc_IsBusy" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Checks if the RTC is busy loading. </p>
+<dd><p>Checks if the RTC is busy setting newly loaded values. </p>
 </dd></dl>
 
 <dl class="cpp macro">
-<dt id="c.TIMER1_ENABLE">
-<span class="target" id="tice_8h_1a38561aa2a67117708f28ae50a0cd1b37"></span><code class="sig-name descname">TIMER1_ENABLE</code><a class="headerlink" href="#c.TIMER1_ENABLE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Enables Timer 1 </p>
+<dt id="c.rtc_AckInterrupt">
+<span class="target" id="tice_8h_1ab83cb4c555d2feb16a25f7a6e3773762"></span><code class="sig-name descname">rtc_AckInterrupt</code><span class="sig-paren">(</span><em>mask</em><span class="sig-paren">)</span><a class="headerlink" href="#c.rtc_AckInterrupt" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Acknowledges an RTC interrupt. This should be used to clear the condition that is causing the interrupt.</p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">mask</span></code>: RTC interrupt mask. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
 </dd></dl>
 
 <dl class="cpp macro">
-<dt id="c.TIMER1_DISABLE">
-<span class="target" id="tice_8h_1a55368c52c20dddbb397c6e54ed56182a"></span><code class="sig-name descname">TIMER1_DISABLE</code><a class="headerlink" href="#c.TIMER1_DISABLE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Disables Timer 1 </p>
+<dt id="c.rtc_ChkInterrupt">
+<span class="target" id="tice_8h_1a2e3372f51332cff448996dffc8f6fef7"></span><code class="sig-name descname">rtc_ChkInterrupt</code><span class="sig-paren">(</span><em>mask</em><span class="sig-paren">)</span><a class="headerlink" href="#c.rtc_ChkInterrupt" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Checks if a RTC interrupt condition has occurred.</p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">mask</span></code>: RTC interrupt mask. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
 </dd></dl>
 
 <dl class="cpp macro">
-<dt id="c.TIMER1_32K">
-<span class="target" id="tice_8h_1ad4d84b03d6d9df04717ccef935340bd1"></span><code class="sig-name descname">TIMER1_32K</code><a class="headerlink" href="#c.TIMER1_32K" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Use the 32K clock for timer 1 </p>
+<dt id="c.rtc_Time">
+<span class="target" id="tice_8h_1a61765dd0a064283c74e97b24dcfedd67"></span><code class="sig-name descname">rtc_Time</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#c.rtc_Time" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets a combination of the RTC time; useful for seeding random numbers via srand(). </p>
 </dd></dl>
 
 <dl class="cpp macro">
-<dt id="c.TIMER1_CPU">
-<span class="target" id="tice_8h_1a5579cb47e2a117f8c1acaa9b05904129"></span><code class="sig-name descname">TIMER1_CPU</code><a class="headerlink" href="#c.TIMER1_CPU" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Use the CPU clock rate for timer 1 </p>
+<dt id="c.rtc_Seconds">
+<span class="target" id="tice_8h_1abdf23d88ecf555286569e28be144a3f5"></span><code class="sig-name descname">rtc_Seconds</code><a class="headerlink" href="#c.rtc_Seconds" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>RTC seconds </p>
 </dd></dl>
 
 <dl class="cpp macro">
-<dt id="c.TIMER1_0INT">
-<span class="target" id="tice_8h_1a29d63e9d902ecdbc0a06640bd70443cc"></span><code class="sig-name descname">TIMER1_0INT</code><a class="headerlink" href="#c.TIMER1_0INT" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Enable an interrupt when 0 is reached for the timer 1 </p>
+<dt id="c.rtc_Minutes">
+<span class="target" id="tice_8h_1af8e4c18b56727e449acd6d88598a8e6e"></span><code class="sig-name descname">rtc_Minutes</code><a class="headerlink" href="#c.rtc_Minutes" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>RTC minutes </p>
 </dd></dl>
 
 <dl class="cpp macro">
-<dt id="c.TIMER1_NOINT">
-<span class="target" id="tice_8h_1a35f9608e4874bd316debd7f24aca33bf"></span><code class="sig-name descname">TIMER1_NOINT</code><a class="headerlink" href="#c.TIMER1_NOINT" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Disable interrupts for the timer 1 </p>
+<dt id="c.rtc_Hours">
+<span class="target" id="tice_8h_1abdd5bbe4dc80ec7acd84323cd33bff74"></span><code class="sig-name descname">rtc_Hours</code><a class="headerlink" href="#c.rtc_Hours" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>RTC hours </p>
 </dd></dl>
 
 <dl class="cpp macro">
-<dt id="c.TIMER1_UP">
-<span class="target" id="tice_8h_1a5e6b2df3d1e640a0485e30e17f945245"></span><code class="sig-name descname">TIMER1_UP</code><a class="headerlink" href="#c.TIMER1_UP" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Timer 1 counts up </p>
+<dt id="c.rtc_Days">
+<span class="target" id="tice_8h_1a726fdd385318e31d8a7702d9c08c4523"></span><code class="sig-name descname">rtc_Days</code><a class="headerlink" href="#c.rtc_Days" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>RTC days </p>
 </dd></dl>
 
 <dl class="cpp macro">
-<dt id="c.TIMER1_DOWN">
-<span class="target" id="tice_8h_1a6093439a2f214896593a744dd5fa6363"></span><code class="sig-name descname">TIMER1_DOWN</code><a class="headerlink" href="#c.TIMER1_DOWN" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Timer 1 counts down </p>
+<dt id="c.rtc_AlarmSeconds">
+<span class="target" id="tice_8h_1aabea150de0a86ae8482df851d364b401"></span><code class="sig-name descname">rtc_AlarmSeconds</code><a class="headerlink" href="#c.rtc_AlarmSeconds" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>RTC alarm seconds </p>
 </dd></dl>
 
 <dl class="cpp macro">
-<dt id="c.TIMER2_ENABLE">
-<span class="target" id="tice_8h_1a2b2c87cf384febed61fa7cc3a039c692"></span><code class="sig-name descname">TIMER2_ENABLE</code><a class="headerlink" href="#c.TIMER2_ENABLE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Enables Timer 2 </p>
+<dt id="c.rtc_AlarmMinutes">
+<span class="target" id="tice_8h_1aa7e4bb06f40fb201c28c37ff90e65022"></span><code class="sig-name descname">rtc_AlarmMinutes</code><a class="headerlink" href="#c.rtc_AlarmMinutes" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>RTC alarm minutes </p>
 </dd></dl>
 
 <dl class="cpp macro">
-<dt id="c.TIMER2_DISABLE">
-<span class="target" id="tice_8h_1a6e298642ef5e22856b9a2f1f9b6f0d80"></span><code class="sig-name descname">TIMER2_DISABLE</code><a class="headerlink" href="#c.TIMER2_DISABLE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Disables Timer 2 </p>
-</dd></dl>
-
-<dl class="cpp macro">
-<dt id="c.TIMER2_32K">
-<span class="target" id="tice_8h_1a738b6e58678c1b474c4ca219b83b2c30"></span><code class="sig-name descname">TIMER2_32K</code><a class="headerlink" href="#c.TIMER2_32K" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Use the 32K clock for timer 2 </p>
-</dd></dl>
-
-<dl class="cpp macro">
-<dt id="c.TIMER2_CPU">
-<span class="target" id="tice_8h_1a5e0a56b46fa9c7d8d196ca88fced1250"></span><code class="sig-name descname">TIMER2_CPU</code><a class="headerlink" href="#c.TIMER2_CPU" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Use the CPU clock rate for timer 2 </p>
-</dd></dl>
-
-<dl class="cpp macro">
-<dt id="c.TIMER2_0INT">
-<span class="target" id="tice_8h_1afb314df5a58bd36cdd9cf1c8030d5ad3"></span><code class="sig-name descname">TIMER2_0INT</code><a class="headerlink" href="#c.TIMER2_0INT" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Enable an interrupt when 0 is reached for the timer 2 </p>
-</dd></dl>
-
-<dl class="cpp macro">
-<dt id="c.TIMER2_NOINT">
-<span class="target" id="tice_8h_1a45649d90edebf73f9221b3665d837742"></span><code class="sig-name descname">TIMER2_NOINT</code><a class="headerlink" href="#c.TIMER2_NOINT" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Disable interrupts for the timer 2 </p>
-</dd></dl>
-
-<dl class="cpp macro">
-<dt id="c.TIMER2_UP">
-<span class="target" id="tice_8h_1a949a721e7c8077d01437d02f32d4cde3"></span><code class="sig-name descname">TIMER2_UP</code><a class="headerlink" href="#c.TIMER2_UP" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Timer 2 counts up </p>
-</dd></dl>
-
-<dl class="cpp macro">
-<dt id="c.TIMER2_DOWN">
-<span class="target" id="tice_8h_1ae8b5978ae66d0952505c712b51a99657"></span><code class="sig-name descname">TIMER2_DOWN</code><a class="headerlink" href="#c.TIMER2_DOWN" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Timer 2 counts down </p>
-</dd></dl>
-
-<dl class="cpp macro">
-<dt id="c.TIMER3_ENABLE">
-<span class="target" id="tice_8h_1a1e01534d55a306e0ead51d7c4c70dc49"></span><code class="sig-name descname">TIMER3_ENABLE</code><a class="headerlink" href="#c.TIMER3_ENABLE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Enables Timer 3 </p>
-</dd></dl>
-
-<dl class="cpp macro">
-<dt id="c.TIMER3_DISABLE">
-<span class="target" id="tice_8h_1a5bcde1baf5b70f89b10e21f94438ac84"></span><code class="sig-name descname">TIMER3_DISABLE</code><a class="headerlink" href="#c.TIMER3_DISABLE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Disables Timer 3 </p>
-</dd></dl>
-
-<dl class="cpp macro">
-<dt id="c.TIMER3_32K">
-<span class="target" id="tice_8h_1a6d4c1ee39f74767647f807b356534d1d"></span><code class="sig-name descname">TIMER3_32K</code><a class="headerlink" href="#c.TIMER3_32K" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Use the 32K clock for timer 3 </p>
-</dd></dl>
-
-<dl class="cpp macro">
-<dt id="c.TIMER3_CPU">
-<span class="target" id="tice_8h_1aee1bff9884e53e14727dedc25467e40f"></span><code class="sig-name descname">TIMER3_CPU</code><a class="headerlink" href="#c.TIMER3_CPU" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Use the CPU clock rate for timer 3 </p>
-</dd></dl>
-
-<dl class="cpp macro">
-<dt id="c.TIMER3_0INT">
-<span class="target" id="tice_8h_1a5e3af2e172786d19986be6baee70efe0"></span><code class="sig-name descname">TIMER3_0INT</code><a class="headerlink" href="#c.TIMER3_0INT" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Enable an interrupt when 0 is reached for the timer 3 </p>
-</dd></dl>
-
-<dl class="cpp macro">
-<dt id="c.TIMER3_NOINT">
-<span class="target" id="tice_8h_1ae317625ba73b9ea4356b28d847b4fea1"></span><code class="sig-name descname">TIMER3_NOINT</code><a class="headerlink" href="#c.TIMER3_NOINT" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Disable interrupts for the timer 3 </p>
-</dd></dl>
-
-<dl class="cpp macro">
-<dt id="c.TIMER3_UP">
-<span class="target" id="tice_8h_1aafd3fdbfc0dcd262a0008a04f9d94561"></span><code class="sig-name descname">TIMER3_UP</code><a class="headerlink" href="#c.TIMER3_UP" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Timer 3 counts up </p>
-</dd></dl>
-
-<dl class="cpp macro">
-<dt id="c.TIMER3_DOWN">
-<span class="target" id="tice_8h_1aa8de474c51dd59a16d5a53811d7a7733"></span><code class="sig-name descname">TIMER3_DOWN</code><a class="headerlink" href="#c.TIMER3_DOWN" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Timer 3 counts down </p>
-</dd></dl>
-
-<dl class="cpp macro">
-<dt id="c.TIMER1_MATCH1">
-<span class="target" id="tice_8h_1ab2675778266f611d90e296be424ce195"></span><code class="sig-name descname">TIMER1_MATCH1</code><a class="headerlink" href="#c.TIMER1_MATCH1" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Timer 1 hit the first match value </p>
-</dd></dl>
-
-<dl class="cpp macro">
-<dt id="c.TIMER1_MATCH2">
-<span class="target" id="tice_8h_1ac0af321ad5cbb573f5a2df6d512c1842"></span><code class="sig-name descname">TIMER1_MATCH2</code><a class="headerlink" href="#c.TIMER1_MATCH2" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Timer 1 hit the second match value </p>
-</dd></dl>
-
-<dl class="cpp macro">
-<dt id="c.TIMER1_RELOADED">
-<span class="target" id="tice_8h_1aefc77a3010ee6a932417992ec1929cfb"></span><code class="sig-name descname">TIMER1_RELOADED</code><a class="headerlink" href="#c.TIMER1_RELOADED" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Timer 1 was reloaded (Needs TIMER1_0INT enabled) </p>
-</dd></dl>
-
-<dl class="cpp macro">
-<dt id="c.TIMER2_MATCH1">
-<span class="target" id="tice_8h_1ad53702079d0406d4d2f200bc8ad81452"></span><code class="sig-name descname">TIMER2_MATCH1</code><a class="headerlink" href="#c.TIMER2_MATCH1" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Timer 2 hit the first match value </p>
-</dd></dl>
-
-<dl class="cpp macro">
-<dt id="c.TIMER2_MATCH2">
-<span class="target" id="tice_8h_1a1d0f77a2f677a7d8220f5765e343f109"></span><code class="sig-name descname">TIMER2_MATCH2</code><a class="headerlink" href="#c.TIMER2_MATCH2" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Timer 2 hit the second match value </p>
-</dd></dl>
-
-<dl class="cpp macro">
-<dt id="c.TIMER2_RELOADED">
-<span class="target" id="tice_8h_1ac34f6966031477401d1977c5d96a4d63"></span><code class="sig-name descname">TIMER2_RELOADED</code><a class="headerlink" href="#c.TIMER2_RELOADED" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Timer 2 was reloaded (Needs TIMER2_0INT enabled) </p>
-</dd></dl>
-
-<dl class="cpp macro">
-<dt id="c.TIMER3_MATCH1">
-<span class="target" id="tice_8h_1a94ab1e15e7dc0467bfd8932bc2153291"></span><code class="sig-name descname">TIMER3_MATCH1</code><a class="headerlink" href="#c.TIMER3_MATCH1" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Timer 3 hit the first match value </p>
-</dd></dl>
-
-<dl class="cpp macro">
-<dt id="c.TIMER3_MATCH2">
-<span class="target" id="tice_8h_1a4cda6a0f0f05595cb5ceee0d027a83ec"></span><code class="sig-name descname">TIMER3_MATCH2</code><a class="headerlink" href="#c.TIMER3_MATCH2" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Timer 3 hit the second match value </p>
-</dd></dl>
-
-<dl class="cpp macro">
-<dt id="c.TIMER3_RELOADED">
-<span class="target" id="tice_8h_1a612084decf83002f27de044a771a377c"></span><code class="sig-name descname">TIMER3_RELOADED</code><a class="headerlink" href="#c.TIMER3_RELOADED" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Timer 3 was reloaded (Needs TIMER3_0INT enabled) </p>
-</dd></dl>
-
-<dl class="cpp macro">
-<dt id="c.timer_1_Counter">
-<span class="target" id="tice_8h_1a206be9dbcd8cb4e15ff3638e0991ef9a"></span><code class="sig-name descname">timer_1_Counter</code><a class="headerlink" href="#c.timer_1_Counter" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Timer 1 current value register. </p>
-</dd></dl>
-
-<dl class="cpp macro">
-<dt id="c.timer_1_ReloadValue">
-<span class="target" id="tice_8h_1abc26be23339eb2604e27816d710c9e4c"></span><code class="sig-name descname">timer_1_ReloadValue</code><a class="headerlink" href="#c.timer_1_ReloadValue" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Timer 1 reload value register. </p>
-</dd></dl>
-
-<dl class="cpp macro">
-<dt id="c.timer_1_MatchValue_1">
-<span class="target" id="tice_8h_1a365d7fb1ff9826e17e4d202a6d36b57a"></span><code class="sig-name descname">timer_1_MatchValue_1</code><a class="headerlink" href="#c.timer_1_MatchValue_1" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Timer 1 match 1 value register. </p>
-</dd></dl>
-
-<dl class="cpp macro">
-<dt id="c.timer_1_MatchValue_2">
-<span class="target" id="tice_8h_1a4a6865ca9a0b69041b0d826ae704bcb4"></span><code class="sig-name descname">timer_1_MatchValue_2</code><a class="headerlink" href="#c.timer_1_MatchValue_2" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Timer 1 match 2 value register. </p>
-</dd></dl>
-
-<dl class="cpp macro">
-<dt id="c.timer_2_Counter">
-<span class="target" id="tice_8h_1a9e9421f45895820f2f844b92e5d86805"></span><code class="sig-name descname">timer_2_Counter</code><a class="headerlink" href="#c.timer_2_Counter" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Timer 2 current value register. </p>
-</dd></dl>
-
-<dl class="cpp macro">
-<dt id="c.timer_2_ReloadValue">
-<span class="target" id="tice_8h_1a7422a6c0f28c33ee7be0afbd1e2f4a91"></span><code class="sig-name descname">timer_2_ReloadValue</code><a class="headerlink" href="#c.timer_2_ReloadValue" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Timer 2 reload value register. </p>
-</dd></dl>
-
-<dl class="cpp macro">
-<dt id="c.timer_2_MatchValue_1">
-<span class="target" id="tice_8h_1a0c377ec5019c39e870deb1a148a20d87"></span><code class="sig-name descname">timer_2_MatchValue_1</code><a class="headerlink" href="#c.timer_2_MatchValue_1" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Timer 2 match 1 value register. </p>
-</dd></dl>
-
-<dl class="cpp macro">
-<dt id="c.timer_2_MatchValue_2">
-<span class="target" id="tice_8h_1a552c6771dd3fbbf84b57d3339532e802"></span><code class="sig-name descname">timer_2_MatchValue_2</code><a class="headerlink" href="#c.timer_2_MatchValue_2" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Timer 2 match 2 value register. </p>
-</dd></dl>
-
-<dl class="cpp macro">
-<dt id="c.timer_3_Counter">
-<span class="target" id="tice_8h_1a3967e948b7c4a00162bdee3c602d72d7"></span><code class="sig-name descname">timer_3_Counter</code><a class="headerlink" href="#c.timer_3_Counter" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Timer 3 current value register. </p>
-</dd></dl>
-
-<dl class="cpp macro">
-<dt id="c.timer_3_ReloadValue">
-<span class="target" id="tice_8h_1a2477726398449c4f820a789f6fbe5f67"></span><code class="sig-name descname">timer_3_ReloadValue</code><a class="headerlink" href="#c.timer_3_ReloadValue" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Timer 3 reload value register. </p>
-</dd></dl>
-
-<dl class="cpp macro">
-<dt id="c.timer_3_MatchValue_1">
-<span class="target" id="tice_8h_1a8c3ee9687ded2e1272da3ec975023f84"></span><code class="sig-name descname">timer_3_MatchValue_1</code><a class="headerlink" href="#c.timer_3_MatchValue_1" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Timer 3 match 1 value register. </p>
-</dd></dl>
-
-<dl class="cpp macro">
-<dt id="c.timer_3_MatchValue_2">
-<span class="target" id="tice_8h_1a9e65bf5ab888baf30db1ca1e46eaad31"></span><code class="sig-name descname">timer_3_MatchValue_2</code><a class="headerlink" href="#c.timer_3_MatchValue_2" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Timer 3 match 2 value register. </p>
-</dd></dl>
-
-<dl class="cpp macro">
-<dt id="c.timer_Control">
-<span class="target" id="tice_8h_1aee3c6d8668ba3d5f9cf7fad8cc8a7fae"></span><code class="sig-name descname">timer_Control</code><a class="headerlink" href="#c.timer_Control" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Timer Control register. </p>
-</dd></dl>
-
-<dl class="cpp macro">
-<dt id="c.timer_IntStatus">
-<span class="target" id="tice_8h_1aad9576fed37be2e8841f3a92be35c3e1"></span><code class="sig-name descname">timer_IntStatus</code><a class="headerlink" href="#c.timer_IntStatus" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Timer Interrupt Status register. </p>
-</dd></dl>
-
-<dl class="cpp macro">
-<dt id="c.timer_IntAcknowledge">
-<span class="target" id="tice_8h_1a12d7fa806b96ba12aa7475b6a2962234"></span><code class="sig-name descname">timer_IntAcknowledge</code><a class="headerlink" href="#c.timer_IntAcknowledge" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Timer Interrupt Acknowledge register. </p>
-</dd></dl>
-
-<dl class="cpp macro">
-<dt id="c.timer_EnableInt">
-<span class="target" id="tice_8h_1a9e2a56479a7b412652b4be119bfc0283"></span><code class="sig-name descname">timer_EnableInt</code><a class="headerlink" href="#c.timer_EnableInt" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Timer Interrupt Enable register. </p>
-</dd></dl>
-
-<dl class="cpp macro">
-<dt id="c.TIMER_32K">
-<span class="target" id="tice_8h_1aa43d5737c4f25b5e7dc193507986856a"></span><code class="sig-name descname">TIMER_32K</code><a class="headerlink" href="#c.TIMER_32K" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Use the 32K clock for timer </p>
-</dd></dl>
-
-<dl class="cpp macro">
-<dt id="c.TIMER_CPU">
-<span class="target" id="tice_8h_1a1bab2bfb1a5c83158ad85e90ed540322"></span><code class="sig-name descname">TIMER_CPU</code><a class="headerlink" href="#c.TIMER_CPU" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Use the CPU clock rate for timer </p>
-</dd></dl>
-
-<dl class="cpp macro">
-<dt id="c.TIMER_0INT">
-<span class="target" id="tice_8h_1aa43a8074d7f31f3140e4622582a29960"></span><code class="sig-name descname">TIMER_0INT</code><a class="headerlink" href="#c.TIMER_0INT" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Enable an interrupt when 0 is reached for the timer </p>
-</dd></dl>
-
-<dl class="cpp macro">
-<dt id="c.TIMER_NOINT">
-<span class="target" id="tice_8h_1a8fc77df9a73b89d0b4d2b21335aeb9c9"></span><code class="sig-name descname">TIMER_NOINT</code><a class="headerlink" href="#c.TIMER_NOINT" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Disable interrupts for the timer </p>
-</dd></dl>
-
-<dl class="cpp macro">
-<dt id="c.TIMER_UP">
-<span class="target" id="tice_8h_1addc1518d1f46480d649464c06c85b867"></span><code class="sig-name descname">TIMER_UP</code><a class="headerlink" href="#c.TIMER_UP" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Timer counts up </p>
-</dd></dl>
-
-<dl class="cpp macro">
-<dt id="c.TIMER_DOWN">
-<span class="target" id="tice_8h_1ace39e9ba355335d866481ba1fef7598f"></span><code class="sig-name descname">TIMER_DOWN</code><a class="headerlink" href="#c.TIMER_DOWN" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Timer counts down </p>
-</dd></dl>
-
-<dl class="cpp macro">
-<dt id="c.TIMER_MATCH1">
-<span class="target" id="tice_8h_1ab69bc619f85a263aac3e0a895868eed7"></span><code class="sig-name descname">TIMER_MATCH1</code><a class="headerlink" href="#c.TIMER_MATCH1" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Timer hit the first match value </p>
-</dd></dl>
-
-<dl class="cpp macro">
-<dt id="c.TIMER_MATCH2">
-<span class="target" id="tice_8h_1a198032bef58cf3c63729e7e482b0fc43"></span><code class="sig-name descname">TIMER_MATCH2</code><a class="headerlink" href="#c.TIMER_MATCH2" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Timer hit the second match value </p>
-</dd></dl>
-
-<dl class="cpp macro">
-<dt id="c.TIMER_RELOADED">
-<span class="target" id="tice_8h_1a372e776923461c686132b445c936e516"></span><code class="sig-name descname">TIMER_RELOADED</code><a class="headerlink" href="#c.TIMER_RELOADED" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Timer was reloaded (Needs TIMER_0INT enabled) </p>
+<dt id="c.rtc_AlarmHours">
+<span class="target" id="tice_8h_1a2fb848758b7a3287e9aa02e680235fb1"></span><code class="sig-name descname">rtc_AlarmHours</code><a class="headerlink" href="#c.rtc_AlarmHours" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>RTC alarm hours </p>
 </dd></dl>
 
 <dl class="cpp macro">
 <dt id="c.timer_Enable">
 <span class="target" id="tice_8h_1ab1c8a0f621a66ae2820897da064f19a8"></span><code class="sig-name descname">timer_Enable</code><span class="sig-paren">(</span><em>n</em>, <em>rate</em>, <em>int</em>, <em>dir</em><span class="sig-paren">)</span><a class="headerlink" href="#c.timer_Enable" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Enables timer <code class="docutils literal notranslate"><span class="pre">n</span></code> with the specified settings </p>
+<dd><p>Enables timer <code class="docutils literal notranslate"><span class="pre">n</span></code> with the specified settings. The CE has 3 different timers.</p>
+<p><dl class="simple">
+<dt><strong>Warning</strong></dt><dd><p>Timer 3 is usually employed by USB. Use it at your own risk. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">n</span></code>: Timer to enable (range 1 - 3 inclusive). </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">rate</span></code>: Rate in Hz the timer ticks at. Can be TIMER_32K or TIMER_CPU. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">int</span></code>: Throw an interrupt when the timer reaches 0. Can be TIMER_0INT or TIMER_NOINT. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dir</span></code>: Direction in which to count. Can be TIMER_UP or TIMER_DOWN.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
 </dd></dl>
 
 <dl class="cpp macro">
 <dt id="c.timer_Disable">
 <span class="target" id="tice_8h_1a40b279c3b9b2941301a95f833e3b3330"></span><code class="sig-name descname">timer_Disable</code><span class="sig-paren">(</span><em>n</em><span class="sig-paren">)</span><a class="headerlink" href="#c.timer_Disable" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Disables timer <code class="docutils literal notranslate"><span class="pre">n</span></code> </p>
+<dd><p>Disables a timer.</p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">n</span></code>: Timer to disable (range 1 - 3 inclusive). </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.timer_Get">
+<span class="target" id="tice_8h_1ad46c222ff7504317965ff89751016c71"></span><code class="sig-name descname">timer_Get</code><span class="sig-paren">(</span><em>n</em><span class="sig-paren">)</span><a class="headerlink" href="#c.timer_Get" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets the current count value of a timer.</p>
+<p><dl class="simple">
+<dt><strong>Attention</strong></dt><dd><p>Do not use this function if the timer is configured with TIMER_CPU. Use the <a class="reference internal" href="#tice_8h_1aa8b70fe0981344cf759bc432528d6d05"><span class="std std-ref">timer_GetSafe()</span></a> function instead. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">n</span></code>: Timer to get count value of (range 1 - 3 inclusive).</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.timer_GetSafe">
+<span class="target" id="tice_8h_1aa8b70fe0981344cf759bc432528d6d05"></span><code class="sig-name descname">timer_GetSafe</code><span class="sig-paren">(</span><em>n</em>, <em>dir</em><span class="sig-paren">)</span><a class="headerlink" href="#c.timer_GetSafe" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Safely gets the current count value of a timer. This should be used if the timer is ticking at &gt;= 1MHz.</p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">n</span></code>: Timer to get count value of (range 1 - 3 inclusive). </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dir</span></code>: Direction the timer is counting. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.timer_GetLow">
+<span class="target" id="tice_8h_1a941a7f760a6ab0fa48d6f8e6193dfef6"></span><code class="sig-name descname">timer_GetLow</code><span class="sig-paren">(</span><em>n</em><span class="sig-paren">)</span><a class="headerlink" href="#c.timer_GetLow" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>If the timer count value will never exceed (2^24)-1, this function can be used in place of both timer_Get and timer_GetSafe. It returns the low 24 bits value of the full 32 bit count value, and is atomic safe.</p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">n</span></code>: Timer to get count value of (range 1 - 3 inclusive). </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.timer_Set">
+<span class="target" id="tice_8h_1a197d3a26928edd545f5cc41d260469e6"></span><code class="sig-name descname">timer_Set</code><span class="sig-paren">(</span><em>n</em>, <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#c.timer_Set" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sets the count value of a timer.</p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">n</span></code>: Timer to set count value of (range 1 - 3 inclusive). </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code>: Value to set timer count to. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.timer_GetReload">
+<span class="target" id="tice_8h_1aba348b237a735827f68ad7f5c75f47f6"></span><code class="sig-name descname">timer_GetReload</code><span class="sig-paren">(</span><em>n</em><span class="sig-paren">)</span><a class="headerlink" href="#c.timer_GetReload" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets the current reload value of a timer. The reload value is loaded into the timer count when the timer reaches zero.</p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">n</span></code>: Timer to get count reload value of (range 1 - 3 inclusive). </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.timer_SetReload">
+<span class="target" id="tice_8h_1a368f9ea7d4c7f4c47168558516258c57"></span><code class="sig-name descname">timer_SetReload</code><span class="sig-paren">(</span><em>n</em>, <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#c.timer_SetReload" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sets the reload value of a timer. The reload value is loaded into the timer count when the timer reaches zero.</p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">n</span></code>: Timer to set count reload value of (range 1 - 3 inclusive). </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code>: Value to set timer reload count to. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.timer_GetMatch">
+<span class="target" id="tice_8h_1a2eb1a68d79d6570230bde2688be03c69"></span><code class="sig-name descname">timer_GetMatch</code><span class="sig-paren">(</span><em>n</em>, <em>m</em><span class="sig-paren">)</span><a class="headerlink" href="#c.timer_GetMatch" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets the match <code class="docutils literal notranslate"><span class="pre">m</span></code> value of a timer. There are two match value comparators per timer.</p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">n</span></code>: Timer to get match comparator value of (range 1 - 3 inclusive). </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">m</span></code>: Match compartor index (range 1 - 2 inclusive, recommended to use <a class="reference internal" href="#tice_8h_1a63e950e3b3da15e2e7ce96f586e43c3d"><span class="std std-ref">TIMER_MATCH(1)</span></a> or <a class="reference internal" href="#tice_8h_1a63e950e3b3da15e2e7ce96f586e43c3d"><span class="std std-ref">TIMER_MATCH(2)</span></a>). </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.timer_SetMatch">
+<span class="target" id="tice_8h_1a905ef7069cea62c1c11fe6444d92b11c"></span><code class="sig-name descname">timer_SetMatch</code><span class="sig-paren">(</span><em>n</em>, <em>m</em>, <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#c.timer_SetMatch" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sets the match <code class="docutils literal notranslate"><span class="pre">m</span></code> value of a timer. There are two match value comparators per timer.</p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">n</span></code>: Timer to set match comparator value of (range 1 - 3 inclusive). </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">m</span></code>: Match compartor index (range 1 - 2 inclusive recommended to use <a class="reference internal" href="#tice_8h_1a63e950e3b3da15e2e7ce96f586e43c3d"><span class="std std-ref">TIMER_MATCH(1)</span></a> or <a class="reference internal" href="#tice_8h_1a63e950e3b3da15e2e7ce96f586e43c3d"><span class="std std-ref">TIMER_MATCH(2)</span></a>). </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code>: Value to set match compartor to. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
 </dd></dl>
 
 <dl class="cpp macro">
 <dt id="c.timer_AckInterrupt">
-<span class="target" id="tice_8h_1a758cc90ce87b261254237f8abcec9358"></span><code class="sig-name descname">timer_AckInterrupt</code><span class="sig-paren">(</span><em>n</em>, <em>type</em><span class="sig-paren">)</span><a class="headerlink" href="#c.timer_AckInterrupt" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Acknowledges an interrupt for timer <code class="docutils literal notranslate"><span class="pre">n</span></code> of type <code class="docutils literal notranslate"><span class="pre">type</span></code>. </p>
+<span class="target" id="tice_8h_1abdd67cddccbd717e9fc6fc670eee35e2"></span><code class="sig-name descname">timer_AckInterrupt</code><span class="sig-paren">(</span><em>n</em>, <em>mask</em><span class="sig-paren">)</span><a class="headerlink" href="#c.timer_AckInterrupt" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Acknowledges a timer interrupt. This should be used to clear the condition that is causing the interrupt.</p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">n</span></code>: Timer to acknowledge interrupt of (range 1 - 3 inclusive). </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mask</span></code>: Interrupt mask, combination of TIMER_RELOADED, <a class="reference internal" href="#tice_8h_1a63e950e3b3da15e2e7ce96f586e43c3d"><span class="std std-ref">TIMER_MATCH(1)</span></a>, or <a class="reference internal" href="#tice_8h_1a63e950e3b3da15e2e7ce96f586e43c3d"><span class="std std-ref">TIMER_MATCH(2)</span></a>. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
 </dd></dl>
 
 <dl class="cpp macro">
-<dt id="c.timer_CheckInterrupt">
-<span class="target" id="tice_8h_1a9327f07d7924e76a350c52d268066852"></span><code class="sig-name descname">timer_CheckInterrupt</code><span class="sig-paren">(</span><em>n</em>, <em>type</em><span class="sig-paren">)</span><a class="headerlink" href="#c.timer_CheckInterrupt" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Checks if an interrupt for timer <code class="docutils literal notranslate"><span class="pre">n</span></code> of type <code class="docutils literal notranslate"><span class="pre">type</span></code> has occurred. </p>
+<dt id="c.timer_ChkInterrupt">
+<span class="target" id="tice_8h_1aa3144074004c401e75b33f35be96cdc6"></span><code class="sig-name descname">timer_ChkInterrupt</code><span class="sig-paren">(</span><em>n</em>, <em>mask</em><span class="sig-paren">)</span><a class="headerlink" href="#c.timer_ChkInterrupt" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Checks if a timer interrupt condition has occurred.</p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">n</span></code>: Timer to check interrupt for (range 1 - 3 inclusive). </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mask</span></code>: Interrupt mask, combination of TIMER_RELOADED, <a class="reference internal" href="#tice_8h_1a63e950e3b3da15e2e7ce96f586e43c3d"><span class="std std-ref">TIMER_MATCH(1)</span></a>, or <a class="reference internal" href="#tice_8h_1a63e950e3b3da15e2e7ce96f586e43c3d"><span class="std std-ref">TIMER_MATCH(2)</span></a>. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.matrix_element">
+<span class="target" id="tice_8h_1a5d9e4f37175df52ece5e95789224e1f0"></span><code class="sig-name descname">matrix_element</code><span class="sig-paren">(</span><em>matrix</em>, <em>row</em>, <em>col</em><span class="sig-paren">)</span><a class="headerlink" href="#c.matrix_element" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets an element from a matrix</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p><a class="reference internal" href="#structreal__t"><span class="std std-ref">real_t</span></a> containing element data </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">matrix</span></code>: Structure of matrix </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">row</span></code>: Row in matrix </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">col</span></code>: Column in matrix </p></li>
+</ul>
+</dd>
+</dl>
+</p>
 </dd></dl>
 
 <dl class="cpp macro">
@@ -681,53 +555,6 @@
 <dt id="c.lcd_BacklightLevel">
 <span class="target" id="tice_8h_1a7803d6e2b15d1b44e08195d94f89cd52"></span><code class="sig-name descname">lcd_BacklightLevel</code><a class="headerlink" href="#c.lcd_BacklightLevel" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Current backlight level of the LCD. 0 is bright. 255 is dark. </p>
-</dd></dl>
-
-<dl class="cpp macro">
-<dt id="c.LCD_WIDTH">
-<span class="target" id="tice_8h_1a19693eac3018d3e7800fde141921b812"></span><code class="sig-name descname">LCD_WIDTH</code><a class="headerlink" href="#c.LCD_WIDTH" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Width of LCD in pixels </p>
-</dd></dl>
-
-<dl class="cpp macro">
-<dt id="c.LCD_HEIGHT">
-<span class="target" id="tice_8h_1a53a8b2a971de4b88047192655a48b651"></span><code class="sig-name descname">LCD_HEIGHT</code><a class="headerlink" href="#c.LCD_HEIGHT" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Height of LCD in pixels </p>
-</dd></dl>
-
-<dl class="cpp macro">
-<dt id="c.LCD_SIZE">
-<span class="target" id="tice_8h_1a4b5774fa14ff71cbc1c3f3001b4a8713"></span><code class="sig-name descname">LCD_SIZE</code><a class="headerlink" href="#c.LCD_SIZE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Total number of pixels in LCD </p>
-</dd></dl>
-
-<dl class="cpp macro">
-<dt id="c.matrix_element">
-<span class="target" id="tice_8h_1a5d9e4f37175df52ece5e95789224e1f0"></span><code class="sig-name descname">matrix_element</code><span class="sig-paren">(</span><em>matrix</em>, <em>row</em>, <em>col</em><span class="sig-paren">)</span><a class="headerlink" href="#c.matrix_element" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Gets an element from a matrix</p>
-<p><dl class="simple">
-<dt><strong>Return</strong></dt><dd><p><a class="reference internal" href="#structreal__t"><span class="std std-ref">real_t</span></a> containing element data </p>
-</dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">matrix</span></code>: Structure of matrix </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">row</span></code>: Row in matrix </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">col</span></code>: Column in matrix </p></li>
-</ul>
-</dd>
-</dl>
-</p>
-</dd></dl>
-
-<dl class="cpp macro">
-<dt id="c.os_ClrHome">
-<span class="target" id="tice_8h_1af31f77eb16adfccf31a00072554c48c5"></span><code class="sig-name descname">os_ClrHome</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#c.os_ClrHome" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Resets the OS homescreen; accounts for split screen </p>
-</dd></dl>
-
-<dl class="cpp macro">
-<dt id="c.os_ClrHomeFull">
-<span class="target" id="tice_8h_1a085b3ccef49b2e3eb7c7e6d6c24507f5"></span><code class="sig-name descname">os_ClrHomeFull</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#c.os_ClrHomeFull" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Resets the OS homescreen fully </p>
 </dd></dl>
 
 <dl class="cpp macro">
@@ -772,6 +599,156 @@
 <dt id="c.os_PenRow">
 <span class="target" id="tice_8h_1a445f4ccb9c0c495f034011c473633ba0"></span><code class="sig-name descname">os_PenRow</code><a class="headerlink" href="#c.os_PenRow" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Small font row location. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.os_OP1">
+<span class="target" id="tice_8h_1afd0ee65ef148f595560c98fc2e4b023a"></span><code class="sig-name descname">os_OP1</code><a class="headerlink" href="#c.os_OP1" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>OP1 Variable </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.os_OP2">
+<span class="target" id="tice_8h_1aea7e22c5e0edbee268c718eab9e1aacf"></span><code class="sig-name descname">os_OP2</code><a class="headerlink" href="#c.os_OP2" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>OP2 Variable </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.os_OP3">
+<span class="target" id="tice_8h_1a07ea703291a7b2212b95621bbb952def"></span><code class="sig-name descname">os_OP3</code><a class="headerlink" href="#c.os_OP3" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>OP3 Variable </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.os_OP4">
+<span class="target" id="tice_8h_1ac03454a82ac8abc8c0d89ca30c5865f5"></span><code class="sig-name descname">os_OP4</code><a class="headerlink" href="#c.os_OP4" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>OP4 Variable </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.os_OP5">
+<span class="target" id="tice_8h_1a231d95d39e94c45daf5d2ce8ec095f0a"></span><code class="sig-name descname">os_OP5</code><a class="headerlink" href="#c.os_OP5" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>OP5 Variable </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.os_OP6">
+<span class="target" id="tice_8h_1a1973b57a9ca1398d0e3dc68235e49a7d"></span><code class="sig-name descname">os_OP6</code><a class="headerlink" href="#c.os_OP6" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>OP6 Variable </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.os_OP7">
+<span class="target" id="tice_8h_1a5aa2d855066534e0477d5aedcf987b21"></span><code class="sig-name descname">os_OP7</code><a class="headerlink" href="#c.os_OP7" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>OP7 Variable </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.LCD_WIDTH">
+<span class="target" id="tice_8h_1a19693eac3018d3e7800fde141921b812"></span><code class="sig-name descname">LCD_WIDTH</code><a class="headerlink" href="#c.LCD_WIDTH" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Width of LCD in pixels </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.LCD_HEIGHT">
+<span class="target" id="tice_8h_1a53a8b2a971de4b88047192655a48b651"></span><code class="sig-name descname">LCD_HEIGHT</code><a class="headerlink" href="#c.LCD_HEIGHT" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Height of LCD in pixels </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.LCD_SIZE">
+<span class="target" id="tice_8h_1a4b5774fa14ff71cbc1c3f3001b4a8713"></span><code class="sig-name descname">LCD_SIZE</code><a class="headerlink" href="#c.LCD_SIZE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Total number of pixels in LCD </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.TIMER_32K">
+<span class="target" id="tice_8h_1aa43d5737c4f25b5e7dc193507986856a"></span><code class="sig-name descname">TIMER_32K</code><a class="headerlink" href="#c.TIMER_32K" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Use the 32K clock for timer </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.TIMER_CPU">
+<span class="target" id="tice_8h_1a1bab2bfb1a5c83158ad85e90ed540322"></span><code class="sig-name descname">TIMER_CPU</code><a class="headerlink" href="#c.TIMER_CPU" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Use the CPU clock rate for timer </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.TIMER_0INT">
+<span class="target" id="tice_8h_1aa43a8074d7f31f3140e4622582a29960"></span><code class="sig-name descname">TIMER_0INT</code><a class="headerlink" href="#c.TIMER_0INT" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Enable an interrupt when 0 is reached for the timer </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.TIMER_NOINT">
+<span class="target" id="tice_8h_1a8fc77df9a73b89d0b4d2b21335aeb9c9"></span><code class="sig-name descname">TIMER_NOINT</code><a class="headerlink" href="#c.TIMER_NOINT" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Disable interrupts for the timer </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.TIMER_UP">
+<span class="target" id="tice_8h_1addc1518d1f46480d649464c06c85b867"></span><code class="sig-name descname">TIMER_UP</code><a class="headerlink" href="#c.TIMER_UP" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Timer counts up </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.TIMER_DOWN">
+<span class="target" id="tice_8h_1ace39e9ba355335d866481ba1fef7598f"></span><code class="sig-name descname">TIMER_DOWN</code><a class="headerlink" href="#c.TIMER_DOWN" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Timer counts down </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.TIMER_MATCH">
+<span class="target" id="tice_8h_1a63e950e3b3da15e2e7ce96f586e43c3d"></span><code class="sig-name descname">TIMER_MATCH</code><span class="sig-paren">(</span><em>i</em><span class="sig-paren">)</span><a class="headerlink" href="#c.TIMER_MATCH" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Timer hit the match value. There are 2 match values per timer </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.TIMER_RELOADED">
+<span class="target" id="tice_8h_1a372e776923461c686132b445c936e516"></span><code class="sig-name descname">TIMER_RELOADED</code><a class="headerlink" href="#c.TIMER_RELOADED" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Timer was reloaded (Needs TIMER_0INT enabled) </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.RTC_LOAD_INT">
+<span class="target" id="tice_8h_1a0353ddf54b01271354466d33ef2bd85e"></span><code class="sig-name descname">RTC_LOAD_INT</code><a class="headerlink" href="#c.RTC_LOAD_INT" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>RTC load operation complete </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.RTC_ALARM_INT">
+<span class="target" id="tice_8h_1ad49cab3be02397c38e4e9142ff03e4a8"></span><code class="sig-name descname">RTC_ALARM_INT</code><a class="headerlink" href="#c.RTC_ALARM_INT" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>RTC alarm interrupt </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.RTC_DAY_INT">
+<span class="target" id="tice_8h_1a7667a27467dee9355571996216680b37"></span><code class="sig-name descname">RTC_DAY_INT</code><a class="headerlink" href="#c.RTC_DAY_INT" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>RTC interrupt on day change </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.RTC_HR_INT">
+<span class="target" id="tice_8h_1ad5dd377a093ff767ce43bc7d61b6e06e"></span><code class="sig-name descname">RTC_HR_INT</code><a class="headerlink" href="#c.RTC_HR_INT" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>RTC interrupt on hour change </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.RTC_MIN_INT">
+<span class="target" id="tice_8h_1a186ff169ce776960273e096baeef810c"></span><code class="sig-name descname">RTC_MIN_INT</code><a class="headerlink" href="#c.RTC_MIN_INT" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>RTC interrupt on minute change </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.RTC_SEC_INT">
+<span class="target" id="tice_8h_1aebf00bff844a0a69af360e24c0945d38"></span><code class="sig-name descname">RTC_SEC_INT</code><a class="headerlink" href="#c.RTC_SEC_INT" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>RTC interrupt on second change </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.RTC_INT_MASK">
+<span class="target" id="tice_8h_1a5842b31b337c7f949a0414c8f9aeb7ec"></span><code class="sig-name descname">RTC_INT_MASK</code><a class="headerlink" href="#c.RTC_INT_MASK" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>RTC mask for all interrupts </p>
 </dd></dl>
 
 </div>
@@ -888,6 +865,21 @@
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric">Functions</p>
 <dl class="cpp function">
+<dt id="_CPPv45delay8uint16_t">
+<span id="_CPPv35delay8uint16_t"></span><span id="_CPPv25delay8uint16_t"></span><span id="delay__uint16_t"></span><span class="target" id="tice_8h_1acfd12579679c85d5f1c716509b2587f6"></span>void <code class="sig-name descname">delay</code><span class="sig-paren">(</span>uint16_t <em>msec</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv45delay8uint16_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Delays for a number of milliseconds.</p>
+<p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>Counts time spent while interrupted. Assumes a CPU clock speed of 48MHz.</p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">msec</span></code>: number of milliseconds </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
 <dt id="_CPPv46randomv">
 <span id="_CPPv36randomv"></span><span id="_CPPv26randomv"></span><span id="random__void"></span><span class="target" id="tice_8h_1a25238a98affe26c3faf9bcdb58855c48"></span>uint32_t <code class="sig-name descname">random</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv46randomv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Returns a pseudo-random 32-bit integer.</p>
@@ -905,71 +897,6 @@
 <p><dl class="simple">
 <dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">seed</span></code>: the seed value </p></li>
-</ul>
-</dd>
-</dl>
-</p>
-</dd></dl>
-
-<dl class="cpp function">
-<dt id="_CPPv45delay8uint16_t">
-<span id="_CPPv35delay8uint16_t"></span><span id="_CPPv25delay8uint16_t"></span><span id="delay__uint16_t"></span><span class="target" id="tice_8h_1acfd12579679c85d5f1c716509b2587f6"></span>void <code class="sig-name descname">delay</code><span class="sig-paren">(</span>uint16_t <em>msec</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv45delay8uint16_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Delays for a number of milliseconds. </p>
-<p>Counts time spent while interrupted. Assumes a CPU clock speed of 48MHz.</p>
-<p><dl class="simple">
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">msec</span></code>: number of milliseconds </p></li>
-</ul>
-</dd>
-</dl>
-</p>
-</dd></dl>
-
-<dl class="cpp function">
-<dt id="_CPPv414atomic_load_32PV8uint32_t">
-<span id="_CPPv314atomic_load_32PV8uint32_t"></span><span id="_CPPv214atomic_load_32PV8uint32_t"></span><span id="atomic_load_32__uint32_tVP"></span><span class="target" id="tice_8h_1a0be008b3b1dd2bcbcd323c06eec61094"></span>uint32_t <code class="sig-name descname">atomic_load_32</code><span class="sig-paren">(</span><em class="property">volatile</em> uint32_t *<em>p</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv414atomic_load_32PV8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>“Atomically” loads from a volatile 32-bit value.</p>
-<p><dl class="simple">
-<dt><strong>Remark</strong></dt><dd><p>The hardware does not provide a mechanism to truly atomically load from a 32-bit value. This “atomic” load is implemented by non-atomically reading the value twice and retrying if the values read differ.</p>
-</dd>
-<dt><strong>Attention</strong></dt><dd><p>If the maximum period between two value changes is 1us or less (assuming a CPU clock speed of 48MHz), then this function may never complete. For instance, the counter of a timer ticking at 1MHz or more should not be read using this function. In such a case of a purely increasing or decreasing value, <a class="reference internal" href="#tice_8h_1acf4c807f7c9a51cf8ac55059334aef20"><span class="std std-ref">atomic_load_increasing_32()</span></a> or <a class="reference internal" href="#tice_8h_1a52b216df9a65876fa0a88959d975cfd6"><span class="std std-ref">atomic_load_decreasing_32()</span></a> may be appropriate instead.</p>
-</dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">p</span></code>: pointer to 32-bit value </p></li>
-</ul>
-</dd>
-</dl>
-</p>
-</dd></dl>
-
-<dl class="cpp function">
-<dt id="_CPPv425atomic_load_increasing_32PV8uint32_t">
-<span id="_CPPv325atomic_load_increasing_32PV8uint32_t"></span><span id="_CPPv225atomic_load_increasing_32PV8uint32_t"></span><span id="atomic_load_increasing_32__uint32_tVP"></span><span class="target" id="tice_8h_1acf4c807f7c9a51cf8ac55059334aef20"></span>uint32_t <code class="sig-name descname">atomic_load_increasing_32</code><span class="sig-paren">(</span><em class="property">volatile</em> uint32_t *<em>p</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv425atomic_load_increasing_32PV8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>“Atomically” loads from a volatile, increasing 32-bit value.</p>
-<p><dl class="simple">
-<dt><strong>Remark</strong></dt><dd><p>The hardware does not provide a mechanism to truly atomically load from a 32-bit value. This “atomic” load is implemented by temporarily disabling interrupts while non-atomically reading the value twice and then returning the lesser of the two values read.</p>
-</dd>
-<dt><strong>Attention</strong></dt><dd><p>If the minimum period between two value changes is 5us or less and the value’s maximum rate of change over a 5us period exceeds 256 (assuming a CPU clock speed of 48MHz), then the value returned may be incorrect. Of relevant note may be the fact that a 48MHz counter does not exceed this limit.</p>
-</dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">p</span></code>: pointer to 32-bit value </p></li>
-</ul>
-</dd>
-</dl>
-</p>
-</dd></dl>
-
-<dl class="cpp function">
-<dt id="_CPPv425atomic_load_decreasing_32PV8uint32_t">
-<span id="_CPPv325atomic_load_decreasing_32PV8uint32_t"></span><span id="_CPPv225atomic_load_decreasing_32PV8uint32_t"></span><span id="atomic_load_decreasing_32__uint32_tVP"></span><span class="target" id="tice_8h_1a52b216df9a65876fa0a88959d975cfd6"></span>uint32_t <code class="sig-name descname">atomic_load_decreasing_32</code><span class="sig-paren">(</span><em class="property">volatile</em> uint32_t *<em>p</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv425atomic_load_decreasing_32PV8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>“Atomically” loads from a volatile, decreasing 32-bit value.</p>
-<p><dl class="simple">
-<dt><strong>Remark</strong></dt><dd><p>The hardware does not provide a mechanism to truly atomically load from a 32-bit value. This “atomic” load is implemented by temporarily disabling interrupts while non-atomically reading the value twice and then returning the greater of the two values read.</p>
-</dd>
-<dt><strong>Attention</strong></dt><dd><p>If the minimum period between two value changes is 5us or less and the value’s maximum rate of change over a 5us period exceeds 256 (assuming a CPU clock speed of 48MHz), then the value returned may be incorrect. Of relevant note may be the fact that a 48MHz counter does not exceed this limit.</p>
-</dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">p</span></code>: pointer to 32-bit value </p></li>
 </ul>
 </dd>
 </dl>
@@ -1121,42 +1048,24 @@
 
 <dl class="cpp function">
 <dt id="_CPPv421boot_GetBatteryStatusv">
-<span id="_CPPv321boot_GetBatteryStatusv"></span><span id="_CPPv221boot_GetBatteryStatusv"></span><span id="boot_GetBatteryStatus__void"></span><span class="target" id="tice_8h_1aded0f250850a22719cf5fc0cb8046d54"></span>__attribute__((__tiflags__)) uint8_t <code class="sig-name descname">boot_GetBatteryStatus</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv421boot_GetBatteryStatusv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p><p>Inserts a new line at the current cursor posistion on the homescreen Does scroll.</p>
-<dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>Current battery status</p>
+<span id="_CPPv321boot_GetBatteryStatusv"></span><span id="_CPPv221boot_GetBatteryStatusv"></span><span id="boot_GetBatteryStatus__void"></span><span class="target" id="tice_8h_1a23989d64ba6248df3cd0fec20fa96ae7"></span>uint8_t <code class="sig-name descname">boot_GetBatteryStatus</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv421boot_GetBatteryStatusv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Current battery status </p>
 </dd>
 </dl>
 </p>
-<p>Converts an integer to a <a class="reference internal" href="#structreal__t"><span class="std std-ref">real_t</span></a></p>
-<p><p>Routine to scroll homescreen up</p>
-<dl class="simple">
-<dt><strong>Note</strong></dt><dd><p>Saturates on overflow</p>
-</dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">arg</span></code>: Integer value. </p></li>
-</ul>
-</dd>
-</dl>
-</p>
-<p>Routine to scroll homescreen down</p>
-<p>Routine to move row and column posistion to (0,0)</p>
-<p>Routine to turn on the Run Indicator</p>
-<p>Routine to turn off the Run Indicator</p>
-<p>Routine to turn off APD</p>
-<p>Routine to turn on APD</p>
-<p>Routine checks the amount of free archive</p>
-<p>Routine to clear the homescreen lcd</p>
-<p>Routine to clear the homescreen lcd. Accounts for split screen</p>
-<p>Routine to redraw the status bar</p>
-<p>Invalidate and clear stat variables</p>
-<p>Invalidate and clear text shadow area </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv414boot_WaitShortv">
 <span id="_CPPv314boot_WaitShortv"></span><span id="_CPPv214boot_WaitShortv"></span><span id="boot_WaitShort__void"></span><span class="target" id="tice_8h_1a4751701988751e498490608739b3def1"></span>void <code class="sig-name descname">boot_WaitShort</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv414boot_WaitShortv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Waits for ~10 ms </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv410os_NewLinev">
+<span id="_CPPv310os_NewLinev"></span><span id="_CPPv210os_NewLinev"></span><span id="os_NewLine__void"></span><span class="target" id="tice_8h_1a42b2cb04bc3d20d2a259cc956cb64d2b"></span>void <code class="sig-name descname">os_NewLine</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv410os_NewLinev" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Inserts a new line at the current cursor posistion on the homescreen. Does scroll. </p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -1810,6 +1719,21 @@
 </dd></dl>
 
 <dl class="cpp function">
+<dt id="_CPPv414os_Int24ToReal7int24_t">
+<span id="_CPPv314os_Int24ToReal7int24_t"></span><span id="_CPPv214os_Int24ToReal7int24_t"></span><span id="os_Int24ToReal__int24_t"></span><span class="target" id="tice_8h_1a83cd18115c9638421c1e44c7e1ec7380"></span><a class="reference internal" href="#_CPPv46real_t" title="real_t">real_t</a> <code class="sig-name descname">os_Int24ToReal</code><span class="sig-paren">(</span>int24_t <em>arg</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv414os_Int24ToReal7int24_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Converts an integer to a <a class="reference internal" href="#structreal__t"><span class="std std-ref">real_t</span></a></p>
+<p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>Saturates on overflow </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">arg</span></code>: Integer value. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
 <dt id="_CPPv414os_RealToFloatPK6real_t">
 <span id="_CPPv314os_RealToFloatPK6real_t"></span><span id="_CPPv214os_RealToFloatPK6real_t"></span><span id="os_RealToFloat__real_tCP"></span><span class="target" id="tice_8h_1a29e3aa966dadbd18298ad0791f7917c8"></span>float <code class="sig-name descname">os_RealToFloat</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv46real_t" title="real_t">real_t</a> *<em>arg</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv414os_RealToFloatPK6real_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Converts a <a class="reference internal" href="#structreal__t"><span class="std std-ref">real_t</span></a> to a float</p>
@@ -2085,6 +2009,84 @@
 </dd></dl>
 
 <dl class="cpp function">
+<dt id="_CPPv49os_MoveUpv">
+<span id="_CPPv39os_MoveUpv"></span><span id="_CPPv29os_MoveUpv"></span><span id="os_MoveUp__void"></span><span class="target" id="tice_8h_1a4a12456b167131d01b74c9de5d5b247f"></span>void <code class="sig-name descname">os_MoveUp</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv49os_MoveUpv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Routine to scroll homescreen up </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv411os_MoveDownv">
+<span id="_CPPv311os_MoveDownv"></span><span id="_CPPv211os_MoveDownv"></span><span id="os_MoveDown__void"></span><span class="target" id="tice_8h_1aef8e320a7d77919b30c1bf66ed6d6d28"></span>void <code class="sig-name descname">os_MoveDown</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv411os_MoveDownv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Routine to scroll homescreen down </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv49os_HomeUpv">
+<span id="_CPPv39os_HomeUpv"></span><span id="_CPPv29os_HomeUpv"></span><span id="os_HomeUp__void"></span><span class="target" id="tice_8h_1a67a6dc4177ffd0cce49aca1e9f5ebfbf"></span>void <code class="sig-name descname">os_HomeUp</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv49os_HomeUpv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Routine to move row and column posistion to (0,0) </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv413os_RunIndicOnv">
+<span id="_CPPv313os_RunIndicOnv"></span><span id="_CPPv213os_RunIndicOnv"></span><span id="os_RunIndicOn__void"></span><span class="target" id="tice_8h_1a6a70310fb85609de996ec93422cd96b7"></span>void <code class="sig-name descname">os_RunIndicOn</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv413os_RunIndicOnv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Routine to turn on the Run Indicator </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv414os_RunIndicOffv">
+<span id="_CPPv314os_RunIndicOffv"></span><span id="_CPPv214os_RunIndicOffv"></span><span id="os_RunIndicOff__void"></span><span class="target" id="tice_8h_1adc00870524aba07fd3bd5765ea5bda65"></span>void <code class="sig-name descname">os_RunIndicOff</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv414os_RunIndicOffv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Routine to turn off the Run Indicator </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv413os_DisableAPDv">
+<span id="_CPPv313os_DisableAPDv"></span><span id="_CPPv213os_DisableAPDv"></span><span id="os_DisableAPD__void"></span><span class="target" id="tice_8h_1a1f784788305295f208bc85abb1477329"></span>void <code class="sig-name descname">os_DisableAPD</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv413os_DisableAPDv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Routine to turn off APD </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv412os_EnableAPDv">
+<span id="_CPPv312os_EnableAPDv"></span><span id="_CPPv212os_EnableAPDv"></span><span id="os_EnableAPD__void"></span><span class="target" id="tice_8h_1a6dc4f34fe8ec19c381886a53b4f0bcb2"></span>void <code class="sig-name descname">os_EnableAPD</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv412os_EnableAPDv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Routine to turn on APD </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv49os_ArcChkv">
+<span id="_CPPv39os_ArcChkv"></span><span id="_CPPv29os_ArcChkv"></span><span id="os_ArcChk__void"></span><span class="target" id="tice_8h_1a0ac2d0c349446077665fc1aba42a6697"></span>void <code class="sig-name descname">os_ArcChk</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv49os_ArcChkv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Routine checks the amount of free archive </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv413os_ClrLCDFullv">
+<span id="_CPPv313os_ClrLCDFullv"></span><span id="_CPPv213os_ClrLCDFullv"></span><span id="os_ClrLCDFull__void"></span><span class="target" id="tice_8h_1a850b2591b12ad04af210596bfe249369"></span>void <code class="sig-name descname">os_ClrLCDFull</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv413os_ClrLCDFullv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Routine to clear the homescreen lcd </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv49os_ClrLCDv">
+<span id="_CPPv39os_ClrLCDv"></span><span id="_CPPv29os_ClrLCDv"></span><span id="os_ClrLCD__void"></span><span class="target" id="tice_8h_1a76b55fb8cf571b9a91eadb7057e7d57e"></span>void <code class="sig-name descname">os_ClrLCD</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv49os_ClrLCDv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Routine to clear the homescreen lcd. Accounts for split screen </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv416os_DrawStatusBarv">
+<span id="_CPPv316os_DrawStatusBarv"></span><span id="_CPPv216os_DrawStatusBarv"></span><span id="os_DrawStatusBar__void"></span><span class="target" id="tice_8h_1ac04861f74a043a85f576afc18a3b0cea"></span>void <code class="sig-name descname">os_DrawStatusBar</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv416os_DrawStatusBarv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Routine to redraw the status bar </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv49os_DelResv">
+<span id="_CPPv39os_DelResv"></span><span id="_CPPv29os_DelResv"></span><span id="os_DelRes__void"></span><span class="target" id="tice_8h_1abe2be5a73be715caf3058a7066c2198a"></span>void <code class="sig-name descname">os_DelRes</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv49os_DelResv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Invalidate and clear stat variables </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv412os_ClrTxtShdv">
+<span id="_CPPv312os_ClrTxtShdv"></span><span id="_CPPv212os_ClrTxtShdv"></span><span id="os_ClrTxtShd__void"></span><span class="target" id="tice_8h_1a73bff95023931d07ca78c7115d864e86"></span>void <code class="sig-name descname">os_ClrTxtShd</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv412os_ClrTxtShdv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Invalidate and clear text shadow area </p>
+</dd></dl>
+
+<dl class="cpp function">
 <dt id="_CPPv416boot_Set6MHzModev">
 <span id="_CPPv316boot_Set6MHzModev"></span><span id="_CPPv216boot_Set6MHzModev"></span><span id="boot_Set6MHzMode__void"></span><span class="target" id="tice_8h_1a3e48d62e2f6e2cbd743a14bffeda16ae"></span>void <code class="sig-name descname">boot_Set6MHzMode</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv416boot_Set6MHzModev" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Runs the calulator at 6 MHz </p>
@@ -2106,6 +2108,57 @@
 <dt id="_CPPv418boot_Set48MHzModeIv">
 <span id="_CPPv318boot_Set48MHzModeIv"></span><span id="_CPPv218boot_Set48MHzModeIv"></span><span id="boot_Set48MHzModeI__void"></span><span class="target" id="tice_8h_1a034cb83cbc1f68048d1b7a9aa35d38a7"></span>void <code class="sig-name descname">boot_Set48MHzModeI</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv418boot_Set48MHzModeIv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Runs the calulator at 48 MHz (saves interrupt status) </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv414atomic_load_32PV8uint32_t">
+<span id="_CPPv314atomic_load_32PV8uint32_t"></span><span id="_CPPv214atomic_load_32PV8uint32_t"></span><span id="atomic_load_32__uint32_tVP"></span><span class="target" id="tice_8h_1a0be008b3b1dd2bcbcd323c06eec61094"></span>uint32_t <code class="sig-name descname">atomic_load_32</code><span class="sig-paren">(</span><em class="property">volatile</em> uint32_t *<em>p</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv414atomic_load_32PV8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>“Atomically” loads from a volatile 32-bit value.</p>
+<p><dl class="simple">
+<dt><strong>Remark</strong></dt><dd><p>The hardware does not provide a mechanism to truly atomically load from a 32-bit value. This “atomic” load is implemented by non-atomically reading the value twice and retrying if the values read differ.</p>
+</dd>
+<dt><strong>Attention</strong></dt><dd><p>If the maximum period between two value changes is 1us or less (assuming a CPU clock speed of 48MHz), then this function may never complete. For instance, the counter of a timer ticking at 1MHz or more should not be read using this function. In such a case of a purely increasing or decreasing value, <a class="reference internal" href="#tice_8h_1acf4c807f7c9a51cf8ac55059334aef20"><span class="std std-ref">atomic_load_increasing_32()</span></a> or <a class="reference internal" href="#tice_8h_1a52b216df9a65876fa0a88959d975cfd6"><span class="std std-ref">atomic_load_decreasing_32()</span></a> may be appropriate instead.</p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">p</span></code>: pointer to 32-bit value </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv425atomic_load_increasing_32PV8uint32_t">
+<span id="_CPPv325atomic_load_increasing_32PV8uint32_t"></span><span id="_CPPv225atomic_load_increasing_32PV8uint32_t"></span><span id="atomic_load_increasing_32__uint32_tVP"></span><span class="target" id="tice_8h_1acf4c807f7c9a51cf8ac55059334aef20"></span>uint32_t <code class="sig-name descname">atomic_load_increasing_32</code><span class="sig-paren">(</span><em class="property">volatile</em> uint32_t *<em>p</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv425atomic_load_increasing_32PV8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>“Atomically” loads from a volatile, increasing 32-bit value.</p>
+<p><dl class="simple">
+<dt><strong>Remark</strong></dt><dd><p>The hardware does not provide a mechanism to truly atomically load from a 32-bit value. This “atomic” load is implemented by temporarily disabling interrupts while non-atomically reading the value twice and then returning the lesser of the two values read.</p>
+</dd>
+<dt><strong>Attention</strong></dt><dd><p>If the minimum period between two value changes is 5us or less and the value’s maximum rate of change over a 5us period exceeds 256 (assuming a CPU clock speed of 48MHz), then the value returned may be incorrect. Of relevant note may be the fact that a 48MHz counter does not exceed this limit.</p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">p</span></code>: pointer to 32-bit value </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv425atomic_load_decreasing_32PV8uint32_t">
+<span id="_CPPv325atomic_load_decreasing_32PV8uint32_t"></span><span id="_CPPv225atomic_load_decreasing_32PV8uint32_t"></span><span id="atomic_load_decreasing_32__uint32_tVP"></span><span class="target" id="tice_8h_1a52b216df9a65876fa0a88959d975cfd6"></span>uint32_t <code class="sig-name descname">atomic_load_decreasing_32</code><span class="sig-paren">(</span><em class="property">volatile</em> uint32_t *<em>p</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv425atomic_load_decreasing_32PV8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>“Atomically” loads from a volatile, decreasing 32-bit value.</p>
+<p><dl class="simple">
+<dt><strong>Remark</strong></dt><dd><p>The hardware does not provide a mechanism to truly atomically load from a 32-bit value. This “atomic” load is implemented by temporarily disabling interrupts while non-atomically reading the value twice and then returning the greater of the two values read.</p>
+</dd>
+<dt><strong>Attention</strong></dt><dd><p>If the minimum period between two value changes is 5us or less and the value’s maximum rate of change over a 5us period exceeds 256 (assuming a CPU clock speed of 48MHz), then the value returned may be incorrect. Of relevant note may be the fact that a 48MHz counter does not exceed this limit.</p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">p</span></code>: pointer to 32-bit value </p></li>
+</ul>
+</dd>
+</dl>
+</p>
 </dd></dl>
 
 </div>
