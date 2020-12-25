@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Building the CE C Toolchain &mdash; CE C Toolchain v9.0-devel documentation</title>
+  <title>Contributing to the CE C Toolchain &mdash; CE C Toolchain v9.0-devel documentation</title>
   
 
   
@@ -98,9 +98,13 @@
 </ul>
 <p class="caption"><span class="caption-text">Contributing</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Building the CE C Toolchain</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#linux-and-macos">Linux and macOS</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#windows">Windows</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Contributing to the CE C Toolchain</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#creating-prs-for-review">Creating PRs for review</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#building-the-ce-c-toolchain">Building the CE C Toolchain</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#linux-and-macos">Linux and macOS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#windows">Windows</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -149,7 +153,7 @@
     
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>Building the CE C Toolchain</li>
+      <li>Contributing to the CE C Toolchain</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -166,13 +170,27 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="building-the-ce-c-toolchain">
-<span id="building"></span><h1>Building the CE C Toolchain<a class="headerlink" href="#building-the-ce-c-toolchain" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="contributing-to-the-ce-c-toolchain">
+<span id="contributing"></span><h1>Contributing to the CE C Toolchain<a class="headerlink" href="#contributing-to-the-ce-c-toolchain" title="Permalink to this headline">¶</a></h1>
 <p>If you are brave enough to contribute source to the CE C Toolchain, this page is for you!</p>
+<div class="section" id="creating-prs-for-review">
+<h2>Creating PRs for review<a class="headerlink" href="#creating-prs-for-review" title="Permalink to this headline">¶</a></h2>
+<p>Pull Requests (PRs) should branch from git <code class="code docutils literal notranslate"><span class="pre">master</span></code>.
+Before creating a PR, it is a good idea to get some feedback either from IRC or by creating a relevant issue.
+This will increase the chances of your PR being merged in a timely fashion.
+Please do not make large PRs; it is better to make smaller changes in different PRs.</p>
+<p>For information on how to fork a repo and create a PR using GitHub, see the <a class="reference external" href="https://docs.github.com/en/free-pro-team&#64;latest/github/getting-started-with-github/fork-a-repo">forking documentation</a>.</p>
+</div>
+<div class="section" id="building-the-ce-c-toolchain">
+<h2>Building the CE C Toolchain<a class="headerlink" href="#building-the-ce-c-toolchain" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="linux-and-macos">
-<h2>Linux and macOS<a class="headerlink" href="#linux-and-macos" title="Permalink to this headline">¶</a></h2>
+<h3>Linux and macOS<a class="headerlink" href="#linux-and-macos" title="Permalink to this headline">¶</a></h3>
 <p>Get the <a class="reference external" href="https://github.com/jacobly0/llvm-project/wiki">ez80-clang LLVM compiler</a>.
-Make sure the compiler is located in the system’s PATH enviornment variable.</p>
+Make sure the compiler is located in the system’s PATH environment variable.</p>
+<p>Get the <a class="reference external" href="https://flatassembler.net/download.php">fasmg assembler</a>.
+The download is located near the bottom of the page.
+Extract the <cite>fasmg</cite> executable for your operating system to either the same place
+as <cite>ez80-clang</cite>, or in the system’s PATH environment variable.</p>
 <p>Clone the repo:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone --recurse-submodules https://github.com/CE-Programming/toolchain.git
 </pre></div>
@@ -187,12 +205,16 @@ make install
 <p>This is configurable with <code class="code docutils literal notranslate"><span class="pre">make</span> <span class="pre">install</span> <span class="pre">PREFIX=[LOCATION]</span></code></p>
 </div>
 <div class="section" id="windows">
-<h2>Windows<a class="headerlink" href="#windows" title="Permalink to this headline">¶</a></h2>
+<h3>Windows<a class="headerlink" href="#windows" title="Permalink to this headline">¶</a></h3>
 <p>Get <a class="reference external" href="http://www.mingw.org">MinGW</a>.
 The only required pacakges are <cite>mingw32-base</cite> and <cite>mingw32-gcc-g++</cite>.
-Make sure the <cite>MinGW/bin</cite> directory is in the system’s PATH enviornment variable.</p>
+Make sure the <cite>MinGW/bin</cite> directory is in the system’s PATH environment variable.</p>
 <p>Get the <a class="reference external" href="https://github.com/jacobly0/llvm-project/wiki">ez80-clang LLVM compiler</a>.
-Make sure the compiler is located in the system’s PATH enviornment variable.</p>
+Make sure the compiler is located in the system’s PATH environment variable.</p>
+<p>Get the <a class="reference external" href="https://flatassembler.net/download.php">fasmg assembler</a>.
+The download is located near the bottom of the page.
+Extract the <cite>fasmg</cite> executable for your operating system to either the same place
+as <cite>ez80-clang</cite>, or in the system’s PATH environment variable.</p>
 <p>Clone the repo:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone --recurse-submodules https://github.com/CE-Programming/toolchain.git
 </pre></div>
@@ -205,6 +227,7 @@ mingw32-make install
 </div>
 <p>By default, the toolchain is installed into the root (C:\CEdev) directory.</p>
 <p>This is configurable with <code class="code docutils literal notranslate"><span class="pre">mingw32-make</span> <span class="pre">install</span> <span class="pre">PREFIX=[LOCATION]</span></code></p>
+</div>
 </div>
 </div>
 

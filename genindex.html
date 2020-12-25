@@ -97,7 +97,7 @@
 </ul>
 <p class="caption"><span class="caption-text">Contributing</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="static/building.html">Building the CE C Toolchain</a></li>
+<li class="toctree-l1"><a class="reference internal" href="static/contributing.html">Contributing to the CE C Toolchain</a></li>
 </ul>
 
             
@@ -1038,6 +1038,8 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="headers/intce.html#c.ON_IVECT">ON_IVECT (C macro)</a>
 </li>
+      <li><a href="headers/tice.html#_CPPv49os_ArcChkv">os_ArcChk (C++ function)</a>
+</li>
       <li><a href="headers/tice.html#c.os_AsmPrgmSize">os_AsmPrgmSize (C macro)</a>
 </li>
       <li><a href="headers/tice.html#_CPPv413os_ChkFindSym7uint8_tPKcPPvPPv">os_ChkFindSym (C++ function)</a>
@@ -1045,6 +1047,12 @@
       <li><a href="headers/tice.html#c.os_ClrHome">os_ClrHome (C macro)</a>
 </li>
       <li><a href="headers/tice.html#c.os_ClrHomeFull">os_ClrHomeFull (C macro)</a>
+</li>
+      <li><a href="headers/tice.html#_CPPv49os_ClrLCDv">os_ClrLCD (C++ function)</a>
+</li>
+      <li><a href="headers/tice.html#_CPPv413os_ClrLCDFullv">os_ClrLCDFull (C++ function)</a>
+</li>
+      <li><a href="headers/tice.html#_CPPv412os_ClrTxtShdv">os_ClrTxtShd (C++ function)</a>
 </li>
       <li><a href="headers/tice.html#_CPPv411os_colors_t">os_colors_t (C++ enum)</a>
 </li>
@@ -1082,11 +1090,19 @@
 </li>
       <li><a href="headers/tice.html#_CPPv412os_DelAppVarPKc">os_DelAppVar (C++ function)</a>
 </li>
+      <li><a href="headers/tice.html#_CPPv49os_DelResv">os_DelRes (C++ function)</a>
+</li>
       <li><a href="headers/tice.html#_CPPv414os_DelSymEntryPv">os_DelSymEntry (C++ function)</a>
+</li>
+      <li><a href="headers/tice.html#_CPPv413os_DisableAPDv">os_DisableAPD (C++ function)</a>
 </li>
       <li><a href="headers/tice.html#_CPPv416os_DisableCursorv">os_DisableCursor (C++ function)</a>
 </li>
       <li><a href="headers/tice.html#_CPPv424os_DisableHomeTextBufferv">os_DisableHomeTextBuffer (C++ function)</a>
+</li>
+      <li><a href="headers/tice.html#_CPPv416os_DrawStatusBarv">os_DrawStatusBar (C++ function)</a>
+</li>
+      <li><a href="headers/tice.html#_CPPv412os_EnableAPDv">os_EnableAPD (C++ function)</a>
 </li>
       <li><a href="headers/tice.html#_CPPv415os_EnableCursorv">os_EnableCursor (C++ function)</a>
 </li>
@@ -1128,23 +1144,31 @@
 </li>
       <li><a href="headers/tice.html#_CPPv419os_GetMatrixElementPKciiP6real_t">os_GetMatrixElement (C++ function)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="headers/tice.html#_CPPv421os_GetRealListElementPKciP6real_t">os_GetRealListElement (C++ function)</a>
 </li>
       <li><a href="headers/tice.html#_CPPv413os_GetRealVarPKcP6real_t">os_GetRealVar (C++ function)</a>
 </li>
       <li><a href="headers/tice.html#_CPPv417os_GetStringInputPcPc6size_t">os_GetStringInput (C++ function)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="headers/tice.html#_CPPv417os_GetSymTablePtrv">os_GetSymTablePtr (C++ function)</a>
 </li>
       <li><a href="headers/tice.html#_CPPv416os_GetSystemInfov">os_GetSystemInfo (C++ function)</a>
 </li>
       <li><a href="headers/tice.html#_CPPv413os_GetVarSizePKcP6size_t">os_GetVarSize (C++ function)</a>
 </li>
+      <li><a href="headers/tice.html#_CPPv49os_HomeUpv">os_HomeUp (C++ function)</a>
+</li>
+      <li><a href="headers/tice.html#_CPPv414os_Int24ToReal7int24_t">os_Int24ToReal (C++ function)</a>
+</li>
       <li><a href="headers/tice.html#c.os_LargeFont">os_LargeFont (C macro)</a>
 </li>
       <li><a href="headers/tice.html#_CPPv49os_MemChkPPv">os_MemChk (C++ function)</a>
+</li>
+      <li><a href="headers/tice.html#_CPPv411os_MoveDownv">os_MoveDown (C++ function)</a>
+</li>
+      <li><a href="headers/tice.html#_CPPv49os_MoveUpv">os_MoveUp (C++ function)</a>
 </li>
       <li><a href="headers/tice.html#_CPPv415os_MSDGetMaxLUNP7uint8_t">os_MSDGetMaxLUN (C++ function)</a>
 </li>
@@ -1160,7 +1184,23 @@
 </li>
       <li><a href="headers/tice.html#_CPPv411os_MSDWrite7uint8_t7uint8_t8uint32_t8uint24_tPv">os_MSDWrite (C++ function)</a>
 </li>
+      <li><a href="headers/tice.html#_CPPv410os_NewLinev">os_NewLine (C++ function)</a>
+</li>
       <li><a href="headers/tice.html#_CPPv415os_NextSymEntryPvP8uint24_tP8uint24_tPcPPv">os_NextSymEntry (C++ function)</a>
+</li>
+      <li><a href="headers/tice.html#c.os_OP1">os_OP1 (C macro)</a>
+</li>
+      <li><a href="headers/tice.html#c.os_OP2">os_OP2 (C macro)</a>
+</li>
+      <li><a href="headers/tice.html#c.os_OP3">os_OP3 (C macro)</a>
+</li>
+      <li><a href="headers/tice.html#c.os_OP4">os_OP4 (C macro)</a>
+</li>
+      <li><a href="headers/tice.html#c.os_OP5">os_OP5 (C macro)</a>
+</li>
+      <li><a href="headers/tice.html#c.os_OP6">os_OP6 (C macro)</a>
+</li>
+      <li><a href="headers/tice.html#c.os_OP7">os_OP7 (C macro)</a>
 </li>
       <li><a href="headers/tice.html#c.os_PenCol">os_PenCol (C macro)</a>
 </li>
@@ -1187,6 +1227,10 @@
       <li><a href="headers/tice.html#_CPPv412os_RealToStrPcPK6real_t6int8_t7uint8_t6int8_t">os_RealToStr (C++ function)</a>
 </li>
       <li><a href="headers/tice.html#_CPPv416os_ResetFlagBits7int16_t">os_ResetFlagBits (C++ function)</a>
+</li>
+      <li><a href="headers/tice.html#_CPPv414os_RunIndicOffv">os_RunIndicOff (C++ function)</a>
+</li>
+      <li><a href="headers/tice.html#_CPPv413os_RunIndicOnv">os_RunIndicOn (C++ function)</a>
 </li>
       <li><a href="headers/tice.html#_CPPv415os_SetCursorPos7uint8_t7uint8_t">os_SetCursorPos (C++ function)</a>
 </li>
@@ -1240,37 +1284,53 @@
 </li>
       <li><a href="headers/tice.html#_CPPv4N6real_t4signE">real_t::sign (C++ member)</a>
 </li>
-      <li><a href="headers/tice.html#c.rtc_Control">rtc_Control (C macro)</a>
+      <li><a href="headers/tice.html#c.rtc_AckInterrupt">rtc_AckInterrupt (C macro)</a>
+</li>
+      <li><a href="headers/tice.html#c.RTC_ALARM_INT">RTC_ALARM_INT (C macro)</a>
+</li>
+      <li><a href="headers/tice.html#c.rtc_AlarmHours">rtc_AlarmHours (C macro)</a>
+</li>
+      <li><a href="headers/tice.html#c.rtc_AlarmMinutes">rtc_AlarmMinutes (C macro)</a>
+</li>
+      <li><a href="headers/tice.html#c.rtc_AlarmSeconds">rtc_AlarmSeconds (C macro)</a>
+</li>
+      <li><a href="headers/tice.html#c.rtc_ChkInterrupt">rtc_ChkInterrupt (C macro)</a>
+</li>
+      <li><a href="headers/tice.html#c.RTC_DAY_INT">RTC_DAY_INT (C macro)</a>
 </li>
       <li><a href="headers/tice.html#c.rtc_Days">rtc_Days (C macro)</a>
 </li>
-      <li><a href="headers/tice.html#c.RTC_DISABLE">RTC_DISABLE (C macro)</a>
-</li>
-      <li><a href="headers/tice.html#c.RTC_ENABLE">RTC_ENABLE (C macro)</a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="headers/tice.html#c.RTC_FREEZE">RTC_FREEZE (C macro)</a>
+      <li><a href="headers/tice.html#c.rtc_Disable">rtc_Disable (C macro)</a>
+</li>
+      <li><a href="headers/tice.html#c.rtc_Enable">rtc_Enable (C macro)</a>
 </li>
       <li><a href="headers/tice.html#c.rtc_Hours">rtc_Hours (C macro)</a>
 </li>
-      <li><a href="headers/tice.html#c.rtc_IntAcknowledge">rtc_IntAcknowledge (C macro)</a>
+      <li><a href="headers/tice.html#c.RTC_HR_INT">RTC_HR_INT (C macro)</a>
 </li>
-      <li><a href="headers/tice.html#c.rtc_IntStatus">rtc_IntStatus (C macro)</a>
+      <li><a href="headers/tice.html#c.RTC_INT_MASK">RTC_INT_MASK (C macro)</a>
 </li>
       <li><a href="headers/tice.html#c.rtc_IsBusy">rtc_IsBusy (C macro)</a>
 </li>
       <li><a href="headers/intce.html#c.RTC_IVECT">RTC_IVECT (C macro)</a>
 </li>
-      <li><a href="headers/tice.html#c.RTC_LOAD">RTC_LOAD (C macro)</a>
+      <li><a href="headers/tice.html#c.RTC_LOAD_INT">RTC_LOAD_INT (C macro)</a>
+</li>
+      <li><a href="headers/tice.html#c.RTC_MIN_INT">RTC_MIN_INT (C macro)</a>
 </li>
       <li><a href="headers/tice.html#c.rtc_Minutes">rtc_Minutes (C macro)</a>
 </li>
+      <li><a href="headers/tice.html#c.RTC_SEC_INT">RTC_SEC_INT (C macro)</a>
+</li>
       <li><a href="headers/tice.html#c.rtc_Seconds">rtc_Seconds (C macro)</a>
 </li>
-      <li><a href="headers/tice.html#c.rtc_Time">rtc_Time (C macro)</a>
+      <li><a href="headers/tice.html#c.rtc_Set">rtc_Set (C macro)</a>
 </li>
-      <li><a href="headers/tice.html#c.RTC_UNFREEZE">RTC_UNFREEZE (C macro)</a>
+      <li><a href="headers/tice.html#c.rtc_SetAlarm">rtc_SetAlarm (C macro)</a>
+</li>
+      <li><a href="headers/tice.html#c.rtc_Time">rtc_Time (C macro)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -1402,6 +1462,8 @@
 </li>
       <li><a href="libraries/fileioc.html#_CPPv49ti_Resize6size_tK8ti_var_t">ti_Resize (C++ function)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="libraries/fileioc.html#_CPPv49ti_RewindK8ti_var_t">ti_Rewind (C++ function)</a>
 </li>
       <li><a href="libraries/fileioc.html#_CPPv47ti_SeekijK8ti_var_t">ti_Seek (C++ function)</a>
@@ -1424,115 +1486,19 @@
 </li>
       <li><a href="libraries/fileioc.html#_CPPv48ti_WritePKv6size_t6size_tK8ti_var_t">ti_Write (C++ function)</a>
 </li>
-      <li><a href="headers/tice.html#c.tiflags">tiflags (C macro)</a>
-</li>
-      <li><a href="headers/tice.html#c.TIMER1_0INT">TIMER1_0INT (C macro)</a>
-</li>
-      <li><a href="headers/tice.html#c.TIMER1_32K">TIMER1_32K (C macro)</a>
-</li>
-      <li><a href="headers/tice.html#c.TIMER1_CPU">TIMER1_CPU (C macro)</a>
-</li>
-      <li><a href="headers/tice.html#c.TIMER1_DISABLE">TIMER1_DISABLE (C macro)</a>
-</li>
-      <li><a href="headers/tice.html#c.TIMER1_DOWN">TIMER1_DOWN (C macro)</a>
-</li>
-      <li><a href="headers/tice.html#c.TIMER1_ENABLE">TIMER1_ENABLE (C macro)</a>
-</li>
       <li><a href="headers/intce.html#c.TIMER1_IVECT">TIMER1_IVECT (C macro)</a>
-</li>
-      <li><a href="headers/tice.html#c.TIMER1_MATCH1">TIMER1_MATCH1 (C macro)</a>
-</li>
-      <li><a href="headers/tice.html#c.TIMER1_MATCH2">TIMER1_MATCH2 (C macro)</a>
-</li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="headers/tice.html#c.TIMER1_NOINT">TIMER1_NOINT (C macro)</a>
-</li>
-      <li><a href="headers/tice.html#c.TIMER1_RELOADED">TIMER1_RELOADED (C macro)</a>
-</li>
-      <li><a href="headers/tice.html#c.TIMER1_UP">TIMER1_UP (C macro)</a>
-</li>
-      <li><a href="headers/tice.html#c.TIMER2_0INT">TIMER2_0INT (C macro)</a>
-</li>
-      <li><a href="headers/tice.html#c.TIMER2_32K">TIMER2_32K (C macro)</a>
-</li>
-      <li><a href="headers/tice.html#c.TIMER2_CPU">TIMER2_CPU (C macro)</a>
-</li>
-      <li><a href="headers/tice.html#c.TIMER2_DISABLE">TIMER2_DISABLE (C macro)</a>
-</li>
-      <li><a href="headers/tice.html#c.TIMER2_DOWN">TIMER2_DOWN (C macro)</a>
-</li>
-      <li><a href="headers/tice.html#c.TIMER2_ENABLE">TIMER2_ENABLE (C macro)</a>
 </li>
       <li><a href="headers/intce.html#c.TIMER2_IVECT">TIMER2_IVECT (C macro)</a>
 </li>
-      <li><a href="headers/tice.html#c.TIMER2_MATCH1">TIMER2_MATCH1 (C macro)</a>
-</li>
-      <li><a href="headers/tice.html#c.TIMER2_MATCH2">TIMER2_MATCH2 (C macro)</a>
-</li>
-      <li><a href="headers/tice.html#c.TIMER2_NOINT">TIMER2_NOINT (C macro)</a>
-</li>
-      <li><a href="headers/tice.html#c.TIMER2_RELOADED">TIMER2_RELOADED (C macro)</a>
-</li>
-      <li><a href="headers/tice.html#c.TIMER2_UP">TIMER2_UP (C macro)</a>
-</li>
-      <li><a href="headers/tice.html#c.TIMER3_0INT">TIMER3_0INT (C macro)</a>
-</li>
-      <li><a href="headers/tice.html#c.TIMER3_32K">TIMER3_32K (C macro)</a>
-</li>
-      <li><a href="headers/tice.html#c.TIMER3_CPU">TIMER3_CPU (C macro)</a>
-</li>
-      <li><a href="headers/tice.html#c.TIMER3_DISABLE">TIMER3_DISABLE (C macro)</a>
-</li>
-      <li><a href="headers/tice.html#c.TIMER3_DOWN">TIMER3_DOWN (C macro)</a>
-</li>
-      <li><a href="headers/tice.html#c.TIMER3_ENABLE">TIMER3_ENABLE (C macro)</a>
-</li>
       <li><a href="headers/intce.html#c.TIMER3_IVECT">TIMER3_IVECT (C macro)</a>
-</li>
-      <li><a href="headers/tice.html#c.TIMER3_MATCH1">TIMER3_MATCH1 (C macro)</a>
-</li>
-      <li><a href="headers/tice.html#c.TIMER3_MATCH2">TIMER3_MATCH2 (C macro)</a>
-</li>
-      <li><a href="headers/tice.html#c.TIMER3_NOINT">TIMER3_NOINT (C macro)</a>
-</li>
-      <li><a href="headers/tice.html#c.TIMER3_RELOADED">TIMER3_RELOADED (C macro)</a>
-</li>
-      <li><a href="headers/tice.html#c.TIMER3_UP">TIMER3_UP (C macro)</a>
 </li>
       <li><a href="headers/tice.html#c.TIMER_0INT">TIMER_0INT (C macro)</a>
 </li>
-      <li><a href="headers/tice.html#c.timer_1_Counter">timer_1_Counter (C macro)</a>
-</li>
-      <li><a href="headers/tice.html#c.timer_1_MatchValue_1">timer_1_MatchValue_1 (C macro)</a>
-</li>
-      <li><a href="headers/tice.html#c.timer_1_MatchValue_2">timer_1_MatchValue_2 (C macro)</a>
-</li>
-      <li><a href="headers/tice.html#c.timer_1_ReloadValue">timer_1_ReloadValue (C macro)</a>
-</li>
-      <li><a href="headers/tice.html#c.timer_2_Counter">timer_2_Counter (C macro)</a>
-</li>
-      <li><a href="headers/tice.html#c.timer_2_MatchValue_1">timer_2_MatchValue_1 (C macro)</a>
-</li>
-      <li><a href="headers/tice.html#c.timer_2_MatchValue_2">timer_2_MatchValue_2 (C macro)</a>
-</li>
-      <li><a href="headers/tice.html#c.timer_2_ReloadValue">timer_2_ReloadValue (C macro)</a>
-</li>
       <li><a href="headers/tice.html#c.TIMER_32K">TIMER_32K (C macro)</a>
-</li>
-      <li><a href="headers/tice.html#c.timer_3_Counter">timer_3_Counter (C macro)</a>
-</li>
-      <li><a href="headers/tice.html#c.timer_3_MatchValue_1">timer_3_MatchValue_1 (C macro)</a>
-</li>
-      <li><a href="headers/tice.html#c.timer_3_MatchValue_2">timer_3_MatchValue_2 (C macro)</a>
-</li>
-      <li><a href="headers/tice.html#c.timer_3_ReloadValue">timer_3_ReloadValue (C macro)</a>
 </li>
       <li><a href="headers/tice.html#c.timer_AckInterrupt">timer_AckInterrupt (C macro)</a>
 </li>
-      <li><a href="headers/tice.html#c.timer_CheckInterrupt">timer_CheckInterrupt (C macro)</a>
-</li>
-      <li><a href="headers/tice.html#c.timer_Control">timer_Control (C macro)</a>
+      <li><a href="headers/tice.html#c.timer_ChkInterrupt">timer_ChkInterrupt (C macro)</a>
 </li>
       <li><a href="headers/tice.html#c.TIMER_CPU">TIMER_CPU (C macro)</a>
 </li>
@@ -1542,19 +1508,27 @@
 </li>
       <li><a href="headers/tice.html#c.timer_Enable">timer_Enable (C macro)</a>
 </li>
-      <li><a href="headers/tice.html#c.timer_EnableInt">timer_EnableInt (C macro)</a>
+      <li><a href="headers/tice.html#c.timer_Get">timer_Get (C macro)</a>
 </li>
-      <li><a href="headers/tice.html#c.timer_IntAcknowledge">timer_IntAcknowledge (C macro)</a>
+      <li><a href="headers/tice.html#c.timer_GetLow">timer_GetLow (C macro)</a>
 </li>
-      <li><a href="headers/tice.html#c.timer_IntStatus">timer_IntStatus (C macro)</a>
+      <li><a href="headers/tice.html#c.timer_GetMatch">timer_GetMatch (C macro)</a>
 </li>
-      <li><a href="headers/tice.html#c.TIMER_MATCH1">TIMER_MATCH1 (C macro)</a>
+      <li><a href="headers/tice.html#c.timer_GetReload">timer_GetReload (C macro)</a>
 </li>
-      <li><a href="headers/tice.html#c.TIMER_MATCH2">TIMER_MATCH2 (C macro)</a>
+      <li><a href="headers/tice.html#c.timer_GetSafe">timer_GetSafe (C macro)</a>
+</li>
+      <li><a href="headers/tice.html#c.TIMER_MATCH">TIMER_MATCH (C macro)</a>
 </li>
       <li><a href="headers/tice.html#c.TIMER_NOINT">TIMER_NOINT (C macro)</a>
 </li>
       <li><a href="headers/tice.html#c.TIMER_RELOADED">TIMER_RELOADED (C macro)</a>
+</li>
+      <li><a href="headers/tice.html#c.timer_Set">timer_Set (C macro)</a>
+</li>
+      <li><a href="headers/tice.html#c.timer_SetMatch">timer_SetMatch (C macro)</a>
+</li>
+      <li><a href="headers/tice.html#c.timer_SetReload">timer_SetReload (C macro)</a>
 </li>
       <li><a href="headers/tice.html#c.TIMER_UP">TIMER_UP (C macro)</a>
 </li>
