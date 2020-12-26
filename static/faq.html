@@ -264,9 +264,14 @@ This table lists the locations relative to <em>sp</em> from within the called fu
 </tbody>
 </table>
 <p>This table lists which registers are used for return values.
-Note that for shorts, the upper byte does not matter.</p>
-<p><strong>xx</strong>: Contains data.</p>
-<p><strong>??</strong>: Don’t care.</p>
+The type’s sign does not affect the registers used, but may affect the value returned.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<div class="line-block">
+<div class="line"><strong>xx</strong>: Byte must contain valid data.</div>
+<div class="line"><strong>??</strong>: Byte contents don’t matter.</div>
+</div>
+</div>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 28%" />
