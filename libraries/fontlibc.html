@@ -98,11 +98,27 @@
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">CE C Libraries</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="fileioc.html">fileioc.h</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">fontlibc.h</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#text-windowing">Text Windowing</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#aligning-text">Aligning Text</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#text-control-codes">Text Control Codes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#transparent-text">Transparent Text</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#line-spacing">Line Spacing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#creating-fonts">Creating Fonts</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#editor-software">Editor Software</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#using-fonts-in-your-project">Using Fonts in Your Project</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#using-font-packs">Using Font Packs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#opening-a-font-pack-the-simple-way">Opening a Font Pack the Simple Way</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#caching-a-font-pack-s-address">Caching a Font Pack’s Address</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#finding-a-font-pack-by-typeface-name">Finding a Font Pack by Typeface Name</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#looking-at-other-font-metadata">Looking at Other Font Metadata</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#selecting-a-font-by-style">Selecting a Font by Style</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#api-usage-notes">API Usage Notes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#text-windowing">Text Windowing</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#aligning-text">Aligning Text</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#text-control-codes">Text Control Codes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#transparent-text">Transparent Text</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#line-spacing">Line Spacing</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="#api-documentation">API Documentation</a></li>
 </ul>
 </li>
@@ -195,44 +211,276 @@ For example, word-wrap is not directly provided, but can be implemented using <c
 fontlib hopes to provide enough performance to be usable in games, while providing powerful enough basic features for fancy GUIs and document editors.</p>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><p><a class="reference internal" href="#text-windowing" id="id2">Text Windowing</a></p></li>
-<li><p><a class="reference internal" href="#aligning-text" id="id3">Aligning Text</a></p></li>
-<li><p><a class="reference internal" href="#text-control-codes" id="id4">Text Control Codes</a></p></li>
-<li><p><a class="reference internal" href="#transparent-text" id="id5">Transparent Text</a></p></li>
-<li><p><a class="reference internal" href="#line-spacing" id="id6">Line Spacing</a></p></li>
-<li><p><a class="reference internal" href="#api-documentation" id="id7">API Documentation</a></p></li>
+<li><p><a class="reference internal" href="#creating-fonts" id="id2">Creating Fonts</a></p>
+<ul>
+<li><p><a class="reference internal" href="#editor-software" id="id3">Editor Software</a></p></li>
+<li><p><a class="reference internal" href="#using-fonts-in-your-project" id="id4">Using Fonts in Your Project</a></p>
+<ul>
+<li><p><a class="reference internal" href="#embedding-a-font-directly-in-your-program" id="id5">Embedding a Font Directly in Your Program</a></p></li>
+<li><p><a class="reference internal" href="#packaging-a-font-pack" id="id6">Packaging a Font Pack</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#using-font-packs" id="id7">Using Font Packs</a></p>
+<ul>
+<li><p><a class="reference internal" href="#opening-a-font-pack-the-simple-way" id="id8">Opening a Font Pack the Simple Way</a></p></li>
+<li><p><a class="reference internal" href="#caching-a-font-pack-s-address" id="id9">Caching a Font Pack’s Address</a></p></li>
+<li><p><a class="reference internal" href="#finding-a-font-pack-by-typeface-name" id="id10">Finding a Font Pack by Typeface Name</a></p></li>
+<li><p><a class="reference internal" href="#looking-at-other-font-metadata" id="id11">Looking at Other Font Metadata</a></p></li>
+<li><p><a class="reference internal" href="#selecting-a-font-by-style" id="id12">Selecting a Font by Style</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#api-usage-notes" id="id13">API Usage Notes</a></p>
+<ul>
+<li><p><a class="reference internal" href="#text-windowing" id="id14">Text Windowing</a></p></li>
+<li><p><a class="reference internal" href="#aligning-text" id="id15">Aligning Text</a></p></li>
+<li><p><a class="reference internal" href="#text-control-codes" id="id16">Text Control Codes</a></p></li>
+<li><p><a class="reference internal" href="#transparent-text" id="id17">Transparent Text</a></p></li>
+<li><p><a class="reference internal" href="#line-spacing" id="id18">Line Spacing</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#api-documentation" id="id19">API Documentation</a></p></li>
 </ul>
 </div>
+<div class="section" id="creating-fonts">
+<h2><a class="toc-backref" href="#id2">Creating Fonts</a><a class="headerlink" href="#creating-fonts" title="Permalink to this headline">¶</a></h2>
+<p>Fonts for use with FontLibC can be made with any program that can produce Windows 3.x .FNT resource files.</p>
+<div class="section" id="editor-software">
+<h3><a class="toc-backref" href="#id3">Editor Software</a><a class="headerlink" href="#editor-software" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="http://hukka.ncn.fi/?fony">Fony</a> is probably the most-used FNT editor available. It can open both .FNT and .FON files.</p>
+<p><a class="reference external" href="https://github.com/juanitogan/mkwinfont">mkwinfont</a> provides some Python code for converting a text-based format to and .FON files; it should be trivial for someone with basic Python skills to change to code to skip the .FON packaging stage and directly produce a .FNT resource file. Useful if for some reason you think graphics are best done without the aid of any kind of graphics editor.</p>
+<p><a class="reference external" href="http://www.vsoft.nl/software/utils/win/fontedit/">VSoft’s FontEdit</a> is mostly just the original FontEdit included with the Windows SDK for Windows 3.x, but compiled for 32-bit Windows. A notable addition, however, is the ability to import TrueType fonts, though I haven’t tested it. It cannot, however, open .FON files; the FNT resource(s) embedded in a .FON file must be extracted before FontEdit can open the font(s).</p>
+<p><a class="reference external" href="https://github.com/drdnar/MFE">MFE</a> is DrDnar’s own bitmap font editor. It can export .FNT files. It has the useful feature of allowing fully custom mapping from Unicode to your font’s 8-bit code page, which makes creating mock-ups with the preview function easier.</p>
+</div>
+<div class="section" id="using-fonts-in-your-project">
+<h3><a class="toc-backref" href="#id4">Using Fonts in Your Project</a><a class="headerlink" href="#using-fonts-in-your-project" title="Permalink to this headline">¶</a></h3>
+<p>Once your .FNT file has been created, use the convfont utility included with the SDK to convert the .FNT resource file into a format usable in your project.</p>
+<p>There are two main ways of including a font in your project:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>directly in your program binary; or,</p></li>
+<li><p>in separate font pack appvar.</p></li>
+</ul>
+</div></blockquote>
+<div class="section" id="embedding-a-font-directly-in-your-program">
+<h4><a class="toc-backref" href="#id5">Embedding a Font Directly in Your Program</a><a class="headerlink" href="#embedding-a-font-directly-in-your-program" title="Permalink to this headline">¶</a></h4>
+<p>Embedding a font directly in your program ensures the font will always be available, but it prevents it from being used by any other program, and bloats your program. However, it is also the easiest way to access a custom font.</p>
+<p>Place your .FNT font files in your source code directory. Then, create a <code class="code docutils literal notranslate"><span class="pre">myfonts.h</span></code> source code file:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cm">/* Declare globally-accessible pointers to the font data. */</span>
+<span class="k">extern</span> <span class="k">const</span> <span class="n">fontlib_font_t</span> <span class="o">*</span><span class="n">my_font_1</span><span class="p">;</span>
+<span class="k">extern</span> <span class="k">const</span> <span class="n">fontlib_font_t</span> <span class="o">*</span><span class="n">my_font_2</span><span class="p">;</span>
+<span class="p">.</span> <span class="p">.</span> <span class="p">.</span>
+</pre></div>
+</div>
+<p>Then create a <code class="code docutils literal notranslate"><span class="pre">myfonts.c</span></code> file:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cm">/* This contains the raw data for the font. */</span>
+<span class="k">static</span> <span class="k">const</span> <span class="kt">uint8_t</span> <span class="n">my_font_1_data</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="cp">#include</span> <span class="cpf">&quot;myfont1.inc&quot;</span><span class="cp"></span>
+<span class="p">};</span>
+<span class="cm">/* However, C89 does not allow us to typecast a byte array into a</span>
+<span class="cm">fontlib_font_t pointer directly, so we have to use a second statement to do it,</span>
+<span class="cm">though helpfully we can at least do it in the global scope. */</span>
+<span class="k">const</span> <span class="n">fontlib_font_t</span> <span class="o">*</span><span class="n">my_font_1</span> <span class="o">=</span> <span class="p">(</span><span class="n">fontlib_font_t</span> <span class="o">*</span><span class="p">)</span><span class="n">my_font_1_data</span><span class="p">;</span>
+
+<span class="k">static</span> <span class="k">const</span> <span class="kt">uint8_t</span> <span class="n">my_font_2_data</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="cp">#include</span> <span class="cpf">&quot;myfont2.inc&quot;</span><span class="cp"></span>
+<span class="p">};</span>
+<span class="k">const</span> <span class="n">fontlib_font_t</span> <span class="o">*</span><span class="n">my_font_2</span> <span class="o">=</span> <span class="p">(</span><span class="n">fontlib_font_t</span> <span class="o">*</span><span class="p">)</span><span class="n">my_font_2_data</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Now you should be wondering where the <code class="code docutils literal notranslate"><span class="pre">myfont1.inc</span></code> file comes from. This file will get generated by your makefile, which will need to be modified to append the following:</p>
+<div class="highlight-make notranslate"><div class="highlight"><pre><span></span><span class="c"># This is a roundabout way to tell make that myfonts.c depends on the .inc files.</span>
+<span class="c"># It does it by saying the compiled object code depends on the .inc files.</span>
+<span class="nf">$(OBJDIR)/myfonts.src</span><span class="o">:</span> <span class="k">$(</span><span class="nv">SRCDIR</span><span class="k">)</span>/<span class="n">myfont</span>1.<span class="n">inc</span> <span class="k">$(</span><span class="nv">SRCDIR</span><span class="k">)</span>/<span class="n">myfont</span>2.<span class="n">inc</span>
+
+<span class="c"># Convert a .fnt file into a .inc file</span>
+<span class="nf">$(SRCDIR)/myfont1.inc</span><span class="o">:</span> <span class="k">$(</span><span class="nv">SRCDIR</span><span class="k">)</span>/<span class="n">myfont</span>1.<span class="n">fnt</span>
+    convfont -o carray -f <span class="k">$(</span>SRCDIR<span class="k">)</span>/myfont1.fnt <span class="k">$(</span>SRCDIR<span class="k">)</span>/myfont1.inc
+
+<span class="nf">$(SRCDIR)/myfont2.inc</span><span class="o">:</span> <span class="k">$(</span><span class="nv">SRCDIR</span><span class="k">)</span>/<span class="n">myfont</span>2.<span class="n">fnt</span>
+    convfont -o carray -f <span class="k">$(</span>SRCDIR<span class="k">)</span>/myfont2.fnt <span class="k">$(</span>SRCDIR<span class="k">)</span>/myfont2.inc
+</pre></div>
+</div>
+<p>Finally, somewhere else in your program, you can use <code class="code docutils literal notranslate"><span class="pre">fontlib_SetFont</span></code>:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="p">.</span> <span class="p">.</span> <span class="p">.</span>
+    <span class="n">fontlib_SetFont</span><span class="p">(</span><span class="n">my_font_1</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="p">.</span> <span class="p">.</span> <span class="p">.</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="packaging-a-font-pack">
+<h4><a class="toc-backref" href="#id6">Packaging a Font Pack</a><a class="headerlink" href="#packaging-a-font-pack" title="Permalink to this headline">¶</a></h4>
+<p>Font packs are an alternative to directly embedding a font in your program binary. They allow multiple related fonts to be packaged together, and FontLibC can select a font from the font pack given a requested size and style. The fonts in a font pack can be used by other programs, reducing the size of your program and saving valuable space on-calculator. They can also be archived, freeing up limited RAM.</p>
+<p>A font pack should contain related fonts, namely different sizes and styles of a typeface. It is legal for a font pack to contain only one font. Metadata fields in a font pack, such as the description, should be <em>short.</em></p>
+<p>Font packs are easiest to make as a separate project. Create a new folder, place your <code class="code docutils literal notranslate"><span class="pre">.fnt</span></code> files in it, and then create a <code class="code docutils literal notranslate"><span class="pre">makefile</span></code> with the following contents:</p>
+<div class="highlight-make notranslate"><div class="highlight"><pre><span></span><span class="c"># Put each of your .fnt files on this next line.</span>
+<span class="c"># Look at the documentation for convfont for more information on font properties</span>
+<span class="nf">temp.bin</span><span class="o">:</span> <span class="n">font</span>1.<span class="n">fnt</span> <span class="n">font</span>2.<span class="n">fnt</span> <span class="n">font</span>3.<span class="n">fnt</span>
+    convfont -o fontpack -N <span class="s2">&quot;Font Name&quot;</span> -P <span class="s2">&quot;ASCII&quot;</span> -V <span class="s2">&quot;Some version or date&quot;</span> -A <span class="s2">&quot;Your Name&quot;</span> <span class="se">\</span>
+    -D <span class="s2">&quot;A SHORT description of your font&quot;</span> <span class="se">\</span>
+    -f font1.fnt -a <span class="m">1</span> -b <span class="m">1</span> -w bold -s sans-serif -s upright -s proportional <span class="se">\</span>
+    -f font2.fnt -a <span class="m">2</span> -b <span class="m">2</span> -w normal -s serif -s italic <span class="se">\</span>
+    -f font3.fnt -a <span class="m">0</span> -b <span class="m">3</span> -w light -s monospaced <span class="se">\</span>
+    temp.bin
+
+<span class="c"># Don&#39;t forget to change font_pack_file_name on both these lines.</span>
+<span class="c"># Set PACKNAME to the on-calculator appvar name you want</span>
+<span class="nf">font_pack_file_name.8xv</span><span class="o">:</span> <span class="n">temp</span>.<span class="n">bin</span>
+    convhex -a -v -n PACKNAME temp.bin font_pack_file_name.8xv
+
+<span class="nf">all</span><span class="o">:</span> <span class="n">font_pack_file_name</span>.8<span class="n">xv</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="using-font-packs">
+<h2><a class="toc-backref" href="#id7">Using Font Packs</a><a class="headerlink" href="#using-font-packs" title="Permalink to this headline">¶</a></h2>
+<p>While using an embedded font is easy—just call <code class="code docutils literal notranslate"><span class="pre">fontlib_SetFont</span></code> directly on the pointer to the font data—, using a font pack is a bit more involved.</p>
+<p><strong>WARNING: FontLibC caches a pointer to the font’s data when you use</strong> <code class="code docutils literal notranslate"><span class="pre">SetFont</span></code>. <strong>If you do something that causes the font’s data to move, that pointer becomes invalid and FontLibC will start displaying garbage!</strong> For example, if a font appvar is in RAM, any operation that creates or resizes a file may invalidate the cached pointer. Simply calling <code class="code docutils literal notranslate"><span class="pre">SetFont</span></code> again will not suffice to fix this; you must also lookup the font’s location again. This also applies if a font pack is archived, and you do something that causes a garbage collection cycle.</p>
+<p>(The above warning does not apply to fonts embedded into your program, as data embedded in your program cannot get moved.)</p>
+<div class="section" id="opening-a-font-pack-the-simple-way">
+<h3><a class="toc-backref" href="#id8">Opening a Font Pack the Simple Way</a><a class="headerlink" href="#opening-a-font-pack-the-simple-way" title="Permalink to this headline">¶</a></h3>
+<p>If you require a specific font pack with a specific appvar name, then opening a font is straight-forward:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;graphx.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;fontlibc.h&gt;</span><span class="cp"></span>
+
+<span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">fontlib_font_t</span> <span class="o">*</span><span class="n">my_font</span><span class="p">;</span>
+    <span class="p">.</span> <span class="p">.</span> <span class="p">.</span>
+    <span class="cm">/* Get the first font present in the font pack */</span>
+    <span class="n">my_font</span> <span class="o">=</span> <span class="n">fontlib_GetFontByIndex</span><span class="p">(</span><span class="s">&quot;MYFONT&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="cm">/* This check is important! If fetching the font fails, trying to use the font will go . . . poorly. */</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">my_font</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">gfx_PrintStringXY</span><span class="p">(</span><span class="s">&quot;MYFONT appvar not found or invalid&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+        <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="cm">/* Use font for whatever */</span>
+    <span class="n">fontlib_SetFont</span><span class="p">(</span><span class="n">my_font</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="p">.</span> <span class="p">.</span> <span class="p">.</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="caching-a-font-pack-s-address">
+<h3><a class="toc-backref" href="#id9">Caching a Font Pack’s Address</a><a class="headerlink" href="#caching-a-font-pack-s-address" title="Permalink to this headline">¶</a></h3>
+<p>However, accessing fonts this way triggers a slow VAT lookup for the appvar every time you call a <code class="code docutils literal notranslate"><span class="pre">GetFont</span></code> routine. You can avoid this overhead—provided you keep in mind the above warning about moving data around—by using the FileIOC library to get a direct pointer to the appvar’s data.</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">ti_var_t</span> <span class="n">file</span><span class="p">;</span>
+<span class="n">fontlib_font_pack_t</span> <span class="o">*</span><span class="n">my_font_pack</span><span class="p">;</span>
+<span class="n">fontlib_font_t</span> <span class="o">*</span><span class="n">my_font</span><span class="p">;</span>
+<span class="p">.</span> <span class="p">.</span> <span class="p">.</span>
+<span class="cm">/* Open file */</span>
+<span class="n">file</span> <span class="o">=</span> <span class="n">ti_open</span><span class="p">(</span><span class="s">&quot;MYFONT&quot;</span><span class="p">,</span> <span class="s">&quot;r&quot;</span><span class="p">);</span>
+<span class="cm">/* Throw an error if the file was not found */</span>
+<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">my_font_pack</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">gfx_PrintStringXY</span><span class="p">(</span><span class="s">&quot;MYFONT appvar not found&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="k">return</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="n">my_font_pack</span> <span class="o">=</span> <span class="n">ti_GetDataPtr</span><span class="p">(</span><span class="n">file</span><span class="p">);</span>
+<span class="cm">/* Once we have the pointer, we don&#39;t need the file handle any more. */</span>
+<span class="n">ti_Close</span><span class="p">(</span><span class="n">file</span><span class="p">);</span>
+<span class="cm">/* Just because the file exists doesn&#39;t mean it&#39;s actually a font pack */</span>
+<span class="n">my_font</span> <span class="o">=</span> <span class="n">fontlib_GetFontByIndexRaw</span><span class="p">(</span><span class="n">my_font_pack</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">my_font</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">gfx_PrintStringXY</span><span class="p">(</span><span class="s">&quot;MYFONT appvar is invalid&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="k">return</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="finding-a-font-pack-by-typeface-name">
+<h3><a class="toc-backref" href="#id10">Finding a Font Pack by Typeface Name</a><a class="headerlink" href="#finding-a-font-pack-by-typeface-name" title="Permalink to this headline">¶</a></h3>
+<p>In addition to opening a font pack by appvar name, FontLibC also provides the special routine <code class="code docutils literal notranslate"><span class="pre">fontlib_GetFontPackName</span></code> to make it easier to search for a font pack by typeface name:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">char</span> <span class="o">*</span><span class="n">var_name</span><span class="p">;</span>
+<span class="kt">char</span> <span class="o">*</span><span class="n">typeface_name</span><span class="p">;</span>
+<span class="n">fontlib_font_pack_t</span> <span class="o">*</span><span class="n">my_font_pack</span><span class="p">;</span>
+<span class="kt">uint8_t</span> <span class="o">*</span><span class="n">search_pos</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+<span class="k">while</span> <span class="p">((</span><span class="n">var_name</span> <span class="o">=</span> <span class="n">ti_DetectVar</span><span class="p">(</span><span class="o">&amp;</span><span class="n">search_pos</span><span class="p">,</span> <span class="s">&quot;FONTPACK&quot;</span><span class="p">,</span> <span class="n">TI_APPVAR_TYPE</span><span class="p">))</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">typeface_name</span> <span class="o">=</span> <span class="n">fontlib_GetFontPackName</span><span class="p">(</span><span class="n">var_name</span><span class="p">);</span>
+    <span class="cm">/* Font packs can omit the name metadata property, so check for that. */</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">typeface_name</span><span class="p">)</span>
+        <span class="k">continue</span><span class="p">;</span>
+    <span class="cm">/* Do something interesting with the typeface_name here.</span>
+<span class="cm">       Note that a direct pointer to the name is returned, which may be archived,</span>
+<span class="cm">       so you cannot write to the string. */</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">strcmp</span><span class="p">(</span><span class="n">typeface_name</span><span class="p">,</span> <span class="s">&quot;My Font&quot;</span><span class="p">))</span> <span class="p">{</span>
+        <span class="n">fontlib_SetFont</span><span class="p">(</span><span class="n">fontlib_GetFontByIndex</span><span class="p">(</span><span class="n">var_name</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="mi">0</span><span class="p">);</span>
+        <span class="k">break</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="looking-at-other-font-metadata">
+<h3><a class="toc-backref" href="#id11">Looking at Other Font Metadata</a><a class="headerlink" href="#looking-at-other-font-metadata" title="Permalink to this headline">¶</a></h3>
+<p>There are no other routines for processing the other metadata fields in a font pack. However, it is not hard to process the metadata fields yourself:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">ti_var_t</span> <span class="n">file</span><span class="p">;</span>
+<span class="n">fontlib_font_pack_t</span> <span class="o">*</span><span class="n">font_pack</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">metadata_offset</span><span class="p">;</span>
+<span class="n">fontlib_metadata_t</span> <span class="o">*</span><span class="n">font_pack_metadata</span><span class="p">;</span>
+<span class="kt">char</span> <span class="o">*</span><span class="n">font_pack_author</span><span class="p">;</span>
+<span class="p">.</span> <span class="p">.</span> <span class="p">.</span>
+<span class="cm">/* Assume that file is the already-opened appvar of the font pack. */</span>
+<span class="n">font_pack</span> <span class="o">=</span> <span class="n">ti_GetDataPtr</span><span class="p">(</span><span class="n">file</span><span class="p">);</span>
+<span class="n">metadata_offset</span> <span class="o">=</span> <span class="n">font_pack</span><span class="o">-&gt;</span><span class="n">metadata</span><span class="p">;</span>
+<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">metadata_offset</span><span class="p">)</span>
+    <span class="k">return</span><span class="p">;</span> <span class="cm">/* No metadata in the font pack, do something else here */</span>
+<span class="n">ti_Seek</span><span class="p">(</span><span class="n">metadata_offset</span><span class="p">,</span> <span class="n">SEEK_SET</span><span class="p">,</span> <span class="n">file</span><span class="p">);</span>
+<span class="n">font_pack_metadata</span> <span class="o">=</span> <span class="n">ti_GetDataPtr</span><span class="p">(</span><span class="n">file</span><span class="p">);</span>
+<span class="n">metadata_offset</span> <span class="o">=</span> <span class="n">font_pack_metadata</span><span class="o">-&gt;</span><span class="n">font_author</span><span class="p">;</span>
+<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">metadata_offset</span><span class="p">)</span>
+    <span class="k">return</span><span class="p">;</span> <span class="cm">/* No author specified */</span>
+<span class="n">ti_Seek</span><span class="p">(</span><span class="n">metadata_offset</span><span class="p">,</span> <span class="n">SEEK_SET</span><span class="p">,</span> <span class="n">file</span><span class="p">);</span>
+<span class="n">font_pack_author</span> <span class="o">=</span> <span class="n">ti_GetDataPtr</span><span class="p">(</span><span class="n">file</span><span class="p">);</span>
+<span class="cm">/* Now you have the author name string */</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="selecting-a-font-by-style">
+<h3><a class="toc-backref" href="#id12">Selecting a Font by Style</a><a class="headerlink" href="#selecting-a-font-by-style" title="Permalink to this headline">¶</a></h3>
+<p>The <code class="code docutils literal notranslate"><span class="pre">GetFontByStyle</span></code> routines help you automatically select a font given a set of size and style criteria.</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">fontlib_font_pack_t</span> <span class="o">*</span><span class="n">font_pack</span><span class="p">;</span>
+<span class="n">fontlib_font_t</span> <span class="o">*</span><span class="n">font</span><span class="p">;</span>
+<span class="p">.</span> <span class="p">.</span> <span class="p">.</span>
+<span class="cm">/* Assume font_pack already points to a valid font pack. */</span>
+<span class="cm">/* Get a 9 or 10 pixel tall bold, serif font that isn&#39;t monospaced and isn&#39;t italic. */</span>
+<span class="n">font</span> <span class="o">=</span> <span class="n">fontlib_GetFontByStyleRaw</span><span class="p">(</span><span class="n">font_pack</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="n">FONTLIB_BOLD</span><span class="p">,</span> <span class="n">FONTLIB_BOLD</span><span class="p">,</span> <span class="n">FONTLIB_SERIF</span><span class="p">,</span> <span class="n">FONTLIB_MONOSPACED</span> <span class="o">|</span> <span class="n">FONTLIB_ITALIC</span><span class="p">);</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">font</span><span class="p">)</span>
+    <span class="n">fontlib_SetFont</span><span class="p">(</span><span class="n">font</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="api-usage-notes">
+<h2><a class="toc-backref" href="#id13">API Usage Notes</a><a class="headerlink" href="#api-usage-notes" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="text-windowing">
-<h2><a class="toc-backref" href="#id2">Text Windowing</a><a class="headerlink" href="#text-windowing" title="Permalink to this headline">¶</a></h2>
-<p>To assist in text layout, fontlibc provides for a text window, which automatically confines text to appear in a specific rectangular area of the screen.
-This feature may be useful for dialogs and scrolling large blocks of text.
-Use <code class="code docutils literal notranslate"><span class="pre">fontlib_SetWindow</span></code> to set the current window bounds.
-Use <code class="code docutils literal notranslate"><span class="pre">fontlib_SetNewlineOptions</span></code> to control how <code class="code docutils literal notranslate"><span class="pre">fontlib_DrawString</span></code> behaves when it reaches the right edge of the text window.</p>
+<h3><a class="toc-backref" href="#id14">Text Windowing</a><a class="headerlink" href="#text-windowing" title="Permalink to this headline">¶</a></h3>
+<p>To assist in text layout, fontlibc provides for a text window, which automatically confines text to appear in a specific rectangular area of the screen. This feature may be useful for dialogs and scrolling large blocks of text. Use <code class="code docutils literal notranslate"><span class="pre">fontlib_SetWindow</span></code> to set the current window bounds. Use <code class="code docutils literal notranslate"><span class="pre">fontlib_SetNewlineOptions</span></code> to control how <code class="code docutils literal notranslate"><span class="pre">fontlib_DrawString</span></code> behaves when it reaches the right edge of the text window.</p>
 </div>
 <div class="section" id="aligning-text">
-<h2><a class="toc-backref" href="#id3">Aligning Text</a><a class="headerlink" href="#aligning-text" title="Permalink to this headline">¶</a></h2>
-<p>Implementing centered text, right-aligned text, and word wrap requires being able to compute the width of a word or string of text.
-The routine <code class="code docutils literal notranslate"><span class="pre">fontlib_GetStringWidth</span></code> provides this functionality.</p>
-<p>If you call <code class="code docutils literal notranslate"><span class="pre">fontlib_SetAlternateStopCode('</span> <span class="pre">')</span></code>, <code class="code docutils literal notranslate"><span class="pre">fontlib_GetStringWidth</span></code> and <code class="code docutils literal notranslate"><span class="pre">fontlib_DrawString</span></code> will stop drawing on spaces, giving you a chance to check if the next word will fit on screen.
-You can use <code class="code docutils literal notranslate"><span class="pre">fontlib_GetLastCharacterRead()</span></code> to find out where <code class="code docutils literal notranslate"><span class="pre">fontlib_GetStringWidth</span></code> or <code class="code docutils literal notranslate"><span class="pre">fontlib_DrawString</span></code> stopped, and, after handling the space, then pass that address (plus one) again to <code class="code docutils literal notranslate"><span class="pre">fontlib_GetStringWidth</span></code> or <code class="code docutils literal notranslate"><span class="pre">fontlib_DrawString</span></code> to resume processing at where it left off before.</p>
+<h3><a class="toc-backref" href="#id15">Aligning Text</a><a class="headerlink" href="#aligning-text" title="Permalink to this headline">¶</a></h3>
+<p>Implementing centered text, right-aligned text, and word wrap requires being able to compute the width of a word or string of text. The routine <code class="code docutils literal notranslate"><span class="pre">fontlib_GetStringWidth</span></code> provides this functionality.</p>
+<p>If you call <code class="code docutils literal notranslate"><span class="pre">fontlib_SetAlternateStopCode('</span> <span class="pre">')</span></code>, <code class="code docutils literal notranslate"><span class="pre">fontlib_GetStringWidth</span></code> and <code class="code docutils literal notranslate"><span class="pre">fontlib_DrawString</span></code> will stop drawing on spaces, giving you a chance to check if the next word will fit on screen. You can use <code class="code docutils literal notranslate"><span class="pre">fontlib_GetLastCharacterRead()</span></code> to find out where <code class="code docutils literal notranslate"><span class="pre">fontlib_GetStringWidth</span></code> or <code class="code docutils literal notranslate"><span class="pre">fontlib_DrawString</span></code> stopped, and, after handling the space, then pass that address (plus one) again to <code class="code docutils literal notranslate"><span class="pre">fontlib_GetStringWidth</span></code> or <code class="code docutils literal notranslate"><span class="pre">fontlib_DrawString</span></code> to resume processing at where it left off before.</p>
 </div>
 <div class="section" id="text-control-codes">
-<h2><a class="toc-backref" href="#id4">Text Control Codes</a><a class="headerlink" href="#text-control-codes" title="Permalink to this headline">¶</a></h2>
+<h3><a class="toc-backref" href="#id16">Text Control Codes</a><a class="headerlink" href="#text-control-codes" title="Permalink to this headline">¶</a></h3>
 <p>Embedded control codes are a popular way of managing style and formatting information in string.
 fontlibc only natively recognizes two types of control codes: NULL (0) as a stop code and a user-specified alternate stop code, and a user-specified newline code (defaults to 0x0A—ASCII LF and standard Linux style).
 However, you can add your own control codes with <code class="code docutils literal notranslate"><span class="pre">fontlib_SetFirstPrintableCodePoint</span></code>.
 When any code point less than the first printable code point is encountered, fontlibc stops string processing and returns to allow you to handle the control code yourself using <code class="code docutils literal notranslate"><span class="pre">fontlib_GetLastCharacterRead</span></code>.</p>
 </div>
 <div class="section" id="transparent-text">
-<h2><a class="toc-backref" href="#id5">Transparent Text</a><a class="headerlink" href="#transparent-text" title="Permalink to this headline">¶</a></h2>
+<h3><a class="toc-backref" href="#id17">Transparent Text</a><a class="headerlink" href="#transparent-text" title="Permalink to this headline">¶</a></h3>
 <p>Part of providing high-performance is not painting a single pixel more than once.
 To assist with this goal, fontlibc provides for both transparent and opaque text backgrounds.
 Use <code class="code docutils literal notranslate"><span class="pre">fontlib_SetTransparency(true)</span></code> if you need to paint text over a background other than a solid color.
 If you turn transparency off, however, fontlibc will paint both background and foreground pixels for you, eliminating the time needed to erase those pixels before painting over that area.</p>
 </div>
 <div class="section" id="line-spacing">
-<h2><a class="toc-backref" href="#id6">Line Spacing</a><a class="headerlink" href="#line-spacing" title="Permalink to this headline">¶</a></h2>
+<h3><a class="toc-backref" href="#id18">Line Spacing</a><a class="headerlink" href="#line-spacing" title="Permalink to this headline">¶</a></h3>
 <p>Since a block of text may not always be the same size, fontlibc provides <code class="code docutils literal notranslate"><span class="pre">fontlib_ClearEOL</span></code> for erasing the remainder of a line of text without needing to pad it with spaces.
 This action can also be performed automatically after embedded newlines in text and on normal wrapping with <code class="code docutils literal notranslate"><span class="pre">fontlib_SetNewlineOptions</span></code>.</p>
 <p>Additional blank vertical space around text can improve readability in large blocks of text.
@@ -240,8 +488,9 @@ This action can also be performed automatically after embedded newlines in text 
 Fonts may specify default additional spacing that is automatically applied when calling <code class="code docutils literal notranslate"><span class="pre">fontlib_SetFont</span></code>.
 In GUIs and games where the benefits of legibility are outweighed by more aggressive use of vertical space, you can force the default spacing to zero after using <code class="code docutils literal notranslate"><span class="pre">fontlib_SetFont</span></code> with <code class="code docutils literal notranslate"><span class="pre">fontlib_SetLineSpacing</span></code>.</p>
 </div>
+</div>
 <div class="section" id="api-documentation">
-<h2><a class="toc-backref" href="#id7">API Documentation</a><a class="headerlink" href="#api-documentation" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id19">API Documentation</a><a class="headerlink" href="#api-documentation" title="Permalink to this headline">¶</a></h2>
 <p>Provides improved font support. </p>
 <p><dl class="simple">
 <dt><strong>Author</strong></dt><dd><p>DrDnar </p>
