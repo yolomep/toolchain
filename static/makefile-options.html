@@ -4,7 +4,8 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
+  <meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>Makefile Options &mdash; CE C Toolchain v9.0-devel documentation</title>
@@ -85,13 +86,13 @@
               
             
             
-              <p class="caption"><span class="caption-text">Overview</span></p>
+              <p><span class="caption-text">Overview</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Welcome to the CE C Toolchain!</a></li>
 <li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="faq.html">Frequently Asked Questions</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Toolchain Documentation</span></p>
+<p><span class="caption-text">Toolchain Documentation</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="printf.html">Using printf Functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="fileio.html">Using File I/O Functions</a></li>
@@ -108,7 +109,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Contributing</span></p>
+<p><span class="caption-text">Contributing</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing to the CE C Toolchain</a></li>
 </ul>
@@ -176,35 +177,35 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="makefile-options">
+  <section id="makefile-options">
 <span id="id1"></span><h1>Makefile Options<a class="headerlink" href="#makefile-options" title="Permalink to this headline">¶</a></h1>
 <p>The projects’s Makefile controls different features and settings for the output program, and additionally can be added to for custom build structres if needed.
 This section highlights the avaible options.</p>
 <p>To edit these options, open the <cite>makefile</cite> file inside the project’s folder in a text editor.</p>
-<div class="section" id="name">
+<section id="name">
 <h2>NAME<a class="headerlink" href="#name" title="Permalink to this headline">¶</a></h2>
 <p>This is the name of the program variable that will be stored on the calculator.</p>
 <div class="highlight-makefile notranslate"><div class="highlight"><pre><span></span><span class="nv">NAME</span> <span class="o">?=</span> PRGM
 </pre></div>
 </div>
-</div>
-<div class="section" id="icon">
+</section>
+<section id="icon">
 <h2>ICON<a class="headerlink" href="#icon" title="Permalink to this headline">¶</a></h2>
 <p>Icons make a more polished program that can be displayed in shells such as <a class="reference external" href="https://github.com/mateoconlechuga/cesium/releases/latest">Cesium</a>.</p>
 <p>Place a 16x16 image in the same directory as the makefile with the name of whatever <cite>ICON</cite> is defined as, e.g. <cite>icon.png</cite>.</p>
 <div class="highlight-makefile notranslate"><div class="highlight"><pre><span></span><span class="nv">ICON</span> <span class="o">?=</span> icon.png
 </pre></div>
 </div>
-</div>
-<div class="section" id="description">
+</section>
+<section id="description">
 <h2>DESCRIPTION<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
 <p>Change <cite>DESCRIPTION</cite> to the program’s description. It is recommended to keep this under 25 characters.</p>
 <p>The description will be displayed in shells such as <a class="reference external" href="https://github.com/mateoconlechuga/cesium/releases/latest">Cesium</a>.</p>
 <div class="highlight-makefile notranslate"><div class="highlight"><pre><span></span><span class="nv">DESCRIPTION</span> <span class="o">?=</span> <span class="s2">&quot;My awesome program&quot;</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="compressed">
+</section>
+<section id="compressed">
 <h2>COMPRESSED<a class="headerlink" href="#compressed" title="Permalink to this headline">¶</a></h2>
 <p>Programs can tend to be quite large from a variety of factors such as sprites, bloated code, or other issues.
 The toolchain offers the ability to compress programs into a self-extracting executable.
@@ -213,16 +214,16 @@ This does not change the execution size, but rather the executable’s storage s
 <div class="highlight-makefile notranslate"><div class="highlight"><pre><span></span><span class="nv">COMPRESSED</span> <span class="o">?=</span> YES
 </pre></div>
 </div>
-</div>
-<div class="section" id="archived">
+</section>
+<section id="archived">
 <h2>ARCHIVED<a class="headerlink" href="#archived" title="Permalink to this headline">¶</a></h2>
 <p>Programs can be built to be stored in the archive rather than RAM.
 To enable this feature, open the project’s makefile and change the line:</p>
 <div class="highlight-makefile notranslate"><div class="highlight"><pre><span></span><span class="nv">ARCHIVED</span> <span class="o">?=</span> YES
 </pre></div>
 </div>
-</div>
-<div class="section" id="cflags-cxxflags">
+</section>
+<section id="cflags-cxxflags">
 <h2>CFLAGS / CXXFLAGS<a class="headerlink" href="#cflags-cxxflags" title="Permalink to this headline">¶</a></h2>
 <p>These flags are passed to the clang compiler.
 <em>CFLAGS</em> is used for C source files; <em>CXXFLAGS</em> is used for CPP source files.</p>
@@ -230,8 +231,8 @@ To enable this feature, open the project’s makefile and change the line:</p>
 <span class="nv">CXXFLAGS</span> <span class="o">?=</span> -Wall -Wextra -Oz
 </pre></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>

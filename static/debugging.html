@@ -4,7 +4,8 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
+  <meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>Debugging &mdash; CE C Toolchain v9.0-devel documentation</title>
@@ -85,13 +86,13 @@
               
             
             
-              <p class="caption"><span class="caption-text">Overview</span></p>
+              <p><span class="caption-text">Overview</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Welcome to the CE C Toolchain!</a></li>
 <li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="faq.html">Frequently Asked Questions</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Toolchain Documentation</span></p>
+<p><span class="caption-text">Toolchain Documentation</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="printf.html">Using printf Functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="fileio.html">Using File I/O Functions</a></li>
@@ -103,7 +104,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="makefile-options.html">Makefile Options</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Contributing</span></p>
+<p><span class="caption-text">Contributing</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing to the CE C Toolchain</a></li>
 </ul>
@@ -171,12 +172,12 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="debugging">
+  <section id="debugging">
 <span id="id1"></span><h1>Debugging<a class="headerlink" href="#debugging" title="Permalink to this headline">¶</a></h1>
 <p>The toolchain offers the ability to debug your programs using the emulator <a class="reference external" href="https://ce-programming.github.io/CEmu">CEmu</a>.</p>
 <p>Add <code class="code docutils literal notranslate"><span class="pre">#include</span> <span class="pre">&lt;debug.h&gt;</span></code> to a source file, and use <code class="code docutils literal notranslate"><span class="pre">make</span> <span class="pre">debug</span></code> instead of <code class="code docutils literal notranslate"><span class="pre">make</span></code> to build a debug program.
 You may need <code class="code docutils literal notranslate"><span class="pre">make</span> <span class="pre">clean</span></code> in order to ensure all source files are rebuilt.</p>
-<div class="section" id="printing-to-the-console">
+<section id="printing-to-the-console">
 <h2>Printing to the console<a class="headerlink" href="#printing-to-the-console" title="Permalink to this headline">¶</a></h2>
 <p>Printing is a classic debugging technique. <code class="code docutils literal notranslate"><span class="pre">dbg_sprintf()</span></code> allows you to print variables and strings to the CEmu console.
 It uses these <a class="reference external" href="http://www.cplusplus.com/reference/cstdio/printf/">format specifiers</a>.</p>
@@ -189,8 +190,8 @@ It uses these <a class="reference external" href="http://www.cplusplus.com/refer
 </pre></div>
 </div>
 <p>To view the output of these functions within <a class="reference external" href="https://ce-programming.github.io/CEmu">CEmu</a>, enable the console using <strong>Docks &gt; Console</strong>.</p>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>

@@ -4,7 +4,8 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
+  <meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>graphx.h &mdash; CE C Toolchain v9.0-devel documentation</title>
@@ -85,13 +86,13 @@
               
             
             
-              <p class="caption"><span class="caption-text">Overview</span></p>
+              <p><span class="caption-text">Overview</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Welcome to the CE C Toolchain!</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../static/getting-started.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../static/faq.html">Frequently Asked Questions</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Toolchain Documentation</span></p>
+<p><span class="caption-text">Toolchain Documentation</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../static/printf.html">Using printf Functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../static/fileio.html">Using File I/O Functions</a></li>
@@ -126,7 +127,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../static/debugging.html">Debugging</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../static/makefile-options.html">Makefile Options</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Contributing</span></p>
+<p><span class="caption-text">Contributing</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../static/contributing.html">Contributing to the CE C Toolchain</a></li>
 </ul>
@@ -196,7 +197,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="graphx-h">
+  <section id="graphx-h">
 <span id="id1"></span><h1>graphx.h<a class="headerlink" href="#graphx-h" title="Permalink to this headline">¶</a></h1>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;graphx.h&gt;</span><span class="cp"></span>
 </pre></div>
@@ -232,13 +233,13 @@ This allows a programmer to easily add quality graphics to their program without
 <li><p><a class="reference internal" href="#api-documentation" id="id14">API Documentation</a></p></li>
 </ul>
 </div>
-<div class="section" id="default-palette">
+<section id="default-palette">
 <h2><a class="toc-backref" href="#id2">Default Palette</a><a class="headerlink" href="#default-palette" title="Permalink to this headline">¶</a></h2>
 <p>This is the default palette used by graphx.
 This palette can be modified at any time with different colors.</p>
 <img alt="../_images/graphx_palette.png" class="align-center" src="../_images/graphx_palette.png" />
-</div>
-<div class="section" id="clipped-vs-unclipped">
+</section>
+<section id="clipped-vs-unclipped">
 <h2><a class="toc-backref" href="#id3">Clipped vs. Unclipped</a><a class="headerlink" href="#clipped-vs-unclipped" title="Permalink to this headline">¶</a></h2>
 <p>The graphx library contains many similar functions, e.g. <code class="code docutils literal notranslate"><span class="pre">gfx_Sprite</span></code> and <code class="code docutils literal notranslate"><span class="pre">gfx_Sprite_NoClip</span></code>.</p>
 <p>As the name suggests, the <strong>_NoClip</strong> variant of a routine performs no clipping.
@@ -246,13 +247,13 @@ Clipping is the process of checking if parts (or all) of an object to be drawn a
 This checking process takes time.
 If you can be sure that an object to be drawn is fully within the bounds of the screen, the clipping process can be safely skipped by using the <strong>_NoClip</strong> variant of the routine.</p>
 <p><strong>Do not use the _NoClip variant of a routine if you can not be sure that the object to be drawn is fully within the bounds of the screen. Doing so may result in corrupted graphics or memory.</strong></p>
-</div>
-<div class="section" id="partial-redraw">
+</section>
+<section id="partial-redraw">
 <h2><a class="toc-backref" href="#id4">Partial Redraw</a><a class="headerlink" href="#partial-redraw" title="Permalink to this headline">¶</a></h2>
 <p>Partial redraw applies when you are moving a transparent sprite against a static background.
 This can be problematic, as you may not want to redraw the whole background each time.
 Partial redraw saves a copy of what is behind the transparent sprite, and draws it when the sprite moves again.</p>
-<div class="section" id="the-implementation">
+<section id="the-implementation">
 <h3><a class="toc-backref" href="#id5">The Implementation</a><a class="headerlink" href="#the-implementation" title="Permalink to this headline">¶</a></h3>
 <p>A brief summation of the paritial redraw using graphx is:</p>
 <ul class="simple">
@@ -289,9 +290,9 @@ Partial redraw saves a copy of what is behind the transparent sprite, and draws 
 <span class="p">}</span> <span class="k">while</span> <span class="p">(</span><span class="n">moving</span><span class="p">);</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="buffering-graphics">
+</section>
+</section>
+<section id="buffering-graphics">
 <h2><a class="toc-backref" href="#id6">Buffering Graphics</a><a class="headerlink" href="#buffering-graphics" title="Permalink to this headline">¶</a></h2>
 <p>Buffering is a fancy method in order to prevent graphics from being displayed as they are being drawn.
 It is used primarily to eliminate visible draws which can make an application look amateurish, sluggish, or appear to flicker.</p>
@@ -301,7 +302,7 @@ This is accomplished in one line with the following routine, usually placed dire
 </pre></div>
 </div>
 <p>The next part is deciding how the drawn graphics should be displayed to the user.</p>
-<div class="section" id="method-1-copying-blitting">
+<section id="method-1-copying-blitting">
 <h3><a class="toc-backref" href="#id7">Method 1 (Copying/Blitting)</a><a class="headerlink" href="#method-1-copying-blitting" title="Permalink to this headline">¶</a></h3>
 <p>The first method is to copy (commonly referred to as ‘blitting’) whatever is in the buffer to the visible screen.
 The simplest way is to call:</p>
@@ -310,8 +311,8 @@ The simplest way is to call:</p>
 </div>
 <p>Which will copy/blit the entire buffer to the screen.
 Alternatively, <cite>gfx_BlitLines()</cite> and <cite>gfx_BlitRectangle()</cite> and the other variations are used to specify the blitting bounds.</p>
-</div>
-<div class="section" id="method-2-buffer-swapping">
+</section>
+<section id="method-2-buffer-swapping">
 <h3><a class="toc-backref" href="#id8">Method 2 (Buffer Swapping)</a><a class="headerlink" href="#method-2-buffer-swapping" title="Permalink to this headline">¶</a></h3>
 <p>Buffer swapping swaps the visible screen with an offscreen buffer, leaving the contents on both.
 Whatever is currently on the screen will become the graphics buffer, and whatever is in the graphics buffer will be displayed on the screen
@@ -322,19 +323,19 @@ The code to swap the visible screen with nonvisibile buffer is:</p>
 <p>What actually happens is shown below, ‘graphics’ is simply where the graphics routines will draw to.</p>
 <img alt="../_images/graphx_buffer.png" class="align-center" src="../_images/graphx_buffer.png" />
 <p>This method is really useful when you are redrawing all of the graphics each frame, and requires more work to handle if you only wish to do a partial redraw.</p>
-</div>
-<div class="section" id="pros-and-cons">
+</section>
+<section id="pros-and-cons">
 <h3><a class="toc-backref" href="#id9">Pros and Cons</a><a class="headerlink" href="#pros-and-cons" title="Permalink to this headline">¶</a></h3>
 <p>Buffering is slower than drawing to the main screen, but greatly improves perceived performance which is extremely important in graphical applications.</p>
 <p><strong>Blitting</strong>: Easy, simply a copy to the screen.</p>
 <p><strong>Swapping</strong>: Requires more programmer management (sometimes), faster than blitting.</p>
-</div>
-</div>
-<div class="section" id="creating-sprites">
+</section>
+</section>
+<section id="creating-sprites">
 <h2><a class="toc-backref" href="#id10">Creating Sprites</a><a class="headerlink" href="#creating-sprites" title="Permalink to this headline">¶</a></h2>
 <p>Sprites are images that contain pixel data that can be drawn via graphx functions.
 The CE C Toolchain includes <a class="reference external" href="https://github.com/mateoconlechuga/convimg">convimg</a>, which is used to convert images in PNG or similar formats into binary data that can be used by graphx.</p>
-<div class="section" id="getting-started">
+<section id="getting-started">
 <h3><a class="toc-backref" href="#id11">Getting Started</a><a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h3>
 <p>We are going to begin by taking a look at an example program to familiarize ourselves with how to run and configure convimg.</p>
 <p>Open the <cite>graphx/sprites</cite> example, and navigate to the <cite>src/gfx</cite> folder.</p>
@@ -365,22 +366,22 @@ You can also find the readme online, available <a class="reference external" hre
       <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">sprites</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="converting-sprites">
+</section>
+<section id="converting-sprites">
 <h3><a class="toc-backref" href="#id12">Converting Sprites</a><a class="headerlink" href="#converting-sprites" title="Permalink to this headline">¶</a></h3>
 <p>Converting sprites requires you to type <code class="code docutils literal notranslate"><span class="pre">make</span> <span class="pre">gfx</span></code> instead of <code class="code docutils literal notranslate"><span class="pre">make</span></code>.
 Any time you change an image or the <code class="code docutils literal notranslate"><span class="pre">convimg.yaml</span></code>, you will need to execute this command.</p>
 <img alt="../_images/graphx_sprites.png" class="align-center" src="../_images/graphx_sprites.png" />
 <p>You can now <code class="code docutils literal notranslate"><span class="pre">make</span></code> the project as you would any of the other examples.</p>
-<div class="section" id="explanation-of-output">
+<section id="explanation-of-output">
 <h4><a class="toc-backref" href="#id13">Explanation of output</a><a class="headerlink" href="#explanation-of-output" title="Permalink to this headline">¶</a></h4>
 <p>Sprites used in the graphx library are allowed 8 bits per pixel <em>(aka 8bpp)</em>, which allows for a total of <code class="code docutils literal notranslate"><span class="pre">256</span></code> colors.
 As shown in the previous image, convimg was able to create a suitable palette for <code class="code docutils literal notranslate"><span class="pre">oiram.png</span></code> with 15 colors.
 Once the palette is generated, convimg outputs C headers and source files that are automatically picked up by the toolchain and compiled into the final program.</p>
-</div>
-</div>
-</div>
-<div class="section" id="api-documentation">
+</section>
+</section>
+</section>
+<section id="api-documentation">
 <h2><a class="toc-backref" href="#id14">API Documentation</a><a class="headerlink" href="#api-documentation" title="Permalink to this headline">¶</a></h2>
 <p>graphx contains optimized graphics operations and routines. </p>
 <p>The below example template shows the best graphx buffer usage pattern: <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>// Standard #includes omitted
@@ -2679,8 +2680,8 @@ void main() {
 </div>
 </dd></dl>
 
-</div>
-</div>
+</section>
+</section>
 
 
            </div>

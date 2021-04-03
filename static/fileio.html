@@ -4,7 +4,8 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
+  <meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>Using File I/O Functions &mdash; CE C Toolchain v9.0-devel documentation</title>
@@ -85,13 +86,13 @@
               
             
             
-              <p class="caption"><span class="caption-text">Overview</span></p>
+              <p><span class="caption-text">Overview</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Welcome to the CE C Toolchain!</a></li>
 <li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="faq.html">Frequently Asked Questions</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Toolchain Documentation</span></p>
+<p><span class="caption-text">Toolchain Documentation</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="printf.html">Using printf Functions</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Using File I/O Functions</a><ul>
@@ -104,7 +105,7 @@
 <li class="toctree-l1"><a class="reference internal" href="debugging.html">Debugging</a></li>
 <li class="toctree-l1"><a class="reference internal" href="makefile-options.html">Makefile Options</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Contributing</span></p>
+<p><span class="caption-text">Contributing</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing to the CE C Toolchain</a></li>
 </ul>
@@ -172,9 +173,9 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="using-file-i-o-functions">
+  <section id="using-file-i-o-functions">
 <span id="fileio"></span><h1>Using File I/O Functions<a class="headerlink" href="#using-file-i-o-functions" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="what-are-file-i-o-functions">
+<section id="what-are-file-i-o-functions">
 <h2>What are File I/O Functions?<a class="headerlink" href="#what-are-file-i-o-functions" title="Permalink to this headline">¶</a></h2>
 <p>File I/O functions are any of the standard <cite>fopen</cite>, <cite>fgets</cite>, <cite>fread</cite>, and related file functions.
 These functions are meant to perform OS-level file access for reading and writing.
@@ -182,8 +183,8 @@ However, the CE doesn’t expose any sort of standard UNIX or similar file capab
 <p>To mitigate this, the CE C Toolchain includes these functions as wrappers around the <a class="reference internal" href="../libraries/fileioc.html#fileioc-h"><span class="std std-ref">fileioc library</span></a>.
 This allows native access to AppVars for read and write operations.</p>
 <p>For <code class="code docutils literal notranslate"><span class="pre">stdin</span></code>, <code class="code docutils literal notranslate"><span class="pre">stdout</span></code>, and <code class="code docutils literal notranslate"><span class="pre">stderr</span></code> file streams, the default implementation uses the <cite>getchar</cite> and <cite>putchar</cite> functions respectively.</p>
-</div>
-<div class="section" id="using-custom-file-i-o">
+</section>
+<section id="using-custom-file-i-o">
 <h2>Using Custom File I/O<a class="headerlink" href="#using-custom-file-i-o" title="Permalink to this headline">¶</a></h2>
 <p>If you do not wish to have the file I/O functions backed by the <a class="reference internal" href="../libraries/fileioc.html#fileioc-h"><span class="std std-ref">fileioc library</span></a>, you can instead redefine the functions that you need in any source file.
 The new functions will override the default implementation.</p>
@@ -214,8 +215,8 @@ Additionally, it should redefine <code class="code docutils literal notranslate"
 </pre></div>
 </div>
 <p>Be sure to clean the project via <code class="code docutils literal notranslate"><span class="pre">make</span> <span class="pre">clean</span></code> if the implementation changes from the default and project files need to be rebuilt to use the updates.</p>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>

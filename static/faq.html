@@ -4,7 +4,8 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
+  <meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>Frequently Asked Questions &mdash; CE C Toolchain v9.0-devel documentation</title>
@@ -85,7 +86,7 @@
               
             
             
-              <p class="caption"><span class="caption-text">Overview</span></p>
+              <p><span class="caption-text">Overview</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Welcome to the CE C Toolchain!</a></li>
 <li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting Started</a></li>
@@ -99,7 +100,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Toolchain Documentation</span></p>
+<p><span class="caption-text">Toolchain Documentation</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="printf.html">Using printf Functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="fileio.html">Using File I/O Functions</a></li>
@@ -108,7 +109,7 @@
 <li class="toctree-l1"><a class="reference internal" href="debugging.html">Debugging</a></li>
 <li class="toctree-l1"><a class="reference internal" href="makefile-options.html">Makefile Options</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Contributing</span></p>
+<p><span class="caption-text">Contributing</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing to the CE C Toolchain</a></li>
 </ul>
@@ -176,21 +177,21 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="frequently-asked-questions">
+  <section id="frequently-asked-questions">
 <span id="faq"></span><h1>Frequently Asked Questions<a class="headerlink" href="#frequently-asked-questions" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="i-have-a-bug-help">
+<section id="i-have-a-bug-help">
 <h2>I Have A Bug, Help!?<a class="headerlink" href="#i-have-a-bug-help" title="Permalink to this headline">¶</a></h2>
 <p>Nice work, now create an <a class="reference external" href="https://github.com/CE-Programming/toolchain/issues">issue report here</a> with details on what caused the crash.
 Uploading a zip of your code and/or a minimal reproducible example is very appreciated, and will make bug fixes faster.</p>
-</div>
-<div class="section" id="what-is-the-c-runtime-memory-layout">
+</section>
+<section id="what-is-the-c-runtime-memory-layout">
 <h2>What is the C Runtime Memory Layout?<a class="headerlink" href="#what-is-the-c-runtime-memory-layout" title="Permalink to this headline">¶</a></h2>
 <p>The CE has a limited amount of memory.
 The stack is roughly 4KiB bytes in size, while the bss/heap grow into each other and consume roughly 64KiB.
 The following graphic breaks down the address space.</p>
 <img alt="../_images/mem_layout.png" class="align-center" src="../_images/mem_layout.png" />
-</div>
-<div class="section" id="linking-assembly-source-files">
+</section>
+<section id="linking-assembly-source-files">
 <h2>Linking Assembly Source Files<a class="headerlink" href="#linking-assembly-source-files" title="Permalink to this headline">¶</a></h2>
 <p>Assembly routines can be linked into a C program provided the following conditions are met:</p>
 <ul class="simple">
@@ -218,7 +219,7 @@ The following graphic breaks down the address space.</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">asm_func</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">);</span>
 </pre></div>
 </div>
-<div class="section" id="arguments-and-returns">
+<section id="arguments-and-returns">
 <h3>Arguments and Returns<a class="headerlink" href="#arguments-and-returns" title="Permalink to this headline">¶</a></h3>
 <p>Arguments are pushed from last to first corresponding to the C prototype.
 In eZ80, 3 bytes are always pushed to the stack regardless of the actual size.
@@ -320,9 +321,9 @@ The type’s sign does not affect the registers used, but may affect the value r
 </tr>
 </tbody>
 </table>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
            </div>
