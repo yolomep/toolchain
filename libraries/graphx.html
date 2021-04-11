@@ -433,19 +433,25 @@ void main() {
 <dd><p>Dynamically allocates memory for a sprite using <code class="docutils literal notranslate"><span class="pre">malloc</span></code>.</p>
 <p><code class="docutils literal notranslate"><span class="pre">width</span></code> and <code class="docutils literal notranslate"><span class="pre">height</span></code> will be set in the sprite. Returns <code class="docutils literal notranslate"><span class="pre">NULL</span></code> upon allocation failure.</p>
 <p><dl class="simple">
-<dt><strong>Note</strong></dt><dd><p>If not used in a dynamic context and <code class="docutils literal notranslate"><span class="pre">width</span></code> and <code class="docutils literal notranslate"><span class="pre">height</span></code> are static, consider statically allocating the sprite instead with <a class="reference internal" href="#graphx_8h_1aec1bf1b311dee9f387931b37db5ec5f0"><span class="std std-ref">gfx_UninitedSprite()</span></a> or <a class="reference internal" href="#graphx_8h_1ad95d6ddd408bb6c0fad041353da0d7ea"><span class="std std-ref">gfx_TempSprite()</span></a>.</p>
-</dd>
-<dt><strong>Return</strong></dt><dd><p>A pointer to the allocated sprite. </p>
-</dd>
 <dt><strong>See</strong></dt><dd><p><a class="reference internal" href="#graphx_8h_1a4fba20a3e6f896f3a45efc19cce44472"><span class="std std-ref">gfx_AllocSprite</span></a> </p>
-</dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">width</span></code>: Sprite width. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">height</span></code>: Sprite height. </p></li>
-</ul>
 </dd>
 </dl>
 </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If not used in a dynamic context and <code class="docutils literal notranslate"><span class="pre">width</span></code> and <code class="docutils literal notranslate"><span class="pre">height</span></code> are static, consider statically allocating the sprite instead with <a class="reference internal" href="#graphx_8h_1aec1bf1b311dee9f387931b37db5ec5f0"><span class="std std-ref">gfx_UninitedSprite()</span></a> or <a class="reference internal" href="#graphx_8h_1ad95d6ddd408bb6c0fad041353da0d7ea"><span class="std std-ref">gfx_TempSprite()</span></a>.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>width</strong> – Sprite width. </p></li>
+<li><p><strong>height</strong> – Sprite height. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A pointer to the allocated sprite. </p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="cpp macro">
@@ -454,18 +460,23 @@ void main() {
 <dd><p>Statically allocates uninitialized memory for a sprite.</p>
 <p>Declares a <code class="docutils literal notranslate"><a class="reference internal" href="#structgfx__sprite__t"><span class="std std-ref"><span class="pre">gfx_sprite_t</span></span></a> <span class="pre">*</span></code> with the given <code class="docutils literal notranslate"><span class="pre">name</span></code> pointing to the allocated memory. <code class="docutils literal notranslate"><span class="pre">width</span></code> and <code class="docutils literal notranslate"><span class="pre">height</span></code> will <strong>not</strong> be set in the sprite, unlike <a class="reference internal" href="#graphx_8h_1ad95d6ddd408bb6c0fad041353da0d7ea"><span class="std std-ref">gfx_TempSprite()</span></a>.</p>
 <p><dl class="simple">
-<dt><strong>Warning</strong></dt><dd><p>If used outside of a function body, the memory will be allocated in the global uninitialized data segment (BSS). If used inside a function body, the memory will be allocated on the stack. If the sprite is sufficiently large, usage inside a function body will overflow the stack, so it is recommended that this normally be used outside of a function body.</p>
-</dd>
 <dt><strong>See</strong></dt><dd><p><a class="reference internal" href="#graphx_8h_1add09e11cb2d5b761ea1b336c07d9283e"><span class="std std-ref">gfx_MallocSprite</span></a> </p>
-</dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code>: Name of declared <code class="docutils literal notranslate"><a class="reference internal" href="#structgfx__sprite__t"><span class="std std-ref"><span class="pre">gfx_sprite_t</span></span></a> <span class="pre">*</span></code>. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">width</span></code>: Sprite width. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">height</span></code>: Sprite height. </p></li>
-</ul>
 </dd>
 </dl>
 </p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If used outside of a function body, the memory will be allocated in the global uninitialized data segment (BSS). If used inside a function body, the memory will be allocated on the stack. If the sprite is sufficiently large, usage inside a function body will overflow the stack, so it is recommended that this normally be used outside of a function body.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> – Name of declared <code class="docutils literal notranslate"><a class="reference internal" href="#structgfx__sprite__t"><span class="std std-ref"><span class="pre">gfx_sprite_t</span></span></a> <span class="pre">*</span></code>. </p></li>
+<li><p><strong>width</strong> – Sprite width. </p></li>
+<li><p><strong>height</strong> – Sprite height. </p></li>
+</ul>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="cpp macro">
@@ -478,14 +489,17 @@ void main() {
 </dd>
 <dt><strong>See</strong></dt><dd><p><a class="reference internal" href="#graphx_8h_1add09e11cb2d5b761ea1b336c07d9283e"><span class="std std-ref">gfx_MallocSprite</span></a> </p>
 </dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code>: Name of declared <code class="docutils literal notranslate"><a class="reference internal" href="#structgfx__sprite__t"><span class="std std-ref"><span class="pre">gfx_sprite_t</span></span></a> <span class="pre">*</span></code>. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">width</span></code>: Sprite width. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">height</span></code>: Sprite height. </p></li>
+</dl>
+</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> – Name of declared <code class="docutils literal notranslate"><a class="reference internal" href="#structgfx__sprite__t"><span class="std std-ref"><span class="pre">gfx_sprite_t</span></span></a> <span class="pre">*</span></code>. </p></li>
+<li><p><strong>width</strong> – Sprite width. </p></li>
+<li><p><strong>height</strong> – Sprite height. </p></li>
 </ul>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp macro">
@@ -500,19 +514,25 @@ void main() {
 <p><code class="docutils literal notranslate"><span class="pre">rbnont</span></code>: Number of rows beginning with a non-transparent pixel.</p>
 <p><code class="docutils literal notranslate"><span class="pre">ret</span></code>: Number of rows ending with a transparent pixel.</p>
 <p><dl class="simple">
-<dt><strong>Note</strong></dt><dd><p>If not used in a dynamic context and <code class="docutils literal notranslate"><span class="pre">data_size</span></code> is static, consider statically allocating the sprite instead with <a class="reference internal" href="#graphx_8h_1a5fcd622fda5e146071dfb64a77569b59"><span class="std std-ref">gfx_UninitedRLETSprite()</span></a> or gfx_TempRLETSprite().</p>
-</dd>
 <dt><strong>Remark</strong></dt><dd><p>If using <code class="docutils literal notranslate"><span class="pre">malloc</span></code> as the <code class="docutils literal notranslate"><span class="pre">malloc_routine</span></code>, <a class="reference internal" href="#graphx_8h_1a17a6151634015179913865b858de8d4f"><span class="std std-ref">gfx_MallocRLETSprite()</span></a> can be used as a shortcut.</p>
-</dd>
-<dt><strong>Return</strong></dt><dd><p>A pointer to the allocated sprite. </p>
-</dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">data_size</span></code>: (Maximum) sprite data size. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">malloc_routine</span></code>: Malloc implementation to use. </p></li>
-</ul>
 </dd>
 </dl>
 </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If not used in a dynamic context and <code class="docutils literal notranslate"><span class="pre">data_size</span></code> is static, consider statically allocating the sprite instead with <a class="reference internal" href="#graphx_8h_1a5fcd622fda5e146071dfb64a77569b59"><span class="std std-ref">gfx_UninitedRLETSprite()</span></a> or gfx_TempRLETSprite().</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data_size</strong> – (Maximum) sprite data size. </p></li>
+<li><p><strong>malloc_routine</strong> – Malloc implementation to use. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A pointer to the allocated sprite. </p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="cpp macro">
@@ -521,18 +541,24 @@ void main() {
 <dd><p>Dynamically allocates memory for a sprite with RLE transparency using <code class="docutils literal notranslate"><span class="pre">malloc</span></code>.</p>
 <p><code class="docutils literal notranslate"><span class="pre">data_size</span></code> is the size to allocate for sprite data; see <a class="reference internal" href="#graphx_8h_1aca06f205639068645997ae2850d9330c"><span class="std std-ref">gfx_AllocRLETSprite()</span></a> for information. Returns <code class="docutils literal notranslate"><span class="pre">NULL</span></code> upon allocation failure.</p>
 <p><dl class="simple">
-<dt><strong>Note</strong></dt><dd><p>If not used in a dynamic context and <code class="docutils literal notranslate"><span class="pre">data_size</span></code> is static, consider statically allocating the sprite instead with <a class="reference internal" href="#graphx_8h_1a5fcd622fda5e146071dfb64a77569b59"><span class="std std-ref">gfx_UninitedRLETSprite()</span></a> or gfx_TempRLETSprite().</p>
-</dd>
-<dt><strong>Return</strong></dt><dd><p>A pointer to the allocated sprite. </p>
-</dd>
 <dt><strong>See</strong></dt><dd><p><a class="reference internal" href="#graphx_8h_1aca06f205639068645997ae2850d9330c"><span class="std std-ref">gfx_AllocRLETSprite</span></a> </p>
-</dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">data_size</span></code>: (Maximum) sprite data size. </p></li>
-</ul>
 </dd>
 </dl>
 </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If not used in a dynamic context and <code class="docutils literal notranslate"><span class="pre">data_size</span></code> is static, consider statically allocating the sprite instead with <a class="reference internal" href="#graphx_8h_1a5fcd622fda5e146071dfb64a77569b59"><span class="std std-ref">gfx_UninitedRLETSprite()</span></a> or gfx_TempRLETSprite().</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data_size</strong> – (Maximum) sprite data size. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A pointer to the allocated sprite. </p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="cpp macro">
@@ -541,17 +567,22 @@ void main() {
 <dd><p>Statically allocates uninitialized memory for a sprite with RLE transparency.</p>
 <p>Declares a <code class="docutils literal notranslate"><a class="reference internal" href="#structgfx__rletsprite__t"><span class="std std-ref"><span class="pre">gfx_rletsprite_t</span></span></a> <span class="pre">*</span></code> with the given <code class="docutils literal notranslate"><span class="pre">name</span></code> pointing to the allocated memory. <code class="docutils literal notranslate"><span class="pre">data_size</span></code> is the size to allocate for sprite data; see <a class="reference internal" href="#graphx_8h_1aca06f205639068645997ae2850d9330c"><span class="std std-ref">gfx_AllocRLETSprite()</span></a> for information.</p>
 <p><dl class="simple">
-<dt><strong>Warning</strong></dt><dd><p>If used outside of a function body, the memory will be allocated in the global uninitialized data segment (BSS). If used inside a function body, the memory will be allocated on the stack. If the sprite is sufficiently large, usage inside a function body will overflow the stack, so it is recommended that this normally be used outside of a function body.</p>
-</dd>
 <dt><strong>See</strong></dt><dd><p><a class="reference internal" href="#graphx_8h_1a17a6151634015179913865b858de8d4f"><span class="std std-ref">gfx_MallocRLETSprite</span></a> </p>
-</dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code>: Name of declared <code class="docutils literal notranslate"><a class="reference internal" href="#structgfx__rletsprite__t"><span class="std std-ref"><span class="pre">gfx_rletsprite_t</span></span></a> <span class="pre">*</span></code>. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">data_size</span></code>: (Maximum) sprite data size. </p></li>
-</ul>
 </dd>
 </dl>
 </p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If used outside of a function body, the memory will be allocated in the global uninitialized data segment (BSS). If used inside a function body, the memory will be allocated on the stack. If the sprite is sufficiently large, usage inside a function body will overflow the stack, so it is recommended that this normally be used outside of a function body.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> – Name of declared <code class="docutils literal notranslate"><a class="reference internal" href="#structgfx__rletsprite__t"><span class="std std-ref"><span class="pre">gfx_rletsprite_t</span></span></a> <span class="pre">*</span></code>. </p></li>
+<li><p><strong>data_size</strong> – (Maximum) sprite data size. </p></li>
+</ul>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="cpp macro">
@@ -587,77 +618,78 @@ void main() {
 <dt id="c.gfx_SetTile">
 <span class="target" id="graphx_8h_1ad70531063f5da9bf3399585fbb36749a"></span><code class="sig-name descname">gfx_SetTile</code><span class="sig-paren">(</span><em>tilemap</em>, <em>x_offset</em>, <em>y_offset</em>, <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#c.gfx_SetTile" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Sets a particular tile’s value given an initialized tilemap structure and pixel offsets</p>
-<p><dl class="simple">
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">tilemap</span></code>: Pointer to initialized tilemap structure. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">x_offset</span></code>: Offset in pixels from the left of the tilemap. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">y_offset</span></code>: Offset in pixels from the top of the tilemap. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code>: Value to set tile to. </p></li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>tilemap</strong> – Pointer to initialized tilemap structure. </p></li>
+<li><p><strong>x_offset</strong> – Offset in pixels from the left of the tilemap. </p></li>
+<li><p><strong>y_offset</strong> – Offset in pixels from the top of the tilemap. </p></li>
+<li><p><strong>value</strong> – Value to set tile to. </p></li>
 </ul>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp macro">
 <dt id="c.gfx_GetTile">
 <span class="target" id="graphx_8h_1a9890efd799057bc0e0bc2a3df16acedb"></span><code class="sig-name descname">gfx_GetTile</code><span class="sig-paren">(</span><em>tilemap</em>, <em>x_offset</em>, <em>y_offset</em><span class="sig-paren">)</span><a class="headerlink" href="#c.gfx_GetTile" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Gets a particular tile’s value given an initialized tilemap structure and pixel offsets.</p>
-<p><dl class="simple">
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">tilemap</span></code>: Pointer to an initialized tilemap structure. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">x_offset</span></code>: Offset in pixels from the left of the tilemap. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">y_offset</span></code>: Offset in pixels from the top of the tilemap. </p></li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>tilemap</strong> – Pointer to an initialized tilemap structure. </p></li>
+<li><p><strong>x_offset</strong> – Offset in pixels from the left of the tilemap. </p></li>
+<li><p><strong>y_offset</strong> – Offset in pixels from the top of the tilemap. </p></li>
 </ul>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp macro">
 <dt id="c.gfx_SetTileMapped">
 <span class="target" id="graphx_8h_1adcf76a40a594e051c40c95b515c8beb4"></span><code class="sig-name descname">gfx_SetTileMapped</code><span class="sig-paren">(</span><em>tilemap</em>, <em>col</em>, <em>row</em>, <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#c.gfx_SetTileMapped" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Sets a particular tile’s value given an initialized tilemap structure and mapped offsets.</p>
-<p><dl class="simple">
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">tilemap</span></code>: Pointer to initialized tilemap structure. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">col</span></code>: Column of tile in tilemap. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">row</span></code>: Row of tile in tilemap. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code>: Value to set tile to. </p></li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>tilemap</strong> – Pointer to initialized tilemap structure. </p></li>
+<li><p><strong>col</strong> – Column of tile in tilemap. </p></li>
+<li><p><strong>row</strong> – Row of tile in tilemap. </p></li>
+<li><p><strong>value</strong> – Value to set tile to. </p></li>
 </ul>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp macro">
 <dt id="c.gfx_GetTileMapped">
 <span class="target" id="graphx_8h_1a3d9dbeb2b3a47de9b6848767aac7361d"></span><code class="sig-name descname">gfx_GetTileMapped</code><span class="sig-paren">(</span><em>tilemap</em>, <em>col</em>, <em>row</em><span class="sig-paren">)</span><a class="headerlink" href="#c.gfx_GetTileMapped" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Gets a particular tile’s value given an initialized tilemap structure and mapped offsets.</p>
-<p><dl class="simple">
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">tilemap</span></code>: Pointer to an initialized tilemap structure. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">col</span></code>: Column of tile in tilemap. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">row</span></code>: Row of tile in tilemap. </p></li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>tilemap</strong> – Pointer to an initialized tilemap structure. </p></li>
+<li><p><strong>col</strong> – Column of tile in tilemap. </p></li>
+<li><p><strong>row</strong> – Row of tile in tilemap. </p></li>
 </ul>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp macro">
 <dt id="c.gfx_Circle_NoClip">
 <span class="target" id="graphx_8h_1a754aac71bdd84b8a6d8b3f43c17ca987"></span><code class="sig-name descname">gfx_Circle_NoClip</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>radius</em><span class="sig-paren">)</span><a class="headerlink" href="#c.gfx_Circle_NoClip" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Draws an unclipped circle outline.</p>
-<p>This is measured from the top left origin of the screen. <dl class="simple">
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">x</span></code>: X coordinate. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">y</span></code>: Y coordinate. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">radius</span></code>: The radius of the circle. </p></li>
+<p>This is measured from the top left origin of the screen. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> – X coordinate. </p></li>
+<li><p><strong>y</strong> – Y coordinate. </p></li>
+<li><p><strong>radius</strong> – The radius of the circle. </p></li>
 </ul>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp macro">
@@ -688,19 +720,23 @@ void main() {
 <dt id="c.gfx_GetSprite_NoClip">
 <span class="target" id="graphx_8h_1ae617a7b274ef70c70b2aa6f854bd959f"></span><code class="sig-name descname">gfx_GetSprite_NoClip</code><span class="sig-paren">(</span><em>sprite_buffer</em>, <em>x</em>, <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#c.gfx_GetSprite_NoClip" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Grabs the background behind an unclipped sprite.</p>
-<p>This is useful for partial redraw. <dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>A pointer to sprite_buffer. </p>
-</dd>
-<dt><strong>Note</strong></dt><dd><p><code class="docutils literal notranslate"><span class="pre">sprite_buffer</span></code> must be pointing to a large enough buffer to hold (width * height + 2) number of bytes. </p>
-</dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">sprite_buffer</span></code>: Buffer used to store grabbed sprite. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">x</span></code>: X coordinate to grab sprite. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">y</span></code>: Y coordinate to grab sprite. </p></li>
+<p>This is useful for partial redraw. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">sprite_buffer</span></code> must be pointing to a large enough buffer to hold (width * height + 2) number of bytes. </p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sprite_buffer</strong> – Buffer used to store grabbed sprite. </p></li>
+<li><p><strong>x</strong> – X coordinate to grab sprite. </p></li>
+<li><p><strong>y</strong> – Y coordinate to grab sprite. </p></li>
 </ul>
 </dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A pointer to sprite_buffer. </p>
+</dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp macro">
@@ -710,15 +746,18 @@ void main() {
 <p><dl class="simple">
 <dt><strong>See</strong></dt><dd><p><a class="reference internal" href="#graphx_8h_1a9558061a3d9aa0b6fdb5db2dddffb8ea"><span class="std std-ref">gfx_RotatedScaledTransparentSprite_NoClip</span></a>. </p>
 </dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">sprite</span></code>: Input sprite to rotate/scale. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">x</span></code>: X coordinate position. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">y</span></code>: Y coordinate position. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">angle</span></code>: 256 position angular integer. </p></li>
+</dl>
+</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sprite</strong> – Input sprite to rotate/scale. </p></li>
+<li><p><strong>x</strong> – X coordinate position. </p></li>
+<li><p><strong>y</strong> – Y coordinate position. </p></li>
+<li><p><strong>angle</strong> – 256 position angular integer. </p></li>
 </ul>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp macro">
@@ -728,15 +767,18 @@ void main() {
 <p><dl class="simple">
 <dt><strong>See</strong></dt><dd><p><a class="reference internal" href="#graphx_8h_1a9558061a3d9aa0b6fdb5db2dddffb8ea"><span class="std std-ref">gfx_RotatedScaledTransparentSprite_NoClip</span></a>. </p>
 </dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">sprite</span></code>: Input sprite to rotate/scale. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">x</span></code>: X coordinate position. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">y</span></code>: Y coordinate position. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">angle</span></code>: 256 position angular integer. </p></li>
+</dl>
+</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sprite</strong> – Input sprite to rotate/scale. </p></li>
+<li><p><strong>x</strong> – X coordinate position. </p></li>
+<li><p><strong>y</strong> – Y coordinate position. </p></li>
+<li><p><strong>angle</strong> – 256 position angular integer. </p></li>
 </ul>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp macro">
@@ -744,18 +786,22 @@ void main() {
 <span class="target" id="graphx_8h_1ab28dbc6573d8ed4a264d95c332acbef7"></span><code class="sig-name descname">gfx_RotateSprite</code><span class="sig-paren">(</span><em>sprite_in</em>, <em>sprite_out</em>, <em>angle</em><span class="sig-paren">)</span><a class="headerlink" href="#c.gfx_RotateSprite" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Helper macro to only perform rotation using gfx_RotateScaleSprite.</p>
 <p><dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>A pointer to <code class="docutils literal notranslate"><span class="pre">sprite_out</span></code>. </p>
-</dd>
 <dt><strong>See</strong></dt><dd><p><a class="reference internal" href="#graphx_8h_1ac54639d3cbd7ce056d45013418d1e5a8"><span class="std std-ref">gfx_RotateScaleSprite</span></a>. </p>
-</dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">sprite_in</span></code>: Input sprite to rotate. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">sprite_out</span></code>: Pointer to where rotated sprite will be stored. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">angle</span></code>: 256 position angular integer. </p></li>
-</ul>
 </dd>
 </dl>
 </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sprite_in</strong> – Input sprite to rotate. </p></li>
+<li><p><strong>sprite_out</strong> – Pointer to where rotated sprite will be stored. </p></li>
+<li><p><strong>angle</strong> – 256 position angular integer. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A pointer to <code class="docutils literal notranslate"><span class="pre">sprite_out</span></code>. </p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="cpp macro">
@@ -767,16 +813,20 @@ void main() {
 <p><dl class="simple">
 <dt><strong>Remark</strong></dt><dd><p>A <a class="reference internal" href="#structgfx__sprite__t"><span class="std std-ref">gfx_sprite_t</span></a> can be converted into an appropriately large, already-allocated <a class="reference internal" href="#structgfx__rletsprite__t"><span class="std std-ref">gfx_rletsprite_t</span></a> using <a class="reference internal" href="#graphx_8h_1a3ace82c9c54a17c4e2c3b5260e86628d"><span class="std std-ref">gfx_ConvertToRLETSprite()</span></a>.</p>
 </dd>
-<dt><strong>Return</strong></dt><dd><p>A newly allocated converted sprite with RLE transparency. </p>
-</dd>
 <dt><strong>See</strong></dt><dd><p><a class="reference internal" href="#graphx_8h_1aaf810a547aad7899602769c3f5e9124f"><span class="std std-ref">gfx_ConvertFromRLETSprite</span></a>. </p>
-</dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">sprite_in</span></code>: Input sprite with normal transparency. </p></li>
-</ul>
 </dd>
 </dl>
 </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sprite_in</strong> – Input sprite with normal transparency. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A newly allocated converted sprite with RLE transparency. </p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="cpp macro">
@@ -808,15 +858,16 @@ void main() {
 <dd><p>Calculates the amount of memory that a zx7-compressed sprite would use when decompressed.</p>
 <p>Sprite size is calculated as 2 + (width * height).</p>
 <p>ZX7 data always starts with a literal, which is the sprite’s width. The next byte contains flags, which indicates if the following bytes are literals or codewords. If bit 7 of that is zero, the byte immediately after it is a literal and can be read in as sprite height. Otherwise, the bits that follows indicates a codeword, making sprite height the same as width.</p>
-<p><dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>Size, in bytes, of decompressed sprite </p>
-</dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">zx7_sprite</span></code>: ZX7-compressed sprite </p></li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>zx7_sprite</strong> – ZX7-compressed sprite </p></li>
 </ul>
 </dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Size, in bytes, of decompressed sprite </p>
+</dd>
 </dl>
-</p>
 </dd></dl>
 
 </div>
@@ -947,20 +998,26 @@ void main() {
 <dd><p>Dynamically allocates memory for a sprite.</p>
 <p>Allocates the memory with <code class="docutils literal notranslate"><span class="pre">malloc_routine</span></code>. <code class="docutils literal notranslate"><span class="pre">width</span></code> and <code class="docutils literal notranslate"><span class="pre">height</span></code> will be set in the allocated sprite. Returns <code class="docutils literal notranslate"><span class="pre">NULL</span></code> upon allocation failure.</p>
 <p><dl class="simple">
-<dt><strong>Note</strong></dt><dd><p>If not used in a dynamic context and <code class="docutils literal notranslate"><span class="pre">width</span></code> and <code class="docutils literal notranslate"><span class="pre">height</span></code> are static, consider statically allocating the sprite instead with <a class="reference internal" href="#graphx_8h_1aec1bf1b311dee9f387931b37db5ec5f0"><span class="std std-ref">gfx_UninitedSprite()</span></a> or <a class="reference internal" href="#graphx_8h_1ad95d6ddd408bb6c0fad041353da0d7ea"><span class="std std-ref">gfx_TempSprite()</span></a>.</p>
-</dd>
 <dt><strong>Remark</strong></dt><dd><p>If using <code class="docutils literal notranslate"><span class="pre">malloc</span></code> as the <code class="docutils literal notranslate"><span class="pre">malloc_routine</span></code>, <a class="reference internal" href="#graphx_8h_1add09e11cb2d5b761ea1b336c07d9283e"><span class="std std-ref">gfx_MallocSprite()</span></a> can be used as a shortcut.</p>
-</dd>
-<dt><strong>Return</strong></dt><dd><p>A pointer to the allocated sprite. </p>
-</dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">width</span></code>: Sprite width. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">height</span></code>: Sprite height. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">malloc_routine</span></code>: Malloc implementation to use. </p></li>
-</ul>
 </dd>
 </dl>
 </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If not used in a dynamic context and <code class="docutils literal notranslate"><span class="pre">width</span></code> and <code class="docutils literal notranslate"><span class="pre">height</span></code> are static, consider statically allocating the sprite instead with <a class="reference internal" href="#graphx_8h_1aec1bf1b311dee9f387931b37db5ec5f0"><span class="std std-ref">gfx_UninitedSprite()</span></a> or <a class="reference internal" href="#graphx_8h_1ad95d6ddd408bb6c0fad041353da0d7ea"><span class="std std-ref">gfx_TempSprite()</span></a>.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>width</strong> – Sprite width. </p></li>
+<li><p><strong>height</strong> – Sprite height. </p></li>
+<li><p><strong>malloc_routine</strong> – Malloc implementation to use. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A pointer to the allocated sprite. </p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="cpp function">
@@ -983,14 +1040,17 @@ void main() {
 <p><dl class="simple">
 <dt><strong>See</strong></dt><dd><p><a class="reference internal" href="#structgfx__tilemap__t"><span class="std std-ref">gfx_tilemap_t</span></a>. </p>
 </dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">tilemap</span></code>: Pointer to initialized tilemap structure. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">x_offset</span></code>: Offset in pixels from the left of the tilemap. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">y_offset</span></code>: Offset in pixels from the top of the tilemap. </p></li>
+</dl>
+</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>tilemap</strong> – Pointer to initialized tilemap structure. </p></li>
+<li><p><strong>x_offset</strong> – Offset in pixels from the left of the tilemap. </p></li>
+<li><p><strong>y_offset</strong> – Offset in pixels from the top of the tilemap. </p></li>
 </ul>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -1000,14 +1060,17 @@ void main() {
 <p><dl class="simple">
 <dt><strong>See</strong></dt><dd><p><a class="reference internal" href="#structgfx__tilemap__t"><span class="std std-ref">gfx_tilemap_t</span></a>. </p>
 </dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">tilemap</span></code>: Pointer to initialized tilemap structure. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">x_offset</span></code>: Offset in pixels from the left of the tilemap. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">y_offset</span></code>: Offset in pixels from the top of the tilemap. </p></li>
+</dl>
+</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>tilemap</strong> – Pointer to initialized tilemap structure. </p></li>
+<li><p><strong>x_offset</strong> – Offset in pixels from the left of the tilemap. </p></li>
+<li><p><strong>y_offset</strong> – Offset in pixels from the top of the tilemap. </p></li>
 </ul>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -1017,14 +1080,17 @@ void main() {
 <p><dl class="simple">
 <dt><strong>See</strong></dt><dd><p><a class="reference internal" href="#structgfx__tilemap__t"><span class="std std-ref">gfx_tilemap_t</span></a>. </p>
 </dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">tilemap</span></code>: Pointer to initialized tilemap structure. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">x_offset</span></code>: Offset in pixels from the left of the tilemap. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">y_offset</span></code>: Offset in pixels from the top of the tilemap. </p></li>
+</dl>
+</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>tilemap</strong> – Pointer to initialized tilemap structure. </p></li>
+<li><p><strong>x_offset</strong> – Offset in pixels from the left of the tilemap. </p></li>
+<li><p><strong>y_offset</strong> – Offset in pixels from the top of the tilemap. </p></li>
 </ul>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -1034,115 +1100,114 @@ void main() {
 <p><dl class="simple">
 <dt><strong>See</strong></dt><dd><p><a class="reference internal" href="#structgfx__tilemap__t"><span class="std std-ref">gfx_tilemap_t</span></a>. </p>
 </dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">tilemap</span></code>: Pointer to initialized tilemap structure. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">x_offset</span></code>: Offset in pixels from the left of the tilemap. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">y_offset</span></code>: Offset in pixels from the top of the tilemap. </p></li>
+</dl>
+</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>tilemap</strong> – Pointer to initialized tilemap structure. </p></li>
+<li><p><strong>x_offset</strong> – Offset in pixels from the left of the tilemap. </p></li>
+<li><p><strong>y_offset</strong> – Offset in pixels from the top of the tilemap. </p></li>
 </ul>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv411gfx_TilePtrPK13gfx_tilemap_t8uint24_t8uint24_t">
 <span id="_CPPv311gfx_TilePtrPK13gfx_tilemap_t8uint24_t8uint24_t"></span><span id="_CPPv211gfx_TilePtrPK13gfx_tilemap_t8uint24_t8uint24_t"></span><span id="gfx_TilePtr__gfx_tilemap_tCP.uint24_t.uint24_t"></span><span class="target" id="graphx_8h_1a4614f9b5b6a73493c089988d02956855"></span>uint8_t *<code class="sig-name descname">gfx_TilePtr</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv413gfx_tilemap_t" title="gfx_tilemap_t">gfx_tilemap_t</a> *<em>tilemap</em>, uint24_t <em>x_offset</em>, uint24_t <em>y_offset</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv411gfx_TilePtrPK13gfx_tilemap_t8uint24_t8uint24_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Gets a pointer to a particular tile given an initialized tilemap structure and pixel offsets. Measurement is done from the actual tilemap, not the drawn offset location.</p>
-<p><dl class="simple">
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">tilemap</span></code>: Pointer to initialized tilemap structure. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">x_offset</span></code>: Offset in pixels from the left of the tilemap. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">y_offset</span></code>: Offset in pixels from the top of the tilemap. </p></li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>tilemap</strong> – Pointer to initialized tilemap structure. </p></li>
+<li><p><strong>x_offset</strong> – Offset in pixels from the left of the tilemap. </p></li>
+<li><p><strong>y_offset</strong> – Offset in pixels from the top of the tilemap. </p></li>
 </ul>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv417gfx_TilePtrMappedPK13gfx_tilemap_t7uint8_t7uint8_t">
 <span id="_CPPv317gfx_TilePtrMappedPK13gfx_tilemap_t7uint8_t7uint8_t"></span><span id="_CPPv217gfx_TilePtrMappedPK13gfx_tilemap_t7uint8_t7uint8_t"></span><span id="gfx_TilePtrMapped__gfx_tilemap_tCP.uint8_t.uint8_t"></span><span class="target" id="graphx_8h_1afb6a35620c29e97791d52d1e72f5c602"></span>uint8_t *<code class="sig-name descname">gfx_TilePtrMapped</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv413gfx_tilemap_t" title="gfx_tilemap_t">gfx_tilemap_t</a> *<em>tilemap</em>, uint8_t <em>col</em>, uint8_t <em>row</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv417gfx_TilePtrMappedPK13gfx_tilemap_t7uint8_t7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Gets a pointer to a particular tile given an initialized tilemap structure and mapped offsets.</p>
-<p><dl class="simple">
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">tilemap</span></code>: Pointer to an initialized tilemap structure. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">col</span></code>: Column of tile in tilemap. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">row</span></code>: Row of tile in tilemap. </p></li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>tilemap</strong> – Pointer to an initialized tilemap structure. </p></li>
+<li><p><strong>col</strong> – Column of tile in tilemap. </p></li>
+<li><p><strong>row</strong> – Row of tile in tilemap. </p></li>
 </ul>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv412gfx_SetColor7uint8_t">
 <span id="_CPPv312gfx_SetColor7uint8_t"></span><span id="_CPPv212gfx_SetColor7uint8_t"></span><span id="gfx_SetColor__uint8_t"></span><span class="target" id="graphx_8h_1ab4cea4cba1f247bc13bf2d8aec575a95"></span>uint8_t <code class="sig-name descname">gfx_SetColor</code><span class="sig-paren">(</span>uint8_t <em>index</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv412gfx_SetColor7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Sets the color index that drawing routines will use</p>
-<p>This applies to lines, rectangles, circles, etc. <dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>Previous set color index. </p>
+<p>This applies to lines, rectangles, circles, etc. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>index</strong> – Color index to set. </p>
 </dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">index</span></code>: Color index to set. </p></li>
-</ul>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Previous set color index. </p>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv423gfx_SetTransparentColor7uint8_t">
 <span id="_CPPv323gfx_SetTransparentColor7uint8_t"></span><span id="_CPPv223gfx_SetTransparentColor7uint8_t"></span><span id="gfx_SetTransparentColor__uint8_t"></span><span class="target" id="graphx_8h_1a2de6c559177f25c8b469cef81b96de42"></span>uint8_t <code class="sig-name descname">gfx_SetTransparentColor</code><span class="sig-paren">(</span>uint8_t <em>index</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv423gfx_SetTransparentColor7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Sets the transparent index that drawing routines will use</p>
-<p>This currently applies to transparent sprites, both scaled and unscaled <dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>The previous transparent color index. </p>
+<p>This currently applies to transparent sprites, both scaled and unscaled </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>index</strong> – Transparent color index to set. </p>
 </dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">index</span></code>: Transparent color index to set. </p></li>
-</ul>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The previous transparent color index. </p>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv421gfx_SetDefaultPalette10gfx_mode_t">
 <span id="_CPPv321gfx_SetDefaultPalette10gfx_mode_t"></span><span id="_CPPv221gfx_SetDefaultPalette10gfx_mode_t"></span><span id="gfx_SetDefaultPalette__gfx_mode_t"></span><span class="target" id="graphx_8h_1a2bf4b0656145ef71545a87e845e5b4cc"></span>void <code class="sig-name descname">gfx_SetDefaultPalette</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv410gfx_mode_t" title="gfx_mode_t">gfx_mode_t</a> <em>mode</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv421gfx_SetDefaultPalette10gfx_mode_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Sets up the default palette for the given mode</p>
-<p><dl class="simple">
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">mode</span></code>: Palette to use. </p></li>
-</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>mode</strong> – Palette to use. </p>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv414gfx_SetPalettePKv8uint24_t7uint8_t">
 <span id="_CPPv314gfx_SetPalettePKv8uint24_t7uint8_t"></span><span id="_CPPv214gfx_SetPalettePKv8uint24_t7uint8_t"></span><span id="gfx_SetPalette__voidCP.uint24_t.uint8_t"></span><span class="target" id="graphx_8h_1a91189f94e75994871c78b339bde324fa"></span>void <code class="sig-name descname">gfx_SetPalette</code><span class="sig-paren">(</span><em class="property">const</em> void *<em>palette</em>, uint24_t <em>size</em>, uint8_t <em>offset</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv414gfx_SetPalettePKv8uint24_t7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Sets entries in the palette</p>
-<p><dl class="simple">
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">palette</span></code>: Pointer to palette to set. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">size</span></code>: Size of palette in bytes. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">offset</span></code>: Palette index to insert at. </p></li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>palette</strong> – Pointer to palette to set. </p></li>
+<li><p><strong>size</strong> – Size of palette in bytes. </p></li>
+<li><p><strong>offset</strong> – Palette index to insert at. </p></li>
 </ul>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv414gfx_FillScreen7uint8_t">
 <span id="_CPPv314gfx_FillScreen7uint8_t"></span><span id="_CPPv214gfx_FillScreen7uint8_t"></span><span id="gfx_FillScreen__uint8_t"></span><span class="target" id="graphx_8h_1a9c48a9ad8104b3b67cc526338bff98d1"></span>void <code class="sig-name descname">gfx_FillScreen</code><span class="sig-paren">(</span>uint8_t <em>index</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv414gfx_FillScreen7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Fills the screen with a given palette index.</p>
-<p><dl class="simple">
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">index</span></code>: Color index to fill with. </p></li>
-</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>index</strong> – Color index to fill with. </p>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -1163,228 +1228,245 @@ void main() {
 <p>This is measured from the top left origin of the screen. Pixels are only clipped within the screen boundaries <dl class="simple">
 <dt><strong>See</strong></dt><dd><p><a class="reference internal" href="#graphx_8h_1ab4cea4cba1f247bc13bf2d8aec575a95"><span class="std std-ref">gfx_SetColor</span></a> </p>
 </dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">x</span></code>: X coordinate location </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">y</span></code>: Y coordinate location </p></li>
+</dl>
+</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> – X coordinate location </p></li>
+<li><p><strong>y</strong> – Y coordinate location </p></li>
 </ul>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv412gfx_GetPixel8uint24_t7uint8_t">
 <span id="_CPPv312gfx_GetPixel8uint24_t7uint8_t"></span><span id="_CPPv212gfx_GetPixel8uint24_t7uint8_t"></span><span id="gfx_GetPixel__uint24_t.uint8_t"></span><span class="target" id="graphx_8h_1a5e6f550b49ff9a1994c8c6d8503a9d31"></span>uint8_t <code class="sig-name descname">gfx_GetPixel</code><span class="sig-paren">(</span>uint24_t <em>x</em>, uint8_t <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv412gfx_GetPixel8uint24_t7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Gets a pixel’s color index</p>
-<p>This is measured from the top left origin of the screen. Pixels are only clipped within the screen boundaries <dl class="simple">
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">x</span></code>: X coordinate location </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">y</span></code>: Y coordinate location </p></li>
+<p>This is measured from the top left origin of the screen. Pixels are only clipped within the screen boundaries </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> – X coordinate location </p></li>
+<li><p><strong>y</strong> – Y coordinate location </p></li>
 </ul>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv48gfx_Lineiiii">
 <span id="_CPPv38gfx_Lineiiii"></span><span id="_CPPv28gfx_Lineiiii"></span><span id="gfx_Line__i.i.i.i"></span><span class="target" id="graphx_8h_1a3a5e5c92c37c66b9e89d5ab3097e7025"></span>void <code class="sig-name descname">gfx_Line</code><span class="sig-paren">(</span>int <em>x0</em>, int <em>y0</em>, int <em>x1</em>, int <em>y1</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv48gfx_Lineiiii" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Draws a line</p>
-<p>This is measured from the top left origin of the screen. <dl class="simple">
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">x0</span></code>: First X coordinate </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">y0</span></code>: First Y coordinate </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">x1</span></code>: Second X coordinate </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">y1</span></code>: Second Y coordinate </p></li>
+<p>This is measured from the top left origin of the screen. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x0</strong> – First X coordinate </p></li>
+<li><p><strong>y0</strong> – First Y coordinate </p></li>
+<li><p><strong>x1</strong> – Second X coordinate </p></li>
+<li><p><strong>y1</strong> – Second Y coordinate </p></li>
 </ul>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv415gfx_Line_NoClip8uint24_t7uint8_t8uint24_t7uint8_t">
 <span id="_CPPv315gfx_Line_NoClip8uint24_t7uint8_t8uint24_t7uint8_t"></span><span id="_CPPv215gfx_Line_NoClip8uint24_t7uint8_t8uint24_t7uint8_t"></span><span id="gfx_Line_NoClip__uint24_t.uint8_t.uint24_t.uint8_t"></span><span class="target" id="graphx_8h_1a430df8f2e7174624d9fc87def81366d5"></span>void <code class="sig-name descname">gfx_Line_NoClip</code><span class="sig-paren">(</span>uint24_t <em>x0</em>, uint8_t <em>y0</em>, uint24_t <em>x1</em>, uint8_t <em>y1</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv415gfx_Line_NoClip8uint24_t7uint8_t8uint24_t7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Draws an unclipped line.</p>
-<p>This is measured from the top left origin of the screen. <dl class="simple">
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">x0</span></code>: First X coordinate. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">y0</span></code>: First Y coordinate. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">x1</span></code>: Second X coordinate. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">y1</span></code>: Second Y coordinate. </p></li>
+<p>This is measured from the top left origin of the screen. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x0</strong> – First X coordinate. </p></li>
+<li><p><strong>y0</strong> – First Y coordinate. </p></li>
+<li><p><strong>x1</strong> – Second X coordinate. </p></li>
+<li><p><strong>y1</strong> – Second Y coordinate. </p></li>
 </ul>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv413gfx_HorizLineiii">
 <span id="_CPPv313gfx_HorizLineiii"></span><span id="_CPPv213gfx_HorizLineiii"></span><span id="gfx_HorizLine__i.i.i"></span><span class="target" id="graphx_8h_1abd4d057ee97278eda9e987d1d057855e"></span>void <code class="sig-name descname">gfx_HorizLine</code><span class="sig-paren">(</span>int <em>x</em>, int <em>y</em>, int <em>length</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv413gfx_HorizLineiii" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Draws a horizontal line.</p>
-<p>This is measured from the top left origin of the screen. Performs faster than using gfx_Line. <dl class="simple">
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">x</span></code>: X coordinate. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">y</span></code>: Y coordinate. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">length</span></code>: Length of line. </p></li>
+<p>This is measured from the top left origin of the screen. Performs faster than using gfx_Line. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> – X coordinate. </p></li>
+<li><p><strong>y</strong> – Y coordinate. </p></li>
+<li><p><strong>length</strong> – Length of line. </p></li>
 </ul>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv420gfx_HorizLine_NoClip8uint24_t7uint8_t8uint24_t">
 <span id="_CPPv320gfx_HorizLine_NoClip8uint24_t7uint8_t8uint24_t"></span><span id="_CPPv220gfx_HorizLine_NoClip8uint24_t7uint8_t8uint24_t"></span><span id="gfx_HorizLine_NoClip__uint24_t.uint8_t.uint24_t"></span><span class="target" id="graphx_8h_1af18b0be9cdee1229adb6e2a81154b46b"></span>void <code class="sig-name descname">gfx_HorizLine_NoClip</code><span class="sig-paren">(</span>uint24_t <em>x</em>, uint8_t <em>y</em>, uint24_t <em>length</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv420gfx_HorizLine_NoClip8uint24_t7uint8_t8uint24_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Draws an unclipped horizontal line.</p>
-<p>This is measured from the top left origin of the screen. Performs faster than using gfx_Line. <dl class="simple">
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">x</span></code>: X coordinate. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">y</span></code>: Y coordinate. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">length</span></code>: Length of line. </p></li>
+<p>This is measured from the top left origin of the screen. Performs faster than using gfx_Line. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> – X coordinate. </p></li>
+<li><p><strong>y</strong> – Y coordinate. </p></li>
+<li><p><strong>length</strong> – Length of line. </p></li>
 </ul>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv412gfx_VertLineiii">
 <span id="_CPPv312gfx_VertLineiii"></span><span id="_CPPv212gfx_VertLineiii"></span><span id="gfx_VertLine__i.i.i"></span><span class="target" id="graphx_8h_1af9bf37483257300442a1224bafbf9cfc"></span>void <code class="sig-name descname">gfx_VertLine</code><span class="sig-paren">(</span>int <em>x</em>, int <em>y</em>, int <em>length</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv412gfx_VertLineiii" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Draws a vertical line</p>
-<p>This is measured from the top left origin of the screen. Performs faster than using <code class="docutils literal notranslate"><span class="pre">gfx_Line</span></code> <dl class="simple">
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">x</span></code>: X coordinate </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">y</span></code>: Y coordinate </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">length</span></code>: Length of line </p></li>
+<p>This is measured from the top left origin of the screen. Performs faster than using <code class="docutils literal notranslate"><span class="pre">gfx_Line</span></code> </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> – X coordinate </p></li>
+<li><p><strong>y</strong> – Y coordinate </p></li>
+<li><p><strong>length</strong> – Length of line </p></li>
 </ul>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv419gfx_VertLine_NoClip8uint24_t7uint8_t8uint24_t">
 <span id="_CPPv319gfx_VertLine_NoClip8uint24_t7uint8_t8uint24_t"></span><span id="_CPPv219gfx_VertLine_NoClip8uint24_t7uint8_t8uint24_t"></span><span id="gfx_VertLine_NoClip__uint24_t.uint8_t.uint24_t"></span><span class="target" id="graphx_8h_1a1a6bbe0b65c1cf7a34c1f7b90a3c0d55"></span>void <code class="sig-name descname">gfx_VertLine_NoClip</code><span class="sig-paren">(</span>uint24_t <em>x</em>, uint8_t <em>y</em>, uint24_t <em>length</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv419gfx_VertLine_NoClip8uint24_t7uint8_t8uint24_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Draws an unclipped vertical line.</p>
-<p>This is measured from the top left origin of the screen. Performs faster than using gfx_Line. <dl class="simple">
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">x</span></code>: X coordinate. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">y</span></code>: Y coordinate. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">length</span></code>: Length of line. </p></li>
+<p>This is measured from the top left origin of the screen. Performs faster than using gfx_Line. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> – X coordinate. </p></li>
+<li><p><strong>y</strong> – Y coordinate. </p></li>
+<li><p><strong>length</strong> – Length of line. </p></li>
 </ul>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv413gfx_Rectangleiiii">
 <span id="_CPPv313gfx_Rectangleiiii"></span><span id="_CPPv213gfx_Rectangleiiii"></span><span id="gfx_Rectangle__i.i.i.i"></span><span class="target" id="graphx_8h_1ac542c4bbc02cace8a17ff51d49bf7260"></span>void <code class="sig-name descname">gfx_Rectangle</code><span class="sig-paren">(</span>int <em>x</em>, int <em>y</em>, int <em>width</em>, int <em>height</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv413gfx_Rectangleiiii" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Draws a rectangle outline.</p>
-<p>This is measured from the top left origin of the screen. <dl class="simple">
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">x</span></code>: X coordinate. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">y</span></code>: Y coordinate. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">width</span></code>: Width of rectangle. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">height</span></code>: Height of rectangle. </p></li>
+<p>This is measured from the top left origin of the screen. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> – X coordinate. </p></li>
+<li><p><strong>y</strong> – Y coordinate. </p></li>
+<li><p><strong>width</strong> – Width of rectangle. </p></li>
+<li><p><strong>height</strong> – Height of rectangle. </p></li>
 </ul>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv420gfx_Rectangle_NoClip8uint24_t7uint8_t8uint24_t7uint8_t">
 <span id="_CPPv320gfx_Rectangle_NoClip8uint24_t7uint8_t8uint24_t7uint8_t"></span><span id="_CPPv220gfx_Rectangle_NoClip8uint24_t7uint8_t8uint24_t7uint8_t"></span><span id="gfx_Rectangle_NoClip__uint24_t.uint8_t.uint24_t.uint8_t"></span><span class="target" id="graphx_8h_1a25b03bb847f4596db0997da42711cfba"></span>void <code class="sig-name descname">gfx_Rectangle_NoClip</code><span class="sig-paren">(</span>uint24_t <em>x</em>, uint8_t <em>y</em>, uint24_t <em>width</em>, uint8_t <em>height</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv420gfx_Rectangle_NoClip8uint24_t7uint8_t8uint24_t7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Draws an unclipped rectangle outline.</p>
-<p>This is measured from the top left origin of the screen. <dl class="simple">
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">x</span></code>: X coordinate. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">y</span></code>: Y coordinate. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">width</span></code>: Width of rectangle. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">height</span></code>: Height of rectangle. </p></li>
+<p>This is measured from the top left origin of the screen. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> – X coordinate. </p></li>
+<li><p><strong>y</strong> – Y coordinate. </p></li>
+<li><p><strong>width</strong> – Width of rectangle. </p></li>
+<li><p><strong>height</strong> – Height of rectangle. </p></li>
 </ul>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv417gfx_FillRectangleiiii">
 <span id="_CPPv317gfx_FillRectangleiiii"></span><span id="_CPPv217gfx_FillRectangleiiii"></span><span id="gfx_FillRectangle__i.i.i.i"></span><span class="target" id="graphx_8h_1af9574a3661e40c2ec6110c2c843e705c"></span>void <code class="sig-name descname">gfx_FillRectangle</code><span class="sig-paren">(</span>int <em>x</em>, int <em>y</em>, int <em>width</em>, int <em>height</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv417gfx_FillRectangleiiii" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Draws a filled rectangle.</p>
-<p>This is measured from the top left origin of the screen. <dl class="simple">
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">x</span></code>: X coordinate. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">y</span></code>: Y coordinate. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">width</span></code>: Width of rectangle. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">height</span></code>: Height of rectangle. </p></li>
+<p>This is measured from the top left origin of the screen. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> – X coordinate. </p></li>
+<li><p><strong>y</strong> – Y coordinate. </p></li>
+<li><p><strong>width</strong> – Width of rectangle. </p></li>
+<li><p><strong>height</strong> – Height of rectangle. </p></li>
 </ul>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv424gfx_FillRectangle_NoClip8uint24_t7uint8_t8uint24_t7uint8_t">
 <span id="_CPPv324gfx_FillRectangle_NoClip8uint24_t7uint8_t8uint24_t7uint8_t"></span><span id="_CPPv224gfx_FillRectangle_NoClip8uint24_t7uint8_t8uint24_t7uint8_t"></span><span id="gfx_FillRectangle_NoClip__uint24_t.uint8_t.uint24_t.uint8_t"></span><span class="target" id="graphx_8h_1a906eb106be168e79c605ee2b7871d01b"></span>void <code class="sig-name descname">gfx_FillRectangle_NoClip</code><span class="sig-paren">(</span>uint24_t <em>x</em>, uint8_t <em>y</em>, uint24_t <em>width</em>, uint8_t <em>height</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv424gfx_FillRectangle_NoClip8uint24_t7uint8_t8uint24_t7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Draws an unclipped filled rectangle</p>
-<p>This is measured from the top left origin of the screen. <dl class="simple">
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">x</span></code>: X coordinate </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">y</span></code>: Y coordinate </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">width</span></code>: Width of rectangle </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">height</span></code>: Height of rectangle </p></li>
+<p>This is measured from the top left origin of the screen. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> – X coordinate </p></li>
+<li><p><strong>y</strong> – Y coordinate </p></li>
+<li><p><strong>width</strong> – Width of rectangle </p></li>
+<li><p><strong>height</strong> – Height of rectangle </p></li>
 </ul>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv410gfx_Circleii8uint24_t">
 <span id="_CPPv310gfx_Circleii8uint24_t"></span><span id="_CPPv210gfx_Circleii8uint24_t"></span><span id="gfx_Circle__i.i.uint24_t"></span><span class="target" id="graphx_8h_1a41f4136bd46eccc6c1cd0885408358b2"></span>void <code class="sig-name descname">gfx_Circle</code><span class="sig-paren">(</span>int <em>x</em>, int <em>y</em>, uint24_t <em>radius</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv410gfx_Circleii8uint24_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Draws a circle outline.</p>
-<p>This is measured from the top left origin of the screen. <dl class="simple">
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">x</span></code>: X coordinate. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">y</span></code>: Y coordinate. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">radius</span></code>: The radius of the circle. </p></li>
+<p>This is measured from the top left origin of the screen. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> – X coordinate. </p></li>
+<li><p><strong>y</strong> – Y coordinate. </p></li>
+<li><p><strong>radius</strong> – The radius of the circle. </p></li>
 </ul>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv414gfx_FillCircleii8uint24_t">
 <span id="_CPPv314gfx_FillCircleii8uint24_t"></span><span id="_CPPv214gfx_FillCircleii8uint24_t"></span><span id="gfx_FillCircle__i.i.uint24_t"></span><span class="target" id="graphx_8h_1a56fc3a826cdca347570da0df6fefc657"></span>void <code class="sig-name descname">gfx_FillCircle</code><span class="sig-paren">(</span>int <em>x</em>, int <em>y</em>, uint24_t <em>radius</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv414gfx_FillCircleii8uint24_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Draws a filled circle.</p>
-<p>This is measured from the top left origin of the screen. <dl class="simple">
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">x</span></code>: X coordinate. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">y</span></code>: Y coordinate. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">radius</span></code>: The radius of the circle. </p></li>
+<p>This is measured from the top left origin of the screen. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> – X coordinate. </p></li>
+<li><p><strong>y</strong> – Y coordinate. </p></li>
+<li><p><strong>radius</strong> – The radius of the circle. </p></li>
 </ul>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv421gfx_FillCircle_NoClip8uint24_t7uint8_t8uint24_t">
 <span id="_CPPv321gfx_FillCircle_NoClip8uint24_t7uint8_t8uint24_t"></span><span id="_CPPv221gfx_FillCircle_NoClip8uint24_t7uint8_t8uint24_t"></span><span id="gfx_FillCircle_NoClip__uint24_t.uint8_t.uint24_t"></span><span class="target" id="graphx_8h_1a5e23f5783bd328cbd40f9a336d566b68"></span>void <code class="sig-name descname">gfx_FillCircle_NoClip</code><span class="sig-paren">(</span>uint24_t <em>x</em>, uint8_t <em>y</em>, uint24_t <em>radius</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv421gfx_FillCircle_NoClip8uint24_t7uint8_t8uint24_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Draws an unclipped filled circle.</p>
-<p>This is measured from the top left origin of the screen. <dl class="simple">
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">x</span></code>: X coordinate. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">y</span></code>: Y coordinate. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">radius</span></code>: The radius of the circle. </p></li>
+<p>This is measured from the top left origin of the screen. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> – X coordinate. </p></li>
+<li><p><strong>y</strong> – Y coordinate. </p></li>
+<li><p><strong>radius</strong> – The radius of the circle. </p></li>
 </ul>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -1400,14 +1482,15 @@ void main() {
 <span class="n">gfx_Polygon</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">num_points</span><span class="p">);</span>
 </pre></div>
 </div>
- <dl class="simple">
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">points</span></code>: Pointer to x and y pairs. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">num_points</span></code>: Number of x and y pairs. </p></li>
+ </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>points</strong> – Pointer to x and y pairs. </p></li>
+<li><p><strong>num_points</strong> – Number of x and y pairs. </p></li>
 </ul>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -1423,50 +1506,53 @@ void main() {
 <span class="n">gfx_Polygon_NoClip</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">num_points</span><span class="p">)</span>
 </pre></div>
 </div>
- <dl class="simple">
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">points</span></code>: Pointer to x and y pairs </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">num_points</span></code>: Number of x and y pairs </p></li>
+ </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>points</strong> – Pointer to x and y pairs </p></li>
+<li><p><strong>num_points</strong> – Number of x and y pairs </p></li>
 </ul>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv416gfx_FillTriangleiiiiii">
 <span id="_CPPv316gfx_FillTriangleiiiiii"></span><span id="_CPPv216gfx_FillTriangleiiiiii"></span><span id="gfx_FillTriangle__i.i.i.i.i.i"></span><span class="target" id="graphx_8h_1a3c61fd88b37382569265fede9ec9ba63"></span>void <code class="sig-name descname">gfx_FillTriangle</code><span class="sig-paren">(</span>int <em>x0</em>, int <em>y0</em>, int <em>x1</em>, int <em>y1</em>, int <em>x2</em>, int <em>y2</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv416gfx_FillTriangleiiiiii" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Draws a clipped filled triangle.</p>
-<p>Points are measured from the top left origin of the screen. <dl class="simple">
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">x0</span></code>: First X coordinate. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">y0</span></code>: First Y coordinate. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">x1</span></code>: Second X coordinate. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">y1</span></code>: Second Y coordinate. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">x2</span></code>: Third X coordinate. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">y2</span></code>: Third Y coordinate. </p></li>
+<p>Points are measured from the top left origin of the screen. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x0</strong> – First X coordinate. </p></li>
+<li><p><strong>y0</strong> – First Y coordinate. </p></li>
+<li><p><strong>x1</strong> – Second X coordinate. </p></li>
+<li><p><strong>y1</strong> – Second Y coordinate. </p></li>
+<li><p><strong>x2</strong> – Third X coordinate. </p></li>
+<li><p><strong>y2</strong> – Third Y coordinate. </p></li>
 </ul>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv423gfx_FillTriangle_NoClipiiiiii">
 <span id="_CPPv323gfx_FillTriangle_NoClipiiiiii"></span><span id="_CPPv223gfx_FillTriangle_NoClipiiiiii"></span><span id="gfx_FillTriangle_NoClip__i.i.i.i.i.i"></span><span class="target" id="graphx_8h_1a96e0fe71e10cfeb7af75725ee812b669"></span>void <code class="sig-name descname">gfx_FillTriangle_NoClip</code><span class="sig-paren">(</span>int <em>x0</em>, int <em>y0</em>, int <em>x1</em>, int <em>y1</em>, int <em>x2</em>, int <em>y2</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv423gfx_FillTriangle_NoClipiiiiii" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Draws a unclipped filled triangle.</p>
-<p>Points are measured from the top left origin of the screen. <dl class="simple">
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">x0</span></code>: First X coordinate. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">y0</span></code>: First Y coordinate. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">x1</span></code>: Second X coordinate. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">y1</span></code>: Second Y coordinate. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">x2</span></code>: Third X coordinate. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">y2</span></code>: Third Y coordinate. </p></li>
+<p>Points are measured from the top left origin of the screen. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x0</strong> – First X coordinate. </p></li>
+<li><p><strong>y0</strong> – First Y coordinate. </p></li>
+<li><p><strong>x1</strong> – Second X coordinate. </p></li>
+<li><p><strong>y1</strong> – Second Y coordinate. </p></li>
+<li><p><strong>x2</strong> – Third X coordinate. </p></li>
+<li><p><strong>y2</strong> – Third Y coordinate. </p></li>
 </ul>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -1476,12 +1562,13 @@ void main() {
 <p><dl class="simple">
 <dt><strong>See</strong></dt><dd><p><a class="reference internal" href="#graphx_8h_1a5128cb7aeab800d47dd9638244e75ed1"><span class="std std-ref">gfx_location_t</span></a>. </p>
 </dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">location</span></code>: Location routines should draw to. </p></li>
-</ul>
-</dd>
 </dl>
 </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>location</strong> – Location routines should draw to. </p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="cpp function">
@@ -1489,12 +1576,15 @@ void main() {
 <span id="_CPPv311gfx_GetDrawv"></span><span id="_CPPv211gfx_GetDrawv"></span><span id="gfx_GetDraw__void"></span><span class="target" id="graphx_8h_1a63fffb8f15d76450ffd53b4cfe13783b"></span>uint8_t <code class="sig-name descname">gfx_GetDraw</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv411gfx_GetDrawv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Gets the current drawing buffer.</p>
 <p><dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>Location type enumeration. </p>
-</dd>
 <dt><strong>See</strong></dt><dd><p><a class="reference internal" href="#graphx_8h_1a5128cb7aeab800d47dd9638244e75ed1"><span class="std std-ref">gfx_location_t</span></a>. </p>
 </dd>
 </dl>
 </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Location type enumeration. </p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="cpp function">
@@ -1528,12 +1618,13 @@ void main() {
 <p>No clipping is performed; as it is a copy not a draw. <dl class="simple">
 <dt><strong>See</strong></dt><dd><p><a class="reference internal" href="#graphx_8h_1a5128cb7aeab800d47dd9638244e75ed1"><span class="std std-ref">gfx_location_t</span></a> </p>
 </dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">src</span></code>: drawing location to copy from. </p></li>
-</ul>
-</dd>
 </dl>
 </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>src</strong> – drawing location to copy from. </p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="cpp function">
@@ -1543,14 +1634,17 @@ void main() {
 <p>No clipping is performed; as it is a copy not a draw. <dl class="simple">
 <dt><strong>See</strong></dt><dd><p><a class="reference internal" href="#graphx_8h_1a5128cb7aeab800d47dd9638244e75ed1"><span class="std std-ref">gfx_location_t</span></a>. </p>
 </dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">src</span></code>: drawing location to copy from. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">y_loc</span></code>: Y Location to begin copying at. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">num_lines</span></code>: Number of lines to copy. </p></li>
+</dl>
+</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>src</strong> – drawing location to copy from. </p></li>
+<li><p><strong>y_loc</strong> – Y Location to begin copying at. </p></li>
+<li><p><strong>num_lines</strong> – Number of lines to copy. </p></li>
 </ul>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -1560,16 +1654,19 @@ void main() {
 <p>No clipping is performed; as it is a copy not a draw. <dl class="simple">
 <dt><strong>See</strong></dt><dd><p><a class="reference internal" href="#graphx_8h_1a5128cb7aeab800d47dd9638244e75ed1"><span class="std std-ref">gfx_location_t</span></a>. </p>
 </dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">src</span></code>: drawing location to copy from. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">x</span></code>: X coordinate. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">y</span></code>: Y coordinate. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">width</span></code>: Width of rectangle. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">height</span></code>: Height of rectangle. </p></li>
+</dl>
+</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>src</strong> – drawing location to copy from. </p></li>
+<li><p><strong>x</strong> – X coordinate. </p></li>
+<li><p><strong>y</strong> – Y coordinate. </p></li>
+<li><p><strong>width</strong> – Width of rectangle. </p></li>
+<li><p><strong>height</strong> – Height of rectangle. </p></li>
 </ul>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -1579,48 +1676,53 @@ void main() {
 <p>No clipping is performed; as it is a copy not a draw. <dl class="simple">
 <dt><strong>See</strong></dt><dd><p><a class="reference internal" href="#graphx_8h_1a5128cb7aeab800d47dd9638244e75ed1"><span class="std std-ref">gfx_location_t</span></a> </p>
 </dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">src</span></code>: Graphics buffer to copy from. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">dst</span></code>: Graphics buffer to copy to. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">src_x</span></code>: X coordinate on src. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">src_y</span></code>: Y coordinate on src. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">dst_x</span></code>: X coordinate on dst. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">dst_y</span></code>: Y coordinate on dst. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">width</span></code>: Width of rectangle. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">height</span></code>: Height of rectangle. </p></li>
+</dl>
+</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>src</strong> – Graphics buffer to copy from. </p></li>
+<li><p><strong>dst</strong> – Graphics buffer to copy to. </p></li>
+<li><p><strong>src_x</strong> – X coordinate on src. </p></li>
+<li><p><strong>src_y</strong> – Y coordinate on src. </p></li>
+<li><p><strong>dst_x</strong> – X coordinate on dst. </p></li>
+<li><p><strong>dst_y</strong> – Y coordinate on dst. </p></li>
+<li><p><strong>width</strong> – Width of rectangle. </p></li>
+<li><p><strong>height</strong> – Height of rectangle. </p></li>
 </ul>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv416gfx_SetTextScale7uint8_t7uint8_t">
 <span id="_CPPv316gfx_SetTextScale7uint8_t7uint8_t"></span><span id="_CPPv216gfx_SetTextScale7uint8_t7uint8_t"></span><span id="gfx_SetTextScale__uint8_t.uint8_t"></span><span class="target" id="graphx_8h_1a32d7b174be502f5a2a01688f7fa5bf77"></span>void <code class="sig-name descname">gfx_SetTextScale</code><span class="sig-paren">(</span>uint8_t <em>width_scale</em>, uint8_t <em>height_scale</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv416gfx_SetTextScale7uint8_t7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Sets the scaling for text. Scaling is performed by multiplying the width / height of the currently loaded text by the supplied scaling factors.</p>
-<p>Values in the range from 1-5 are preferred. <dl class="simple">
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">width_scale</span></code>: Text width scaling </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">height_scale</span></code>: Text height scaling </p></li>
+<p>Values in the range from 1-5 are preferred. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>width_scale</strong> – Text width scaling </p></li>
+<li><p><strong>height_scale</strong> – Text height scaling </p></li>
 </ul>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv413gfx_PrintCharKc">
 <span id="_CPPv313gfx_PrintCharKc"></span><span id="_CPPv213gfx_PrintCharKc"></span><span id="gfx_PrintChar__cC"></span><span class="target" id="graphx_8h_1aaac67a7731804b28386446b64b797ed7"></span>void <code class="sig-name descname">gfx_PrintChar</code><span class="sig-paren">(</span><em class="property">const</em> char <em>c</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv413gfx_PrintCharKc" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Prints a single character.</p>
-<p>Outputs a character at the current cursor position. <dl class="simple">
-<dt><strong>Note</strong></dt><dd><p>By default, no text clipping is performed. See gfx_SetTextConfig. </p>
-</dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">c</span></code>: Character to print </p></li>
-</ul>
+<p>Outputs a character at the current cursor position. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>By default, no text clipping is performed. See gfx_SetTextConfig. </p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>c</strong> – Character to print </p>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -1628,18 +1730,22 @@ void main() {
 <span id="_CPPv312gfx_PrintInti7uint8_t"></span><span id="_CPPv212gfx_PrintInti7uint8_t"></span><span id="gfx_PrintInt__i.uint8_t"></span><span class="target" id="graphx_8h_1ab69d2158cf8d43c9e37277f255837bed"></span>void <code class="sig-name descname">gfx_PrintInt</code><span class="sig-paren">(</span>int <em>n</em>, uint8_t <em>length</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv412gfx_PrintInti7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Prints a signed integer.</p>
 <p>Outputs at the current cursor position. Padded with leading zeros if necessary to satisfy the specified minimum length.</p>
-<p><dl class="simple">
-<dt><strong>Note</strong></dt><dd><p>By default, no text clipping is performed. See gfx_SetTextConfig. </p>
-</dd>
-<dt><strong>Note</strong></dt><dd><p><code class="docutils literal notranslate"><span class="pre">length</span></code> must be between 1 and 8, inclusive </p>
-</dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">n</span></code>: Integer to print. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">length</span></code>: Minimum number of characters to print. </p></li>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>By default, no text clipping is performed. See gfx_SetTextConfig. </p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">length</span></code> must be between 1 and 8, inclusive </p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>n</strong> – Integer to print. </p></li>
+<li><p><strong>length</strong> – Minimum number of characters to print. </p></li>
 </ul>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -1647,84 +1753,92 @@ void main() {
 <span id="_CPPv313gfx_PrintUIntj7uint8_t"></span><span id="_CPPv213gfx_PrintUIntj7uint8_t"></span><span id="gfx_PrintUInt__unsigned-i.uint8_t"></span><span class="target" id="graphx_8h_1ab129e44087ec49a40143780032ac936d"></span>void <code class="sig-name descname">gfx_PrintUInt</code><span class="sig-paren">(</span>unsigned int <em>n</em>, uint8_t <em>length</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv413gfx_PrintUIntj7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Prints an unsigned integer.</p>
 <p>Outputs at the current cursor position. Padded with leading zeros if necessary to satisfy the specified minimum length.</p>
-<p><dl class="simple">
-<dt><strong>Note</strong></dt><dd><p>By default, no text clipping is performed. See gfx_SetTextConfig. </p>
-</dd>
-<dt><strong>Note</strong></dt><dd><p><code class="docutils literal notranslate"><span class="pre">length</span></code> must be between 1 and 8, inclusive </p>
-</dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">n</span></code>: Unsigned integer to print. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">length</span></code>: Minimum number of characters to print. </p></li>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>By default, no text clipping is performed. See gfx_SetTextConfig. </p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">length</span></code> must be between 1 and 8, inclusive </p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>n</strong> – Unsigned integer to print. </p></li>
+<li><p><strong>length</strong> – Minimum number of characters to print. </p></li>
 </ul>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv415gfx_PrintStringPKc">
 <span id="_CPPv315gfx_PrintStringPKc"></span><span id="_CPPv215gfx_PrintStringPKc"></span><span id="gfx_PrintString__cCP"></span><span class="target" id="graphx_8h_1a00e2dfdb8b09f4f8cfd8ead4cfb52833"></span>void <code class="sig-name descname">gfx_PrintString</code><span class="sig-paren">(</span><em class="property">const</em> char *<em>string</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv415gfx_PrintStringPKc" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Prints a string.</p>
-<p>Outputs a string at the current cursor position. <dl class="simple">
-<dt><strong>Note</strong></dt><dd><p>By default, no text clipping is performed. See gfx_SetTextConfig. </p>
-</dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">string</span></code>: Pointer to string to print. </p></li>
-</ul>
+<p>Outputs a string at the current cursor position. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>By default, no text clipping is performed. See gfx_SetTextConfig. </p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>string</strong> – Pointer to string to print. </p>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv417gfx_PrintStringXYPKcii">
 <span id="_CPPv317gfx_PrintStringXYPKcii"></span><span id="_CPPv217gfx_PrintStringXYPKcii"></span><span id="gfx_PrintStringXY__cCP.i.i"></span><span class="target" id="graphx_8h_1a33e9a033e49a9a0d835766bb9d3b7bd0"></span>void <code class="sig-name descname">gfx_PrintStringXY</code><span class="sig-paren">(</span><em class="property">const</em> char *<em>string</em>, int <em>x</em>, int <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv417gfx_PrintStringXYPKcii" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Prints a string at a specific location.</p>
-<p>Outputs a string at the supplied coordinates. Position is measured from top left origin of screen. <dl class="simple">
-<dt><strong>Note</strong></dt><dd><p>By default, no text clipping is performed. See gfx_SetTextConfig. </p>
-</dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">string</span></code>: Pointer to string to print. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">x</span></code>: X coordinate. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">y</span></code>: Y coordinate. </p></li>
+<p>Outputs a string at the supplied coordinates. Position is measured from top left origin of screen. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>By default, no text clipping is performed. See gfx_SetTextConfig. </p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>string</strong> – Pointer to string to print. </p></li>
+<li><p><strong>x</strong> – X coordinate. </p></li>
+<li><p><strong>y</strong> – Y coordinate. </p></li>
 </ul>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv412gfx_GetTextXv">
 <span id="_CPPv312gfx_GetTextXv"></span><span id="_CPPv212gfx_GetTextXv"></span><span id="gfx_GetTextX__void"></span><span class="target" id="graphx_8h_1a328da982fae1d2c3bb498a2ff1e034b3"></span>int <code class="sig-name descname">gfx_GetTextX</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv412gfx_GetTextXv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p><dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>The current text cursor X position. </p>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The current text cursor X position. </p>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv412gfx_GetTextYv">
 <span id="_CPPv312gfx_GetTextYv"></span><span id="_CPPv212gfx_GetTextYv"></span><span id="gfx_GetTextY__void"></span><span class="target" id="graphx_8h_1a8fc52c87cdfe3916c898c9e374ccbb78"></span>int <code class="sig-name descname">gfx_GetTextY</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv412gfx_GetTextYv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p><dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>The current text cursor Y position. </p>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The current text cursor Y position. </p>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv413gfx_SetTextXYii">
 <span id="_CPPv313gfx_SetTextXYii"></span><span id="_CPPv213gfx_SetTextXYii"></span><span id="gfx_SetTextXY__i.i"></span><span class="target" id="graphx_8h_1a370fe7b8f625a3d8a414d8720d07f48a"></span>void <code class="sig-name descname">gfx_SetTextXY</code><span class="sig-paren">(</span>int <em>x</em>, int <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv413gfx_SetTextXYii" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Sets the text cursor X and Y positions.</p>
-<p><dl class="simple">
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">x</span></code>: X coordinate </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">y</span></code>: Y coordinate </p></li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> – X coordinate </p></li>
+<li><p><strong>y</strong> – Y coordinate </p></li>
 </ul>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -1734,144 +1848,154 @@ void main() {
 <p><dl class="simple">
 <dt><strong>See</strong></dt><dd><p><a class="reference internal" href="#graphx_8h_1af41d73083fea940ead39f9449944f46a"><span class="std std-ref">gfx_text_options_t</span></a> </p>
 </dd>
-<dt><strong>Note</strong></dt><dd><p>Scaled text does not clip </p>
-</dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">config</span></code>: Set the options for the text mode. </p></li>
-</ul>
-</dd>
 </dl>
 </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Scaled text does not clip </p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>config</strong> – Set the options for the text mode. </p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv418gfx_SetTextFGColor7uint8_t">
 <span id="_CPPv318gfx_SetTextFGColor7uint8_t"></span><span id="_CPPv218gfx_SetTextFGColor7uint8_t"></span><span id="gfx_SetTextFGColor__uint8_t"></span><span class="target" id="graphx_8h_1acd43c9fb3a02d6d0af89b275f509a7f9"></span>uint8_t <code class="sig-name descname">gfx_SetTextFGColor</code><span class="sig-paren">(</span>uint8_t <em>color</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv418gfx_SetTextFGColor7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Sets the text foreground color.</p>
-<p><dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>Previous text foreground color index. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Default text foreground color index: 0. </p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>color</strong> – Color index to set. </p>
 </dd>
-<dt><strong>Note</strong></dt><dd><p>Default text foreground color index: 0. </p>
-</dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">color</span></code>: Color index to set. </p></li>
-</ul>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Previous text foreground color index. </p>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv418gfx_SetTextBGColor7uint8_t">
 <span id="_CPPv318gfx_SetTextBGColor7uint8_t"></span><span id="_CPPv218gfx_SetTextBGColor7uint8_t"></span><span id="gfx_SetTextBGColor__uint8_t"></span><span class="target" id="graphx_8h_1a5bee09037ac60bffdb46967ded315313"></span>uint8_t <code class="sig-name descname">gfx_SetTextBGColor</code><span class="sig-paren">(</span>uint8_t <em>color</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv418gfx_SetTextBGColor7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Sets the text background color.</p>
-<p><dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>Previous text background color index. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Default text background color index: 255. </p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>color</strong> – Color index to set. </p>
 </dd>
-<dt><strong>Note</strong></dt><dd><p>Default text background color index: 255. </p>
-</dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">color</span></code>: Color index to set. </p></li>
-</ul>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Previous text background color index. </p>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv427gfx_SetTextTransparentColor7uint8_t">
 <span id="_CPPv327gfx_SetTextTransparentColor7uint8_t"></span><span id="_CPPv227gfx_SetTextTransparentColor7uint8_t"></span><span id="gfx_SetTextTransparentColor__uint8_t"></span><span class="target" id="graphx_8h_1a6ef17ddeea165e41edf6728d710b78e9"></span>uint8_t <code class="sig-name descname">gfx_SetTextTransparentColor</code><span class="sig-paren">(</span>uint8_t <em>color</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv427gfx_SetTextTransparentColor7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Sets the text transparency color.</p>
-<p><dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>Previous text transparency color index. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Default text transparency color index: 255. </p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>color</strong> – Color index to set. </p>
 </dd>
-<dt><strong>Note</strong></dt><dd><p>Default text transparency color index: 255. </p>
-</dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">color</span></code>: Color index to set. </p></li>
-</ul>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Previous text transparency color index. </p>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv410gfx_SpritePK12gfx_sprite_tii">
 <span id="_CPPv310gfx_SpritePK12gfx_sprite_tii"></span><span id="_CPPv210gfx_SpritePK12gfx_sprite_tii"></span><span id="gfx_Sprite__gfx_sprite_tCP.i.i"></span><span class="target" id="graphx_8h_1a1000eb205890bc4715258aa945cd6fd2"></span>void <code class="sig-name descname">gfx_Sprite</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv412gfx_sprite_t" title="gfx_sprite_t">gfx_sprite_t</a> *<em>sprite</em>, int <em>x</em>, int <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv410gfx_SpritePK12gfx_sprite_tii" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Draws a sprite.</p>
-<p><dl class="simple">
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">sprite</span></code>: Pointer to an initialized sprite structure. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">x</span></code>: X coordinate. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">y</span></code>: Y coordinate. </p></li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sprite</strong> – Pointer to an initialized sprite structure. </p></li>
+<li><p><strong>x</strong> – X coordinate. </p></li>
+<li><p><strong>y</strong> – Y coordinate. </p></li>
 </ul>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv417gfx_Sprite_NoClipPK12gfx_sprite_t8uint24_t7uint8_t">
 <span id="_CPPv317gfx_Sprite_NoClipPK12gfx_sprite_t8uint24_t7uint8_t"></span><span id="_CPPv217gfx_Sprite_NoClipPK12gfx_sprite_t8uint24_t7uint8_t"></span><span id="gfx_Sprite_NoClip__gfx_sprite_tCP.uint24_t.uint8_t"></span><span class="target" id="graphx_8h_1acb6d64278eead29d5c61c831866ab753"></span>void <code class="sig-name descname">gfx_Sprite_NoClip</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv412gfx_sprite_t" title="gfx_sprite_t">gfx_sprite_t</a> *<em>sprite</em>, uint24_t <em>x</em>, uint8_t <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv417gfx_Sprite_NoClipPK12gfx_sprite_t8uint24_t7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Draws an unclipped sprite.</p>
-<p><dl class="simple">
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">sprite</span></code>: Pointer to an initialized sprite structure. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">x</span></code>: X coordinate. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">y</span></code>: Y coordinate. </p></li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sprite</strong> – Pointer to an initialized sprite structure. </p></li>
+<li><p><strong>x</strong> – X coordinate. </p></li>
+<li><p><strong>y</strong> – Y coordinate. </p></li>
 </ul>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv421gfx_TransparentSpritePK12gfx_sprite_tii">
 <span id="_CPPv321gfx_TransparentSpritePK12gfx_sprite_tii"></span><span id="_CPPv221gfx_TransparentSpritePK12gfx_sprite_tii"></span><span id="gfx_TransparentSprite__gfx_sprite_tCP.i.i"></span><span class="target" id="graphx_8h_1ac01df8f69a5e0bd87b1ea16b8407e709"></span>void <code class="sig-name descname">gfx_TransparentSprite</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv412gfx_sprite_t" title="gfx_sprite_t">gfx_sprite_t</a> *<em>sprite</em>, int <em>x</em>, int <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv421gfx_TransparentSpritePK12gfx_sprite_tii" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Draws a transparent sprite.</p>
-<p><dl class="simple">
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">sprite</span></code>: Pointer to an initialized sprite structure. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">x</span></code>: X coordinate. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">y</span></code>: Y coordinate. </p></li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sprite</strong> – Pointer to an initialized sprite structure. </p></li>
+<li><p><strong>x</strong> – X coordinate. </p></li>
+<li><p><strong>y</strong> – Y coordinate. </p></li>
 </ul>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv428gfx_TransparentSprite_NoClipPK12gfx_sprite_t8uint24_t7uint8_t">
 <span id="_CPPv328gfx_TransparentSprite_NoClipPK12gfx_sprite_t8uint24_t7uint8_t"></span><span id="_CPPv228gfx_TransparentSprite_NoClipPK12gfx_sprite_t8uint24_t7uint8_t"></span><span id="gfx_TransparentSprite_NoClip__gfx_sprite_tCP.uint24_t.uint8_t"></span><span class="target" id="graphx_8h_1a8856b3eb7e725e24c18946764f94eab4"></span>void <code class="sig-name descname">gfx_TransparentSprite_NoClip</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv412gfx_sprite_t" title="gfx_sprite_t">gfx_sprite_t</a> *<em>sprite</em>, uint24_t <em>x</em>, uint8_t <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv428gfx_TransparentSprite_NoClipPK12gfx_sprite_t8uint24_t7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Draws an unclipped transparent sprite.</p>
-<p><dl class="simple">
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">sprite</span></code>: Pointer to an initialized sprite structure. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">x</span></code>: X coordinate. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">y</span></code>: Y coordinate. </p></li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sprite</strong> – Pointer to an initialized sprite structure. </p></li>
+<li><p><strong>x</strong> – X coordinate. </p></li>
+<li><p><strong>y</strong> – Y coordinate. </p></li>
 </ul>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv413gfx_GetSpriteP12gfx_sprite_tii">
 <span id="_CPPv313gfx_GetSpriteP12gfx_sprite_tii"></span><span id="_CPPv213gfx_GetSpriteP12gfx_sprite_tii"></span><span id="gfx_GetSprite__gfx_sprite_tP.i.i"></span><span class="target" id="graphx_8h_1a90d1afbdc2290c3079a43e67ba6e335f"></span><a class="reference internal" href="#_CPPv412gfx_sprite_t" title="gfx_sprite_t">gfx_sprite_t</a> *<code class="sig-name descname">gfx_GetSprite</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv412gfx_sprite_t" title="gfx_sprite_t">gfx_sprite_t</a> *<em>sprite_buffer</em>, int <em>x</em>, int <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv413gfx_GetSpriteP12gfx_sprite_tii" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Grabs the background behind a sprite.</p>
-<p>This is useful for partial redraw. <dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>A pointer to sprite_buffer. </p>
-</dd>
-<dt><strong>Note</strong></dt><dd><p><code class="docutils literal notranslate"><span class="pre">sprite_buffer</span></code> must be pointing to a large enough buffer to hold (width * height + 2) number of bytes. </p>
-</dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">sprite_buffer</span></code>: Buffer used to store grabbed sprite. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">x</span></code>: X coordinate to grab sprite. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">y</span></code>: Y coordinate to grab sprite. </p></li>
+<p>This is useful for partial redraw. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">sprite_buffer</span></code> must be pointing to a large enough buffer to hold (width * height + 2) number of bytes. </p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sprite_buffer</strong> – Buffer used to store grabbed sprite. </p></li>
+<li><p><strong>x</strong> – X coordinate to grab sprite. </p></li>
+<li><p><strong>y</strong> – Y coordinate to grab sprite. </p></li>
 </ul>
 </dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A pointer to sprite_buffer. </p>
+</dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -1879,19 +2003,21 @@ void main() {
 <span id="_CPPv323gfx_ScaledSprite_NoClipPK12gfx_sprite_t8uint24_t7uint8_t7uint8_t7uint8_t"></span><span id="_CPPv223gfx_ScaledSprite_NoClipPK12gfx_sprite_t8uint24_t7uint8_t7uint8_t7uint8_t"></span><span id="gfx_ScaledSprite_NoClip__gfx_sprite_tCP.uint24_t.uint8_t.uint8_t.uint8_t"></span><span class="target" id="graphx_8h_1a12a5521e71ca4633ae32d5ea8bf65d8d"></span>void <code class="sig-name descname">gfx_ScaledSprite_NoClip</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv412gfx_sprite_t" title="gfx_sprite_t">gfx_sprite_t</a> *<em>sprite</em>, uint24_t <em>x</em>, uint8_t <em>y</em>, uint8_t <em>width_scale</em>, uint8_t <em>height_scale</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv423gfx_ScaledSprite_NoClipPK12gfx_sprite_t8uint24_t7uint8_t7uint8_t7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Scales an unclipped sprite.</p>
 <p>Scaling factors must be greater than or equal to 1, and an integer factor. Sprites are scaled by multiplying the dimensions by the respective factors.</p>
-<p><dl class="simple">
-<dt><strong>Note</strong></dt><dd><p>Usable with gfx_GetSprite in order to create clipped versions. </p>
-</dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">sprite</span></code>: Pointer to an initialized sprite structure. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">x</span></code>: X coordinate. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">y</span></code>: Y coordinate. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">width_scale</span></code>: Width scaling factor. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">height_scale</span></code>: Height scaling factor. </p></li>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Usable with gfx_GetSprite in order to create clipped versions. </p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sprite</strong> – Pointer to an initialized sprite structure. </p></li>
+<li><p><strong>x</strong> – X coordinate. </p></li>
+<li><p><strong>y</strong> – Y coordinate. </p></li>
+<li><p><strong>width_scale</strong> – Width scaling factor. </p></li>
+<li><p><strong>height_scale</strong> – Height scaling factor. </p></li>
 </ul>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -1899,169 +2025,196 @@ void main() {
 <span id="_CPPv334gfx_ScaledTransparentSprite_NoClipPK12gfx_sprite_t8uint24_t7uint8_t7uint8_t7uint8_t"></span><span id="_CPPv234gfx_ScaledTransparentSprite_NoClipPK12gfx_sprite_t8uint24_t7uint8_t7uint8_t7uint8_t"></span><span id="gfx_ScaledTransparentSprite_NoClip__gfx_sprite_tCP.uint24_t.uint8_t.uint8_t.uint8_t"></span><span class="target" id="graphx_8h_1a4671c6c8712b77a52d44a0eb5e5e25c6"></span>void <code class="sig-name descname">gfx_ScaledTransparentSprite_NoClip</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv412gfx_sprite_t" title="gfx_sprite_t">gfx_sprite_t</a> *<em>sprite</em>, uint24_t <em>x</em>, uint8_t <em>y</em>, uint8_t <em>width_scale</em>, uint8_t <em>height_scale</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv434gfx_ScaledTransparentSprite_NoClipPK12gfx_sprite_t8uint24_t7uint8_t7uint8_t7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Scales an unclipped transparent sprite.</p>
 <p>Scaling factors must be greater than or equal to 1, and an integer factor. Sprites are scaled by multiplying the dimensions by the respective factors.</p>
-<p><dl class="simple">
-<dt><strong>Note</strong></dt><dd><p>Usable with gfx_GetSprite in order to create clipped versions. </p>
-</dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">sprite</span></code>: Pointer to an initialized sprite structure. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">x</span></code>: X coordinate. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">y</span></code>: Y coordinate. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">width_scale</span></code>: Width scaling factor. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">height_scale</span></code>: Height scaling factor. </p></li>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Usable with gfx_GetSprite in order to create clipped versions. </p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sprite</strong> – Pointer to an initialized sprite structure. </p></li>
+<li><p><strong>x</strong> – X coordinate. </p></li>
+<li><p><strong>y</strong> – Y coordinate. </p></li>
+<li><p><strong>width_scale</strong> – Width scaling factor. </p></li>
+<li><p><strong>height_scale</strong> – Height scaling factor. </p></li>
 </ul>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv441gfx_RotatedScaledTransparentSprite_NoClipPK12gfx_sprite_t8uint24_t7uint8_t7uint8_t7uint8_t">
 <span id="_CPPv341gfx_RotatedScaledTransparentSprite_NoClipPK12gfx_sprite_t8uint24_t7uint8_t7uint8_t7uint8_t"></span><span id="_CPPv241gfx_RotatedScaledTransparentSprite_NoClipPK12gfx_sprite_t8uint24_t7uint8_t7uint8_t7uint8_t"></span><span id="gfx_RotatedScaledTransparentSprite_NoClip__gfx_sprite_tCP.uint24_t.uint8_t.uint8_t.uint8_t"></span><span class="target" id="graphx_8h_1a9558061a3d9aa0b6fdb5db2dddffb8ea"></span>uint8_t <code class="sig-name descname">gfx_RotatedScaledTransparentSprite_NoClip</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv412gfx_sprite_t" title="gfx_sprite_t">gfx_sprite_t</a> *<em>sprite</em>, uint24_t <em>x</em>, uint8_t <em>y</em>, uint8_t <em>angle</em>, uint8_t <em>scale</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv441gfx_RotatedScaledTransparentSprite_NoClipPK12gfx_sprite_t8uint24_t7uint8_t7uint8_t7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Fixed Rotation with scaling factor for sprites.</p>
-<p><dl class="simple">
-<dt><strong>Note</strong></dt><dd><p>A scale factor of 64 represents 100% scaling. </p>
-</dd>
-<dt><strong>Warning</strong></dt><dd><p>This routine only accepts square input sprites. </p>
-</dd>
-<dt><strong>Return</strong></dt><dd><p>The size of the sprite after scaling. This can be used for centering purposes. </p>
-</dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">sprite</span></code>: Input sprite to rotate/scale. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">x</span></code>: X coordinate position. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">y</span></code>: Y coordinate position. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">angle</span></code>: 256 position angular integer. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">scale</span></code>: Scaling factor; range is about 1% to 400% scale. </p></li>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A scale factor of 64 represents 100% scaling. </p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This routine only accepts square input sprites. </p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sprite</strong> – Input sprite to rotate/scale. </p></li>
+<li><p><strong>x</strong> – X coordinate position. </p></li>
+<li><p><strong>y</strong> – Y coordinate position. </p></li>
+<li><p><strong>angle</strong> – 256 position angular integer. </p></li>
+<li><p><strong>scale</strong> – Scaling factor; range is about 1% to 400% scale. </p></li>
 </ul>
 </dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The size of the sprite after scaling. This can be used for centering purposes. </p>
+</dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv430gfx_RotatedScaledSprite_NoClipPK12gfx_sprite_t8uint24_t7uint8_t7uint8_t7uint8_t">
 <span id="_CPPv330gfx_RotatedScaledSprite_NoClipPK12gfx_sprite_t8uint24_t7uint8_t7uint8_t7uint8_t"></span><span id="_CPPv230gfx_RotatedScaledSprite_NoClipPK12gfx_sprite_t8uint24_t7uint8_t7uint8_t7uint8_t"></span><span id="gfx_RotatedScaledSprite_NoClip__gfx_sprite_tCP.uint24_t.uint8_t.uint8_t.uint8_t"></span><span class="target" id="graphx_8h_1a3263e5b8c4c8dd11e18cb10f44d5bedd"></span>uint8_t <code class="sig-name descname">gfx_RotatedScaledSprite_NoClip</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv412gfx_sprite_t" title="gfx_sprite_t">gfx_sprite_t</a> *<em>sprite</em>, uint24_t <em>x</em>, uint8_t <em>y</em>, uint8_t <em>angle</em>, uint8_t <em>scale</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv430gfx_RotatedScaledSprite_NoClipPK12gfx_sprite_t8uint24_t7uint8_t7uint8_t7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Fixed Rotation with scaling fator for sprites without transparency.</p>
-<p><dl class="simple">
-<dt><strong>Note</strong></dt><dd><p>A scale factor of 64 represents 100% scaling. </p>
-</dd>
-<dt><strong>Warning</strong></dt><dd><p>This routine only accepts square input sprites. </p>
-</dd>
-<dt><strong>Return</strong></dt><dd><p>The size of the sprite after scaling. This can be used for centering purposes. </p>
-</dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">sprite</span></code>: Input sprite to rotate/scale. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">x</span></code>: X coordinate position. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">y</span></code>: Y coordinate position. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">angle</span></code>: 256 position angular integer. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">scale</span></code>: Scaling factor; range is about 1% to 400% scale. 64 represents 100% scaling. </p></li>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A scale factor of 64 represents 100% scaling. </p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This routine only accepts square input sprites. </p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sprite</strong> – Input sprite to rotate/scale. </p></li>
+<li><p><strong>x</strong> – X coordinate position. </p></li>
+<li><p><strong>y</strong> – Y coordinate position. </p></li>
+<li><p><strong>angle</strong> – 256 position angular integer. </p></li>
+<li><p><strong>scale</strong> – Scaling factor; range is about 1% to 400% scale. 64 represents 100% scaling. </p></li>
 </ul>
 </dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The size of the sprite after scaling. This can be used for centering purposes. </p>
+</dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv415gfx_FlipSpriteXPK12gfx_sprite_tP12gfx_sprite_t">
 <span id="_CPPv315gfx_FlipSpriteXPK12gfx_sprite_tP12gfx_sprite_t"></span><span id="_CPPv215gfx_FlipSpriteXPK12gfx_sprite_tP12gfx_sprite_t"></span><span id="gfx_FlipSpriteX__gfx_sprite_tCP.gfx_sprite_tP"></span><span class="target" id="graphx_8h_1a8e5e60bcf66a8f830b98f6b2a19de630"></span><a class="reference internal" href="#_CPPv412gfx_sprite_t" title="gfx_sprite_t">gfx_sprite_t</a> *<code class="sig-name descname">gfx_FlipSpriteX</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv412gfx_sprite_t" title="gfx_sprite_t">gfx_sprite_t</a> *<em>sprite_in</em>, <a class="reference internal" href="#_CPPv412gfx_sprite_t" title="gfx_sprite_t">gfx_sprite_t</a> *<em>sprite_out</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv415gfx_FlipSpriteXPK12gfx_sprite_tP12gfx_sprite_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Flips a sprite along the X axis.</p>
-<p><dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>A pointer to sprite_out. </p>
-</dd>
-<dt><strong>Note</strong></dt><dd><p>sprite_in and sprite_out cannot be the same. </p>
-</dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">sprite_in</span></code>: Input sprite to flip. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">sprite_out</span></code>: Pointer to where flipped sprite will be stored. </p></li>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>sprite_in and sprite_out cannot be the same. </p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sprite_in</strong> – Input sprite to flip. </p></li>
+<li><p><strong>sprite_out</strong> – Pointer to where flipped sprite will be stored. </p></li>
 </ul>
 </dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A pointer to sprite_out. </p>
+</dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv415gfx_FlipSpriteYPK12gfx_sprite_tP12gfx_sprite_t">
 <span id="_CPPv315gfx_FlipSpriteYPK12gfx_sprite_tP12gfx_sprite_t"></span><span id="_CPPv215gfx_FlipSpriteYPK12gfx_sprite_tP12gfx_sprite_t"></span><span id="gfx_FlipSpriteY__gfx_sprite_tCP.gfx_sprite_tP"></span><span class="target" id="graphx_8h_1a2ce1e6b941e793c07f5e72240d8a5790"></span><a class="reference internal" href="#_CPPv412gfx_sprite_t" title="gfx_sprite_t">gfx_sprite_t</a> *<code class="sig-name descname">gfx_FlipSpriteY</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv412gfx_sprite_t" title="gfx_sprite_t">gfx_sprite_t</a> *<em>sprite_in</em>, <a class="reference internal" href="#_CPPv412gfx_sprite_t" title="gfx_sprite_t">gfx_sprite_t</a> *<em>sprite_out</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv415gfx_FlipSpriteYPK12gfx_sprite_tP12gfx_sprite_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Flips a sprite along the Y axis.</p>
-<p><dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>A pointer to sprite_out. </p>
-</dd>
-<dt><strong>Note</strong></dt><dd><p>sprite_in and sprite_out cannot be the same. </p>
-</dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">sprite_in</span></code>: Input sprite to flip. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">sprite_out</span></code>: Pointer to where flipped sprite will be stored. </p></li>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>sprite_in and sprite_out cannot be the same. </p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sprite_in</strong> – Input sprite to flip. </p></li>
+<li><p><strong>sprite_out</strong> – Pointer to where flipped sprite will be stored. </p></li>
 </ul>
 </dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A pointer to sprite_out. </p>
+</dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv417gfx_RotateSpriteCPK12gfx_sprite_tP12gfx_sprite_t">
 <span id="_CPPv317gfx_RotateSpriteCPK12gfx_sprite_tP12gfx_sprite_t"></span><span id="_CPPv217gfx_RotateSpriteCPK12gfx_sprite_tP12gfx_sprite_t"></span><span id="gfx_RotateSpriteC__gfx_sprite_tCP.gfx_sprite_tP"></span><span class="target" id="graphx_8h_1a9470bfc215105f7d2eee82adc7f93a1d"></span><a class="reference internal" href="#_CPPv412gfx_sprite_t" title="gfx_sprite_t">gfx_sprite_t</a> *<code class="sig-name descname">gfx_RotateSpriteC</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv412gfx_sprite_t" title="gfx_sprite_t">gfx_sprite_t</a> *<em>sprite_in</em>, <a class="reference internal" href="#_CPPv412gfx_sprite_t" title="gfx_sprite_t">gfx_sprite_t</a> *<em>sprite_out</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv417gfx_RotateSpriteCPK12gfx_sprite_tP12gfx_sprite_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Rotates a sprite 90 degrees clockwise.</p>
-<p><dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>A pointer to sprite_out. </p>
-</dd>
-<dt><strong>Note</strong></dt><dd><p>sprite_in and sprite_out cannot be the same. </p>
-</dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">sprite_in</span></code>: Input sprite to rotate. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">sprite_out</span></code>: Pointer to where rotated sprite will be stored. </p></li>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>sprite_in and sprite_out cannot be the same. </p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sprite_in</strong> – Input sprite to rotate. </p></li>
+<li><p><strong>sprite_out</strong> – Pointer to where rotated sprite will be stored. </p></li>
 </ul>
 </dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A pointer to sprite_out. </p>
+</dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv418gfx_RotateSpriteCCPK12gfx_sprite_tP12gfx_sprite_t">
 <span id="_CPPv318gfx_RotateSpriteCCPK12gfx_sprite_tP12gfx_sprite_t"></span><span id="_CPPv218gfx_RotateSpriteCCPK12gfx_sprite_tP12gfx_sprite_t"></span><span id="gfx_RotateSpriteCC__gfx_sprite_tCP.gfx_sprite_tP"></span><span class="target" id="graphx_8h_1a570ccb08ddecb71ff57558f79f87b125"></span><a class="reference internal" href="#_CPPv412gfx_sprite_t" title="gfx_sprite_t">gfx_sprite_t</a> *<code class="sig-name descname">gfx_RotateSpriteCC</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv412gfx_sprite_t" title="gfx_sprite_t">gfx_sprite_t</a> *<em>sprite_in</em>, <a class="reference internal" href="#_CPPv412gfx_sprite_t" title="gfx_sprite_t">gfx_sprite_t</a> *<em>sprite_out</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv418gfx_RotateSpriteCCPK12gfx_sprite_tP12gfx_sprite_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Rotates a sprite 90 degrees counter clockwise.</p>
-<p><dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>A pointer to sprite_out. </p>
-</dd>
-<dt><strong>Note</strong></dt><dd><p>sprite_in and sprite_out cannot be the same. </p>
-</dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">sprite_in</span></code>: Input sprite to rotate. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">sprite_out</span></code>: Pointer to where rotated sprite will be stored. </p></li>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>sprite_in and sprite_out cannot be the same. </p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sprite_in</strong> – Input sprite to rotate. </p></li>
+<li><p><strong>sprite_out</strong> – Pointer to where rotated sprite will be stored. </p></li>
 </ul>
 </dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A pointer to sprite_out. </p>
+</dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv420gfx_RotateSpriteHalfPK12gfx_sprite_tP12gfx_sprite_t">
 <span id="_CPPv320gfx_RotateSpriteHalfPK12gfx_sprite_tP12gfx_sprite_t"></span><span id="_CPPv220gfx_RotateSpriteHalfPK12gfx_sprite_tP12gfx_sprite_t"></span><span id="gfx_RotateSpriteHalf__gfx_sprite_tCP.gfx_sprite_tP"></span><span class="target" id="graphx_8h_1ac4de3271ec1211693e84c0b489c19e91"></span><a class="reference internal" href="#_CPPv412gfx_sprite_t" title="gfx_sprite_t">gfx_sprite_t</a> *<code class="sig-name descname">gfx_RotateSpriteHalf</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv412gfx_sprite_t" title="gfx_sprite_t">gfx_sprite_t</a> *<em>sprite_in</em>, <a class="reference internal" href="#_CPPv412gfx_sprite_t" title="gfx_sprite_t">gfx_sprite_t</a> *<em>sprite_out</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv420gfx_RotateSpriteHalfPK12gfx_sprite_tP12gfx_sprite_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Rotates a sprite 180 degrees.</p>
-<p><dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>A pointer to sprite_out. </p>
-</dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">sprite_in</span></code>: Input sprite to rotate. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">sprite_out</span></code>: Pointer to where rotated sprite will be stored. </p></li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sprite_in</strong> – Input sprite to rotate. </p></li>
+<li><p><strong>sprite_out</strong> – Pointer to where rotated sprite will be stored. </p></li>
 </ul>
 </dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A pointer to sprite_out. </p>
+</dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv415gfx_ScaleSpritePK12gfx_sprite_tP12gfx_sprite_t">
 <span id="_CPPv315gfx_ScaleSpritePK12gfx_sprite_tP12gfx_sprite_t"></span><span id="_CPPv215gfx_ScaleSpritePK12gfx_sprite_tP12gfx_sprite_t"></span><span id="gfx_ScaleSprite__gfx_sprite_tCP.gfx_sprite_tP"></span><span class="target" id="graphx_8h_1a62a5db34b176d665a18aa603a1d8f1a1"></span><a class="reference internal" href="#_CPPv412gfx_sprite_t" title="gfx_sprite_t">gfx_sprite_t</a> *<code class="sig-name descname">gfx_ScaleSprite</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv412gfx_sprite_t" title="gfx_sprite_t">gfx_sprite_t</a> *<em>sprite_in</em>, <a class="reference internal" href="#_CPPv412gfx_sprite_t" title="gfx_sprite_t">gfx_sprite_t</a> *<em>sprite_out</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv415gfx_ScaleSpritePK12gfx_sprite_tP12gfx_sprite_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Resizes a sprite to new dimensions.</p>
-<p>Place new image dimensions in sprite_out; i.e. sprite_out-&gt;width = 80; sprite_out-&gt;height = 20. <dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>A pointer to <code class="docutils literal notranslate"><span class="pre">sprite_out</span></code>. </p>
-</dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">sprite_in</span></code>: Input sprite to scale. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">sprite_out</span></code>: Pointer to where scaled sprite will be stored. </p></li>
+<p>Place new image dimensions in sprite_out; i.e. sprite_out-&gt;width = 80; sprite_out-&gt;height = 20. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sprite_in</strong> – Input sprite to scale. </p></li>
+<li><p><strong>sprite_out</strong> – Pointer to where scaled sprite will be stored. </p></li>
 </ul>
 </dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A pointer to <code class="docutils literal notranslate"><span class="pre">sprite_out</span></code>. </p>
+</dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -2069,37 +2222,42 @@ void main() {
 <span id="_CPPv321gfx_RotateScaleSpritePK12gfx_sprite_tP12gfx_sprite_t7uint8_t7uint8_t"></span><span id="_CPPv221gfx_RotateScaleSpritePK12gfx_sprite_tP12gfx_sprite_t7uint8_t7uint8_t"></span><span id="gfx_RotateScaleSprite__gfx_sprite_tCP.gfx_sprite_tP.uint8_t.uint8_t"></span><span class="target" id="graphx_8h_1ac54639d3cbd7ce056d45013418d1e5a8"></span><a class="reference internal" href="#_CPPv412gfx_sprite_t" title="gfx_sprite_t">gfx_sprite_t</a> *<code class="sig-name descname">gfx_RotateScaleSprite</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv412gfx_sprite_t" title="gfx_sprite_t">gfx_sprite_t</a> *<em>sprite_in</em>, <a class="reference internal" href="#_CPPv412gfx_sprite_t" title="gfx_sprite_t">gfx_sprite_t</a> *<em>sprite_out</em>, uint8_t <em>angle</em>, uint8_t <em>scale</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv421gfx_RotateScaleSpritePK12gfx_sprite_tP12gfx_sprite_t7uint8_t7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Fixed Rotation with scaling factor for sprites.</p>
 <p>The output sprite is updated with the dimensions required for the implemented scaling factor. You must make sure that <code class="docutils literal notranslate"><span class="pre">sprite_out</span></code> has enough memory to store the needed output sprite. This can be found with the following formula: size = (max_scale / 64) * width * height + 2;</p>
-<p><dl class="simple">
-<dt><strong>Note</strong></dt><dd><p>A scale factor of 64 represents 100% scaling. </p>
-</dd>
-<dt><strong>Warning</strong></dt><dd><p>This routine only accepts square input sprites. </p>
-</dd>
-<dt><strong>Return</strong></dt><dd><p>A pointer to <code class="docutils literal notranslate"><span class="pre">sprite_out</span></code>. </p>
-</dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">sprite_in</span></code>: Input sprite to rotate/scale. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">sprite_out</span></code>: Pointer to where rotated/scaled sprite will be stored. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">angle</span></code>: 256 position angular integer. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">scale</span></code>: Scaling factor; range is about 1% to 400% scale. </p></li>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A scale factor of 64 represents 100% scaling. </p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This routine only accepts square input sprites. </p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sprite_in</strong> – Input sprite to rotate/scale. </p></li>
+<li><p><strong>sprite_out</strong> – Pointer to where rotated/scaled sprite will be stored. </p></li>
+<li><p><strong>angle</strong> – 256 position angular integer. </p></li>
+<li><p><strong>scale</strong> – Scaling factor; range is about 1% to 400% scale. </p></li>
 </ul>
 </dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A pointer to <code class="docutils literal notranslate"><span class="pre">sprite_out</span></code>. </p>
+</dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv417gfx_GetSpriteCharc">
 <span id="_CPPv317gfx_GetSpriteCharc"></span><span id="_CPPv217gfx_GetSpriteCharc"></span><span id="gfx_GetSpriteChar__c"></span><span class="target" id="graphx_8h_1a131df855eb57b1340a430f9d97fc4d95"></span><a class="reference internal" href="#_CPPv412gfx_sprite_t" title="gfx_sprite_t">gfx_sprite_t</a> *<code class="sig-name descname">gfx_GetSpriteChar</code><span class="sig-paren">(</span>char <em>c</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv417gfx_GetSpriteCharc" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Creates a temporary character sprite.</p>
-<p>This may be useful for performing rotations and other. operations on characters. The sprite returned is always 8x8 pixels. <dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>A sprite of the character data. </p>
+<p>This may be useful for performing rotations and other. operations on characters. The sprite returned is always 8x8 pixels. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>c</strong> – Character to generate. </p>
 </dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">c</span></code>: Character to generate. </p></li>
-</ul>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A sprite of the character data. </p>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -2107,17 +2265,18 @@ void main() {
 <span id="_CPPv315gfx_SetFontDataPK7uint8_t"></span><span id="_CPPv215gfx_SetFontDataPK7uint8_t"></span><span id="gfx_SetFontData__uint8_tCP"></span><span class="target" id="graphx_8h_1acf08c0c2db4f9cec95aef598ef78e040"></span>uint8_t *<code class="sig-name descname">gfx_SetFontData</code><span class="sig-paren">(</span><em class="property">const</em> uint8_t *<em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv415gfx_SetFontDataPK7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Sets the font’s character data.</p>
 <p>Fonts can be created manually or and exported to a C-style format using 8x8 Pixel ROM Font Editor: (<a class="reference external" href="https://www.min.at/prinz/o/software/pixelfont/#download">https://www.min.at/prinz/o/software/pixelfont/#download</a>)</p>
-<p><dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>Pointer to previous font data. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Format of font data is 8 bytes horizontally aligned. </p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>data</strong> – Pointer to formatted 8x8 pixel font. </p>
 </dd>
-<dt><strong>Note</strong></dt><dd><p>Format of font data is 8 bytes horizontally aligned. </p>
-</dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">data</span></code>: Pointer to formatted 8x8 pixel font. </p></li>
-</ul>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Pointer to previous font data. </p>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -2125,264 +2284,277 @@ void main() {
 <span id="_CPPv315gfx_SetCharData7uint8_tPK7uint8_t"></span><span id="_CPPv215gfx_SetCharData7uint8_tPK7uint8_t"></span><span id="gfx_SetCharData__uint8_t.uint8_tCP"></span><span class="target" id="graphx_8h_1a35b30c2eb887d83edb90331899bab3b6"></span>uint8_t *<code class="sig-name descname">gfx_SetCharData</code><span class="sig-paren">(</span>uint8_t <em>index</em>, <em class="property">const</em> uint8_t *<em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv415gfx_SetCharData7uint8_tPK7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Sets the font data for a specific character.</p>
 <p><dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>Pointer to current character data if <code class="docutils literal notranslate"><span class="pre">data</span></code> is NULL, otherwise a pointer to next character data. </p>
-</dd>
-<dt><strong>Note</strong></dt><dd><p>Format of font data is 8 bytes horizontally aligned. </p>
-</dd>
 <dt><strong>See</strong></dt><dd><p><a class="reference internal" href="#graphx_8h_1acf08c0c2db4f9cec95aef598ef78e040"><span class="std std-ref">gfx_SetFontData</span></a>. </p>
-</dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">index</span></code>: Character index to modify. (if using default font, values range from 0-127, custom font can have indexes 0-255). </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">data</span></code>: Pointer to formatted 8x8 pixel font. </p></li>
-</ul>
 </dd>
 </dl>
 </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Format of font data is 8 bytes horizontally aligned. </p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>index</strong> – Character index to modify. (if using default font, values range from 0-127, custom font can have indexes 0-255). </p></li>
+<li><p><strong>data</strong> – Pointer to formatted 8x8 pixel font. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Pointer to current character data if <code class="docutils literal notranslate"><span class="pre">data</span></code> is NULL, otherwise a pointer to next character data. </p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv418gfx_SetFontSpacingPK7uint8_t">
 <span id="_CPPv318gfx_SetFontSpacingPK7uint8_t"></span><span id="_CPPv218gfx_SetFontSpacingPK7uint8_t"></span><span id="gfx_SetFontSpacing__uint8_tCP"></span><span class="target" id="graphx_8h_1a532505c1546a594a544e60a5f6dc344c"></span>void <code class="sig-name descname">gfx_SetFontSpacing</code><span class="sig-paren">(</span><em class="property">const</em> uint8_t *<em>spacing</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv418gfx_SetFontSpacingPK7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Sets the font spacing for each character. Format is an array of bytes, where each index in the array corresponds to the character’s numerical value.</p>
-<p><dl class="simple">
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">spacing</span></code>: Pointer to array of character spacing. </p></li>
-</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>spacing</strong> – Pointer to array of character spacing. </p>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv417gfx_SetFontHeight7uint8_t">
 <span id="_CPPv317gfx_SetFontHeight7uint8_t"></span><span id="_CPPv217gfx_SetFontHeight7uint8_t"></span><span id="gfx_SetFontHeight__uint8_t"></span><span class="target" id="graphx_8h_1acd354eca6c04e07f8467edd2a7784b6c"></span>uint8_t <code class="sig-name descname">gfx_SetFontHeight</code><span class="sig-paren">(</span>uint8_t <em>height</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv417gfx_SetFontHeight7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Sets the height in pixels of each character.</p>
-<p>The default value is 8 pixels. <dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>Previous height of font in pixels. </p>
+<p>The default value is 8 pixels. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>height</strong> – New font height in pixels. </p>
 </dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">height</span></code>: New font height in pixels. </p></li>
-</ul>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Previous height of font in pixels. </p>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv420gfx_SetMonospaceFont7uint8_t">
 <span id="_CPPv320gfx_SetMonospaceFont7uint8_t"></span><span id="_CPPv220gfx_SetMonospaceFont7uint8_t"></span><span id="gfx_SetMonospaceFont__uint8_t"></span><span class="target" id="graphx_8h_1a5b8aec47449cfbad6c142401850f8dee"></span>void <code class="sig-name descname">gfx_SetMonospaceFont</code><span class="sig-paren">(</span>uint8_t <em>spacing</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv420gfx_SetMonospaceFont7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Sets a monospaced font width.</p>
-<p><dl class="simple">
-<dt><strong>Note</strong></dt><dd><p>To disable monospaced font, set to 0. </p>
-</dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">spacing</span></code>: Distance between characters. </p></li>
-</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To disable monospaced font, set to 0. </p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>spacing</strong> – Distance between characters. </p>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv418gfx_GetStringWidthPKc">
 <span id="_CPPv318gfx_GetStringWidthPKc"></span><span id="_CPPv218gfx_GetStringWidthPKc"></span><span id="gfx_GetStringWidth__cCP"></span><span class="target" id="graphx_8h_1ac0f458416b5c817f5f8f8784e8661009"></span>unsigned int <code class="sig-name descname">gfx_GetStringWidth</code><span class="sig-paren">(</span><em class="property">const</em> char *<em>string</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv418gfx_GetStringWidthPKc" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Gets the pixel width of the given string.</p>
-<p><dl class="simple">
-<dt><strong>Note</strong></dt><dd><p>Takes into account monospacing flag. </p>
-</dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">string</span></code>: Pointer to a string. </p></li>
-</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Takes into account monospacing flag. </p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>string</strong> – Pointer to a string. </p>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv416gfx_GetCharWidthKc">
 <span id="_CPPv316gfx_GetCharWidthKc"></span><span id="_CPPv216gfx_GetCharWidthKc"></span><span id="gfx_GetCharWidth__cC"></span><span class="target" id="graphx_8h_1afd4674906c609e979d76a308c20f3e8a"></span>unsigned int <code class="sig-name descname">gfx_GetCharWidth</code><span class="sig-paren">(</span><em class="property">const</em> char <em>c</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv416gfx_GetCharWidthKc" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Gets the pixel width of the given character.</p>
-<p><dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>Width in pixels of character. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Takes into account monospacing flag. </p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>c</strong> – Character to get width of. </p>
 </dd>
-<dt><strong>Note</strong></dt><dd><p>Takes into account monospacing flag. </p>
-</dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">c</span></code>: Character to get width of. </p></li>
-</ul>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Width in pixels of character. </p>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv417gfx_SetClipRegioniiii">
 <span id="_CPPv317gfx_SetClipRegioniiii"></span><span id="_CPPv217gfx_SetClipRegioniiii"></span><span id="gfx_SetClipRegion__i.i.i.i"></span><span class="target" id="graphx_8h_1acb61c699620065e070f8390266e1b796"></span>void <code class="sig-name descname">gfx_SetClipRegion</code><span class="sig-paren">(</span>int <em>xmin</em>, int <em>ymin</em>, int <em>xmax</em>, int <em>ymax</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv417gfx_SetClipRegioniiii" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Sets the dimensions of the drawing window for all clipped routines.</p>
-<p><dl class="simple">
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">xmin</span></code>: Minimum x coordinate, inclusive (default 0). </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">ymin</span></code>: Minimum y coordinate, inclusive (default 0). </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">xmax</span></code>: Maximum x coordinate, exclusive (default 320). </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">ymax</span></code>: Maximum y coordinate, exclusive (default 240). </p></li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>xmin</strong> – Minimum x coordinate, inclusive (default 0). </p></li>
+<li><p><strong>ymin</strong> – Minimum y coordinate, inclusive (default 0). </p></li>
+<li><p><strong>xmax</strong> – Maximum x coordinate, exclusive (default 320). </p></li>
+<li><p><strong>ymax</strong> – Maximum y coordinate, exclusive (default 240). </p></li>
 </ul>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv417gfx_GetClipRegionP12gfx_region_t">
 <span id="_CPPv317gfx_GetClipRegionP12gfx_region_t"></span><span id="_CPPv217gfx_GetClipRegionP12gfx_region_t"></span><span id="gfx_GetClipRegion__gfx_region_tP"></span><span class="target" id="graphx_8h_1aa791a7979dcf85013b5e350733eb57e5"></span>bool <code class="sig-name descname">gfx_GetClipRegion</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv412gfx_region_t" title="gfx_region_t">gfx_region_t</a> *<em>region</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv417gfx_GetClipRegionP12gfx_region_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Clips a region to fit within the drawing window using Cohen-Sutherland.</p>
-<p><dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>False if offscreen, true if onscreen. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>False if offscreen, true if onscreen. </p>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv413gfx_ShiftDown7uint8_t">
 <span id="_CPPv313gfx_ShiftDown7uint8_t"></span><span id="_CPPv213gfx_ShiftDown7uint8_t"></span><span id="gfx_ShiftDown__uint8_t"></span><span class="target" id="graphx_8h_1a41f9a7c8340a2303a516e7c8427c3255"></span>void <code class="sig-name descname">gfx_ShiftDown</code><span class="sig-paren">(</span>uint8_t <em>pixels</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv413gfx_ShiftDown7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Shifts/Slides the drawing window down.</p>
-<p><dl class="simple">
-<dt><strong>Note</strong></dt><dd><p>Remnant data after a shift is undefined. </p>
-</dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">pixels</span></code>: Number of pixels to shift. </p></li>
-</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Remnant data after a shift is undefined. </p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>pixels</strong> – Number of pixels to shift. </p>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv411gfx_ShiftUp7uint8_t">
 <span id="_CPPv311gfx_ShiftUp7uint8_t"></span><span id="_CPPv211gfx_ShiftUp7uint8_t"></span><span id="gfx_ShiftUp__uint8_t"></span><span class="target" id="graphx_8h_1adf6e6dc446147f68752f90d3f9b1a778"></span>void <code class="sig-name descname">gfx_ShiftUp</code><span class="sig-paren">(</span>uint8_t <em>pixels</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv411gfx_ShiftUp7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Shifts/Slides the drawing window up.</p>
-<p><dl class="simple">
-<dt><strong>Note</strong></dt><dd><p>Remnant data after a shift is undefined. </p>
-</dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">pixels</span></code>: Number of pixels to shift. </p></li>
-</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Remnant data after a shift is undefined. </p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>pixels</strong> – Number of pixels to shift. </p>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv413gfx_ShiftLeft8uint24_t">
 <span id="_CPPv313gfx_ShiftLeft8uint24_t"></span><span id="_CPPv213gfx_ShiftLeft8uint24_t"></span><span id="gfx_ShiftLeft__uint24_t"></span><span class="target" id="graphx_8h_1a3b394aeafa43424221364463c7322a9c"></span>void <code class="sig-name descname">gfx_ShiftLeft</code><span class="sig-paren">(</span>uint24_t <em>pixels</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv413gfx_ShiftLeft8uint24_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Shifts/Slides the drawing window left.</p>
-<p><dl class="simple">
-<dt><strong>Note</strong></dt><dd><p>Remnant data after a shift is undefined. </p>
-</dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">pixels</span></code>: Number of pixels to shift. </p></li>
-</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Remnant data after a shift is undefined. </p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>pixels</strong> – Number of pixels to shift. </p>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv414gfx_ShiftRight8uint24_t">
 <span id="_CPPv314gfx_ShiftRight8uint24_t"></span><span id="_CPPv214gfx_ShiftRight8uint24_t"></span><span id="gfx_ShiftRight__uint24_t"></span><span class="target" id="graphx_8h_1a3c91bcfe5378f6a4b73c90835d070ba0"></span>void <code class="sig-name descname">gfx_ShiftRight</code><span class="sig-paren">(</span>uint24_t <em>pixels</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv414gfx_ShiftRight8uint24_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Shifts/Slides the drawing window right.</p>
-<p><dl class="simple">
-<dt><strong>Note</strong></dt><dd><p>Remnant data after a shift is undefined. </p>
-</dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">pixels</span></code>: Number of pixels to shift. </p></li>
-</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Remnant data after a shift is undefined. </p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>pixels</strong> – Number of pixels to shift. </p>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv411gfx_Lighten8uint16_t7uint8_t">
 <span id="_CPPv311gfx_Lighten8uint16_t7uint8_t"></span><span id="_CPPv211gfx_Lighten8uint16_t7uint8_t"></span><span id="gfx_Lighten__uint16_t.uint8_t"></span><span class="target" id="graphx_8h_1a8ccd2dead043f0fc753e2e75fa4c2b53"></span>uint16_t <code class="sig-name descname">gfx_Lighten</code><span class="sig-paren">(</span>uint16_t <em>color</em>, uint8_t <em>amount</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv411gfx_Lighten8uint16_t7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Lightens a given 1555 color; useful for palette color conversions.</p>
-<p><dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>Lightened color. </p>
-</dd>
-<dt><strong>Note</strong></dt><dd><p>0 returns full white, 255 returns original color. </p>
-</dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">color</span></code>: Original color input in 1555 format. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">amount</span></code>: Amount to lighten by. </p></li>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>0 returns full white, 255 returns original color. </p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>color</strong> – Original color input in 1555 format. </p></li>
+<li><p><strong>amount</strong> – Amount to lighten by. </p></li>
 </ul>
 </dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Lightened color. </p>
+</dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv410gfx_Darken8uint16_t7uint8_t">
 <span id="_CPPv310gfx_Darken8uint16_t7uint8_t"></span><span id="_CPPv210gfx_Darken8uint16_t7uint8_t"></span><span id="gfx_Darken__uint16_t.uint8_t"></span><span class="target" id="graphx_8h_1aa59d1989ca2e1665af02bf36802e697e"></span>uint16_t <code class="sig-name descname">gfx_Darken</code><span class="sig-paren">(</span>uint16_t <em>color</em>, uint8_t <em>amount</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv410gfx_Darken8uint16_t7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Darkens a given 1555 color; useful for palette color conversions.</p>
-<p><dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>Darkened color. </p>
-</dd>
-<dt><strong>Note</strong></dt><dd><p>0 returns full black, 255 returns original color. </p>
-</dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">color</span></code>: Original color input in 1555 format. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">amount</span></code>: Amount to darken by. </p></li>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>0 returns full black, 255 returns original color. </p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>color</strong> – Original color input in 1555 format. </p></li>
+<li><p><strong>amount</strong> – Amount to darken by. </p></li>
 </ul>
 </dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Darkened color. </p>
+</dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv413gfx_FloodFillj7uint8_t7uint8_t">
 <span id="_CPPv313gfx_FloodFillj7uint8_t7uint8_t"></span><span id="_CPPv213gfx_FloodFillj7uint8_t7uint8_t"></span><span id="gfx_FloodFill__unsigned-i.uint8_t.uint8_t"></span><span class="target" id="graphx_8h_1ab960fa42194a5aa92281f769e9f24837"></span>void <code class="sig-name descname">gfx_FloodFill</code><span class="sig-paren">(</span>unsigned int <em>x</em>, uint8_t <em>y</em>, uint8_t <em>color</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv413gfx_FloodFillj7uint8_t7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Fills an area with a color.</p>
-<p><dl class="simple">
-<dt><strong>Note</strong></dt><dd><p>This routine performs clipping to stay within the window, but you must ensure it starts in the window. </p>
-</dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">x</span></code>: X coordinate to begin filling at. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">y</span></code>: Y coordinate to begin filling at. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">color</span></code>: New color to fill with.</p></li>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This routine performs clipping to stay within the window, but you must ensure it starts in the window. </p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> – X coordinate to begin filling at. </p></li>
+<li><p><strong>y</strong> – Y coordinate to begin filling at. </p></li>
+<li><p><strong>color</strong> – New color to fill with.</p></li>
 </ul>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv414gfx_RLETSpritePK16gfx_rletsprite_tii">
 <span id="_CPPv314gfx_RLETSpritePK16gfx_rletsprite_tii"></span><span id="_CPPv214gfx_RLETSpritePK16gfx_rletsprite_tii"></span><span id="gfx_RLETSprite__gfx_rletsprite_tCP.i.i"></span><span class="target" id="graphx_8h_1a12c9ea4c2a14a64962af7496103713a4"></span>void <code class="sig-name descname">gfx_RLETSprite</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv416gfx_rletsprite_t" title="gfx_rletsprite_t">gfx_rletsprite_t</a> *<em>sprite</em>, int <em>x</em>, int <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv414gfx_RLETSpritePK16gfx_rletsprite_tii" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Draws a sprite with RLE transparency.</p>
-<p><dl class="simple">
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">sprite</span></code>: sprite to draw. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">x</span></code>: X coordinate. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">y</span></code>: Y coordinate. </p></li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sprite</strong> – sprite to draw. </p></li>
+<li><p><strong>x</strong> – X coordinate. </p></li>
+<li><p><strong>y</strong> – Y coordinate. </p></li>
 </ul>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv421gfx_RLETSprite_NoClipPK16gfx_rletsprite_t8uint24_t7uint8_t">
 <span id="_CPPv321gfx_RLETSprite_NoClipPK16gfx_rletsprite_t8uint24_t7uint8_t"></span><span id="_CPPv221gfx_RLETSprite_NoClipPK16gfx_rletsprite_t8uint24_t7uint8_t"></span><span id="gfx_RLETSprite_NoClip__gfx_rletsprite_tCP.uint24_t.uint8_t"></span><span class="target" id="graphx_8h_1a47b29bed2538a6832ea0ce729fe32b59"></span>void <code class="sig-name descname">gfx_RLETSprite_NoClip</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv416gfx_rletsprite_t" title="gfx_rletsprite_t">gfx_rletsprite_t</a> *<em>sprite</em>, uint24_t <em>x</em>, uint8_t <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv421gfx_RLETSprite_NoClipPK16gfx_rletsprite_t8uint24_t7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Draws an unclipped sprite with RLE transparency.</p>
-<p><dl class="simple">
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">sprite</span></code>: Sprite to draw. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">x</span></code>: X coordinate. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">y</span></code>: Y coordinate. </p></li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sprite</strong> – Sprite to draw. </p></li>
+<li><p><strong>x</strong> – X coordinate. </p></li>
+<li><p><strong>y</strong> – Y coordinate. </p></li>
 </ul>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -2394,19 +2566,23 @@ void main() {
 <p><dl class="simple">
 <dt><strong>Attention</strong></dt><dd><p>The output sprite must have been allocated with a large enough <code class="docutils literal notranslate"><span class="pre">data</span></code> field to hold the converted sprite data, which will be <code class="docutils literal notranslate"><span class="pre">width</span> <span class="pre">*</span> <span class="pre">height</span></code> bytes large.</p>
 </dd>
-<dt><strong>Return</strong></dt><dd><p>The converted sprite. </p>
-</dd>
 <dt><strong>See</strong></dt><dd><p><a class="reference internal" href="#graphx_8h_1a77d1282024291bf7864819d1baec027c"><span class="std std-ref">gfx_ConvertMallocRLETSprite</span></a>. </p>
 </dd>
 <dt><strong>See</strong></dt><dd><p><a class="reference internal" href="#graphx_8h_1a3ace82c9c54a17c4e2c3b5260e86628d"><span class="std std-ref">gfx_ConvertToRLETSprite</span></a>. </p>
 </dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">sprite_in</span></code>: Input sprite with RLE transparency. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">[out]</span> <span class="pre">sprite_out</span></code>: Converted sprite with normal transparency. </p></li>
-</ul>
-</dd>
 </dl>
 </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>[in] sprite_in</strong> – Input sprite with RLE transparency. </p></li>
+<li><p><strong>[out] sprite_out</strong> – Converted sprite with normal transparency. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The converted sprite. </p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="cpp function">
@@ -2418,19 +2594,25 @@ void main() {
 <p><dl class="simple">
 <dt><strong>Attention</strong></dt><dd><p>The output sprite must have been allocated with a large enough data field to hold the converted sprite data; see <a class="reference internal" href="#graphx_8h_1aca06f205639068645997ae2850d9330c"><span class="std std-ref">gfx_AllocRLETSprite()</span></a> for information.</p>
 </dd>
-<dt><strong>Note</strong></dt><dd><p>To avoid needing to predict the output size and risking either the prediction being too high and wasting space, or being too low and corrupting memory, <a class="reference internal" href="#graphx_8h_1a77d1282024291bf7864819d1baec027c"><span class="std std-ref">gfx_ConvertMallocRLETSprite()</span></a> can be used instead to allocate the exact amount of necessary space for the converted sprite.</p>
-</dd>
-<dt><strong>Return</strong></dt><dd><p>The converted sprite. </p>
-</dd>
 <dt><strong>See</strong></dt><dd><p><a class="reference internal" href="#graphx_8h_1aaf810a547aad7899602769c3f5e9124f"><span class="std std-ref">gfx_ConvertFromRLETSprite</span></a>. </p>
-</dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">sprite_in</span></code>: Input sprite with normal transparency. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">[out]</span> <span class="pre">sprite_out</span></code>: Converted sprite with RLE transparency. </p></li>
-</ul>
 </dd>
 </dl>
 </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To avoid needing to predict the output size and risking either the prediction being too high and wasting space, or being too low and corrupting memory, <a class="reference internal" href="#graphx_8h_1a77d1282024291bf7864819d1baec027c"><span class="std std-ref">gfx_ConvertMallocRLETSprite()</span></a> can be used instead to allocate the exact amount of necessary space for the converted sprite.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>[in] sprite_in</strong> – Input sprite with normal transparency. </p></li>
+<li><p><strong>[out] sprite_out</strong> – Converted sprite with RLE transparency. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The converted sprite. </p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="cpp function">
@@ -2444,17 +2626,21 @@ void main() {
 </dd>
 <dt><strong>Remark</strong></dt><dd><p>A <a class="reference internal" href="#structgfx__sprite__t"><span class="std std-ref">gfx_sprite_t</span></a> can be converted into an appropriately large, already-allocated <a class="reference internal" href="#structgfx__rletsprite__t"><span class="std std-ref">gfx_rletsprite_t</span></a> using <a class="reference internal" href="#graphx_8h_1a3ace82c9c54a17c4e2c3b5260e86628d"><span class="std std-ref">gfx_ConvertToRLETSprite()</span></a>.</p>
 </dd>
-<dt><strong>Return</strong></dt><dd><p>A newly allocated converted sprite with RLE transparency. </p>
-</dd>
 <dt><strong>See</strong></dt><dd><p><a class="reference internal" href="#graphx_8h_1aaf810a547aad7899602769c3f5e9124f"><span class="std std-ref">gfx_ConvertFromRLETSprite</span></a>. </p>
-</dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">sprite_in</span></code>: Input sprite with normal transparency. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">malloc_routine</span></code>: Malloc implementation to use. </p></li>
-</ul>
 </dd>
 </dl>
 </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sprite_in</strong> – Input sprite with normal transparency. </p></li>
+<li><p><strong>malloc_routine</strong> – Malloc implementation to use. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A newly allocated converted sprite with RLE transparency. </p>
+</dd>
+</dl>
 </dd></dl>
 
 </div>

@@ -305,7 +305,7 @@ The following code sets up a simple falling edge detector to catch this.</p>
 <dt id="c.kb_Data">
 <span class="target" id="keypadc_8h_1a4a4296b5cbbc1f0cd963a36abd456e97"></span><code class="sig-name descname">kb_Data</code><a class="headerlink" href="#c.kb_Data" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Keypad Data registers</p>
-<p><p><table class="docutils align-default">
+<p><table class="docutils align-default">
 <colgroup>
 <col style="width: 8%" />
 <col style="width: 12%" />
@@ -403,7 +403,6 @@ The following code sets up a simple falling edge detector to catch this.</p>
 </tbody>
 </table>
 </p>
-</p>
 <p>These data registers can be indexed as a normal array. For example, to check the status of the ‘2nd’ key: <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">kb_Data</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&amp;</span> <span class="n">kb_2nd</span><span class="p">)</span> <span class="p">{</span>
     <span class="o">...</span>
 <span class="p">}</span>
@@ -420,9 +419,17 @@ The following code sets up a simple falling edge detector to catch this.</p>
 <dt id="c.kb_On">
 <span class="target" id="keypadc_8h_1aefead9ca152e96406af497bb3f7a20e7"></span><code class="sig-name descname">kb_On</code><a class="headerlink" href="#c.kb_On" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>ON key signal. <dl class="simple">
-<dt><strong>Note</strong></dt><dd><p>Scanning mode does not matter. </p>
+<dt><strong>See</strong></dt><dd><p><a class="reference internal" href="#keypadc_8h_1ad5e1693dfac50389f67005242a3ebe71"><span class="std std-ref">kb_DisableOnLatch</span></a> <a class="reference internal" href="#keypadc_8h_1a2fa5f7d791ab9995e5b7045a49fde25d"><span class="std std-ref">kb_EnableOnLatch</span></a> <a class="reference internal" href="#keypadc_8h_1ad45ec00dab415b6a0c5256ca8e11609c"><span class="std std-ref">kb_ClearOnLatch</span></a> </p>
 </dd>
-<dt><strong>Note</strong></dt><dd><p>The ON key is not wired as part of the normal key matrix. The ON key must be checked separately from the other keys with kb_On: <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">int</span> <span class="n">main</span><span class="p">(</span><span class="n">void</span><span class="p">)</span> <span class="p">{</span>
+</dl>
+</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Scanning mode does not matter. </p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The ON key is not wired as part of the normal key matrix. The ON key must be checked separately from the other keys with kb_On: <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">int</span> <span class="n">main</span><span class="p">(</span><span class="n">void</span><span class="p">)</span> <span class="p">{</span>
     <span class="n">kb_DisableOnLatch</span><span class="p">();</span>
     <span class="o">...</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">kb_On</span><span class="p">)</span> <span class="p">{</span>
@@ -432,47 +439,49 @@ The following code sets up a simple falling edge detector to catch this.</p>
 </pre></div>
 </div>
  </p>
-</dd>
-<dt><strong>See</strong></dt><dd><p><a class="reference internal" href="#keypadc_8h_1ad5e1693dfac50389f67005242a3ebe71"><span class="std std-ref">kb_DisableOnLatch</span></a> <a class="reference internal" href="#keypadc_8h_1a2fa5f7d791ab9995e5b7045a49fde25d"><span class="std std-ref">kb_EnableOnLatch</span></a> <a class="reference internal" href="#keypadc_8h_1ad45ec00dab415b6a0c5256ca8e11609c"><span class="std std-ref">kb_ClearOnLatch</span></a> </p>
-</dd>
-</dl>
-</p>
+</div>
 </dd></dl>
 
 <dl class="cpp macro">
 <dt id="c.kb_EnableOnLatch">
 <span class="target" id="keypadc_8h_1a2fa5f7d791ab9995e5b7045a49fde25d"></span><code class="sig-name descname">kb_EnableOnLatch</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#c.kb_EnableOnLatch" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Causes kb_On to latch when the ON is key pressed: once the ON key is pressed, kb_On will remain true until reset with <a class="reference internal" href="#keypadc_8h_1ad45ec00dab415b6a0c5256ca8e11609c"><span class="std std-ref">kb_ClearOnLatch()</span></a>. This may be useful if you want to check the ON key occasionally, for example as a break signal. <dl class="simple">
-<dt><strong>Warning</strong></dt><dd><p>This defaults to whatever the last program set this to, so be sure to set it explicitly. </p>
-</dd>
 <dt><strong>See</strong></dt><dd><p><a class="reference internal" href="#keypadc_8h_1ad5e1693dfac50389f67005242a3ebe71"><span class="std std-ref">kb_DisableOnLatch</span></a> <a class="reference internal" href="#keypadc_8h_1ad45ec00dab415b6a0c5256ca8e11609c"><span class="std std-ref">kb_ClearOnLatch</span></a> </p>
 </dd>
 </dl>
 </p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This defaults to whatever the last program set this to, so be sure to set it explicitly. </p>
+</div>
 </dd></dl>
 
 <dl class="cpp macro">
 <dt id="c.kb_DisableOnLatch">
 <span class="target" id="keypadc_8h_1ad5e1693dfac50389f67005242a3ebe71"></span><code class="sig-name descname">kb_DisableOnLatch</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#c.kb_DisableOnLatch" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Disables ON key latching behavior. <dl class="simple">
-<dt><strong>Warning</strong></dt><dd><p>This defaults to whatever the last program set this to, so be sure to set it explicitly. </p>
-</dd>
 <dt><strong>See</strong></dt><dd><p><a class="reference internal" href="#keypadc_8h_1a2fa5f7d791ab9995e5b7045a49fde25d"><span class="std std-ref">kb_EnableOnLatch</span></a> </p>
 </dd>
 </dl>
 </p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This defaults to whatever the last program set this to, so be sure to set it explicitly. </p>
+</div>
 </dd></dl>
 
 <dl class="cpp macro">
 <dt id="c.kb_ClearOnLatch">
 <span class="target" id="keypadc_8h_1ad45ec00dab415b6a0c5256ca8e11609c"></span><code class="sig-name descname">kb_ClearOnLatch</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#c.kb_ClearOnLatch" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>When ON key latching has been enabled with <a class="reference internal" href="#keypadc_8h_1a2fa5f7d791ab9995e5b7045a49fde25d"><span class="std std-ref">kb_EnableOnLatch()</span></a>, this will reset kb_On back to false (assuming the user is no longer pressing ON). <dl class="simple">
-<dt><strong>Note</strong></dt><dd><p>This may persist between program runs, so be to sure to disable as needed. </p>
-</dd>
 <dt><strong>See</strong></dt><dd><p><a class="reference internal" href="#keypadc_8h_1a2fa5f7d791ab9995e5b7045a49fde25d"><span class="std std-ref">kb_EnableOnLatch</span></a> </p>
 </dd>
 </dl>
 </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This may persist between program runs, so be to sure to disable as needed. </p>
+</div>
 </dd></dl>
 
 </div>
@@ -555,45 +564,46 @@ The following code sets up a simple falling edge detector to catch this.</p>
 <dl class="cpp function">
 <dt id="_CPPv47kb_Scanv">
 <span id="_CPPv37kb_Scanv"></span><span id="_CPPv27kb_Scanv"></span><span id="kb_Scan__void"></span><span class="target" id="keypadc_8h_1a8cea914fc7256292713f6cd915e111ac"></span>void <code class="sig-name descname">kb_Scan</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv47kb_Scanv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Scans the keyboard to update data values. <dl class="simple">
-<dt><strong>Note</strong></dt><dd><p>Disables interrupts. </p>
-</dd>
-</dl>
-</p>
+<dd><p>Scans the keyboard to update data values. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Disables interrupts. </p>
+</div>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv412kb_ScanGroup7uint8_t">
 <span id="_CPPv312kb_ScanGroup7uint8_t"></span><span id="_CPPv212kb_ScanGroup7uint8_t"></span><span id="kb_ScanGroup__uint8_t"></span><span class="target" id="keypadc_8h_1a3e36569b5a313cc743612929dcbc55f4"></span><a class="reference internal" href="#_CPPv48kb_key_t" title="kb_key_t">kb_key_t</a> <code class="sig-name descname">kb_ScanGroup</code><span class="sig-paren">(</span>uint8_t <em>row</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv412kb_ScanGroup7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Scans the given keyboard row and returns the row value. <dl class="simple">
-<dt><strong>Note</strong></dt><dd><p>Disables interrupts. </p>
-</dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">row</span></code>: Row to scan. </p></li>
-</ul>
+<dd><p>Scans the given keyboard row and returns the row value. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Disables interrupts. </p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>row</strong> – Row to scan. </p>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv49kb_AnyKeyv">
 <span id="_CPPv39kb_AnyKeyv"></span><span id="_CPPv29kb_AnyKeyv"></span><span id="kb_AnyKey__void"></span><span class="target" id="keypadc_8h_1ac02ee9014609d6b1fead0c10b02b6419"></span>uint8_t <code class="sig-name descname">kb_AnyKey</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv49kb_AnyKeyv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Scans the keyboard quickly to tell if any key was pressed. <dl class="simple">
-<dt><strong>Note</strong></dt><dd><p>Disables interrupts. </p>
-</dd>
-</dl>
-</p>
+<dd><p>Scans the keyboard quickly to tell if any key was pressed. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Disables interrupts. </p>
+</div>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv48kb_Resetv">
 <span id="_CPPv38kb_Resetv"></span><span id="_CPPv28kb_Resetv"></span><span id="kb_Reset__void"></span><span class="target" id="keypadc_8h_1a6432b4b1d55539eb5cedbad14a00267b"></span>void <code class="sig-name descname">kb_Reset</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv48kb_Resetv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Resets the keyboard before returning to the OS. <dl class="simple">
-<dt><strong>Note</strong></dt><dd><p>Only use if the keyboard timers or number of rows have been modified. </p>
-</dd>
-</dl>
-</p>
+<dd><p>Resets the keyboard before returning to the OS. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Only use if the keyboard timers or number of rows have been modified. </p>
+</div>
 </dd></dl>
 
 </div>
