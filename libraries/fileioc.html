@@ -4,7 +4,7 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
@@ -383,11 +383,12 @@ Additionally, the library supports accessing program data and various OS variabl
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>name</strong> – Name of file to open </p></li>
-<li><p><strong>mode</strong> – “r” - Opens a file for reading. The file must exist. Keeps file in archive if in archive. <p> “w” - Creates an empty file for writing. Overwrites file if already exists. </p>
-<p> “a” - Appends to a file. Writing operations, append data at the end of the file. The file is created if it does not exist. </p>
-<p> “r+” - Opens a file to update both reading and writing. The file must exist. Moves file from archive to RAM if in archive. </p>
-<p> “w+” - Creates an empty file for both reading and writing. Overwrites file if already exists. </p>
-<p> “a+” - Opens a file for reading and appending. Moves file from archive to RAM if in archive. Created if it does not exist. </p>
+<li><p><strong>mode</strong> – <p>“r” - Opens a file for reading. The file must exist. Keeps file in archive if in archive.</p>
+<p>”w” - Creates an empty file for writing. Overwrites file if already exists.</p>
+<p>”a” - Appends to a file. Writing operations, append data at the end of the file. The file is created if it does not exist.</p>
+<p>”r+” - Opens a file to update both reading and writing. The file must exist. Moves file from archive to RAM if in archive.</p>
+<p>”w+” - Creates an empty file for both reading and writing. Overwrites file if already exists.</p>
+<p>”a+” - Opens a file for reading and appending. Moves file from archive to RAM if in archive. Created if it does not exist.</p>
 </p></li>
 </ul>
 </dd>
@@ -410,11 +411,12 @@ Additionally, the library supports accessing program data and various OS variabl
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>varname</strong> – Name of variable to open </p></li>
-<li><p><strong>mode</strong> – “r” - Opens a file for reading. The file must exist. Keeps file in archive if in archive. <p> “w” - Creates an empty file for writing. Overwrites file if already exists. </p>
-<p> “a” - Appends to a file. Writing operations, append data at the end of the file. The file is created if it does not exist. </p>
-<p> “r+” - Opens a file to update both reading and writing. The file must exist. Moves file from archive to RAM if in archive. </p>
-<p> “w+” - Creates an empty file for both reading and writing. Overwrites file if already exists. </p>
-<p> “a+” - Opens a file for reading and appending. Moves file from archive to RAM if in archive. Created if it does not exist. </p>
+<li><p><strong>mode</strong> – <p>“r” - Opens a file for reading. The file must exist. Keeps file in archive if in archive.</p>
+<p>”w” - Creates an empty file for writing. Overwrites file if already exists.</p>
+<p>”a” - Appends to a file. Writing operations, append data at the end of the file. The file is created if it does not exist.</p>
+<p>”r+” - Opens a file to update both reading and writing. The file must exist. Moves file from archive to RAM if in archive.</p>
+<p>”w+” - Creates an empty file for both reading and writing. Overwrites file if already exists.</p>
+<p>”a+” - Opens a file for reading and appending. Moves file from archive to RAM if in archive. Created if it does not exist.</p>
 </p></li>
 <li><p><strong>type</strong> – Specifies the type of variable to open </p></li>
 </ul>
@@ -605,9 +607,10 @@ Additionally, the library supports accessing program data and various OS variabl
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>offset</strong> – Number of bytes to offest from (can be negative). </p></li>
-<li><p><strong>origin</strong> – SEEK_SET (0) - Seek from beginning of file <p> SEEK_CUR (1) - Seek from current offset in file </p>
-<p> SEEK_END (2) - Seek from end of file </p>
-</p></li>
+<li><p><strong>origin</strong> – <p>SEEK_SET (0) - Seek from beginning of file</p>
+<p>SEEK_CUR (1) - Seek from current offset in file</p>
+
+ SEEK_END (2) - Seek from end of file </p></li>
 <li><p><strong>slot</strong> – Variable slot seeking in.</p></li>
 </ul>
 </dd>
@@ -706,7 +709,8 @@ Additionally, the library supports accessing program data and various OS variabl
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>archived</strong> – True - Send to Archive. <p> False - Send to RAM. </p>
+<li><p><strong>archived</strong> – <p>True - Send to Archive.</p>
+<p>False - Send to RAM.</p>
 </p></li>
 <li><p><strong>slot</strong> – Slot to send.</p></li>
 </ul>

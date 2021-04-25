@@ -4,7 +4,7 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
@@ -194,7 +194,8 @@
 <h2><a class="toc-backref" href="#id2">API Documentation</a><a class="headerlink" href="#api-documentation" title="Permalink to this headline">¶</a></h2>
 <p>Core CE define file. </p>
 <p><dl class="simple">
-<dt><strong>Authors</strong></dt><dd><p>Matt “MateoConLechuga” Waltz<p>Jacob “jacobly” Young </p>
+<dt><strong>Authors</strong></dt><dd><p><p>Matt “MateoConLechuga” Waltz</p>
+<p>Jacob “jacobly” Young</p>
 </p>
 </dd>
 </dl>
@@ -1226,7 +1227,8 @@
 <dd><p>Selects the (monospace) font to use when drawing on the graphscreen</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>font</strong> – font id/pointer to use os_SmallFont <p> os_LargeFont </p>
+<dd class="field-odd"><p><strong>font</strong> – <p>font id/pointer to use os_SmallFont</p>
+<p>os_LargeFont</p>
 </p>
 </dd>
 </dl>
@@ -1238,7 +1240,8 @@
 <dd><p>Gets the font to use when drawing on the graphscreen</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>0: small font <p> 1: large monospace font </p>
+<dd class="field-odd"><p><p>0: small font</p>
+<p>1: large monospace font</p>
 </p>
 </dd>
 </dl>
@@ -2045,14 +2048,17 @@
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>result</strong> – Zero terminated string copied to this address </p></li>
 <li><p><strong>arg</strong> – Real to convert </p></li>
-<li><p><strong>maxLength</strong> – &lt;=0: use default max length (14) <p> &gt;0: max length of result, minimum of 6 </p>
+<li><p><strong>maxLength</strong> – <p>&lt;=0: use default max length (14)</p>
+<p>&gt;0: max length of result, minimum of 6</p>
 </p></li>
-<li><p><strong>mode</strong> – 0: Use current mode for everything (digits ignored) <p> 1: Normal mode </p>
-<p> 2: Sci mode </p>
-<p> 3: Eng mode </p>
-<p> &gt;4: Use current Normal/Sci/Eng mode (digits still used) </p>
-</p></li>
-<li><p><strong>digits</strong> – -1: Float mode <p> 0-9: Fix # mode </p>
+<li><p><strong>mode</strong> – <p>0: Use current mode for everything (digits ignored)</p>
+<p>1: Normal mode</p>
+<p>2: Sci mode</p>
+<p>3: Eng mode</p>
+
+ &gt;4: Use current Normal/Sci/Eng mode (digits still used) </p></li>
+<li><p><strong>digits</strong> – <p>-1: Float mode</p>
+<p>0-9: Fix # mode</p>
 </p></li>
 </ul>
 </dd>
