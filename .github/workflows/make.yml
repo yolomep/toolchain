@@ -4,6 +4,7 @@ on:
   push:
     branches-ignore:
       - gh-pages
+      - fatdrvce-rewrite
   pull_request:
     branches:
       - master
