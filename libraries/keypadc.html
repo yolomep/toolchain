@@ -104,6 +104,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#helpful-key-dection">Helpful key dection</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#detecting-a-single-press">Detecting a single press</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#detecting-a-single-release">Detecting a single release</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#getting-getcsc-codes-with-keypadc">Getting GetCSC codes with keypadc</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#api-documentation">API Documentation</a></li>
@@ -198,9 +199,10 @@ It supports multi-key presses, and can be used for extremely responsive input co
 <ul>
 <li><p><a class="reference internal" href="#detecting-a-single-press" id="id3">Detecting a single press</a></p></li>
 <li><p><a class="reference internal" href="#detecting-a-single-release" id="id4">Detecting a single release</a></p></li>
+<li><p><a class="reference internal" href="#getting-getcsc-codes-with-keypadc" id="id5">Getting GetCSC codes with keypadc</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#api-documentation" id="id5">API Documentation</a></p></li>
+<li><p><a class="reference internal" href="#api-documentation" id="id6">API Documentation</a></p></li>
 </ul>
 </div>
 <section id="helpful-key-dection">
@@ -235,9 +237,37 @@ The following code sets up a simple falling edge detector to catch this.</p>
 </pre></div>
 </div>
 </section>
+<section id="getting-getcsc-codes-with-keypadc">
+<h3><a class="toc-backref" href="#id5">Getting GetCSC codes with keypadc</a><a class="headerlink" href="#getting-getcsc-codes-with-keypadc" title="Permalink to this headline">¶</a></h3>
+<p>This code (written by Jacobly) scans c kb_Data</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">uint8_t</span> <span class="nf">get_single_key_pressed</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">static</span> <span class="kt">uint8_t</span> <span class="n">last_key</span><span class="p">;</span>
+    <span class="kt">uint8_t</span> <span class="n">only_key</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">kb_Scan</span><span class="p">();</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">uint8_t</span> <span class="n">key</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">group</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span> <span class="n">group</span><span class="p">;</span> <span class="o">--</span><span class="n">group</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">uint8_t</span> <span class="n">mask</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">mask</span><span class="p">;</span> <span class="n">mask</span> <span class="o">&lt;&lt;=</span> <span class="mi">1</span><span class="p">,</span> <span class="o">++</span><span class="n">key</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">kb_Data</span><span class="p">[</span><span class="n">group</span><span class="p">]</span> <span class="o">&amp;</span> <span class="n">mask</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">only_key</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="n">last_key</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+                    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+                <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                    <span class="n">only_key</span> <span class="o">=</span> <span class="n">key</span><span class="p">;</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">only_key</span> <span class="o">==</span> <span class="n">last_key</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">last_key</span> <span class="o">=</span> <span class="n">only_key</span><span class="p">;</span>
+    <span class="k">return</span> <span class="n">only_key</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
 </section>
 <section id="api-documentation">
-<h2><a class="toc-backref" href="#id5">API Documentation</a><a class="headerlink" href="#api-documentation" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id6">API Documentation</a><a class="headerlink" href="#api-documentation" title="Permalink to this headline">¶</a></h2>
 <p>keypadc is a simple direct-input keypad library. </p>
 <p><dl class="simple">
 <dt><strong>Author</strong></dt><dd><p>Matt “MateoConLechuga” Waltz </p>
@@ -297,8 +327,9 @@ The following code sets up a simple falling edge detector to catch this.</p>
 <dl class="cpp macro">
 <dt id="c.kb_IsDown">
 <span class="target" id="keypadc_8h_1a131ac75acf182051fe82d518b75109d8"></span><code class="sig-name descname">kb_IsDown</code><span class="sig-paren">(</span><em>lkey</em><span class="sig-paren">)</span><a class="headerlink" href="#c.kb_IsDown" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Checks if a key is pressed. This uses the long key type, which includes the group as well. It can be used in place of reading directly from <code class="docutils literal notranslate"><span class="pre">kb_Data</span></code>.</p>
-<p>Long key types have the same name as the normal key types, but are prefixed with kb_Key* rather than kb_*. </p>
+<dd><p>Checks if a key is pressed. This uses the long key type (kb_lkey_t), which includes the group as well. It can be used in place of reading directly from <code class="docutils literal notranslate"><span class="pre">kb_Data</span></code>.</p>
+<p>Long key types have the same name as the normal key types, but are prefixed with kb_Key* rather than kb_*.</p>
+<p>It does not call <code class="docutils literal notranslate"><a class="reference internal" href="#keypadc_8h_1a8cea914fc7256292713f6cd915e111ac"><span class="std std-ref"><span class="pre">kb_Scan()</span></span></a></code> internally, so you have to do so before calling this if you want the keyboard data to get updated. </p>
 </dd></dl>
 
 <dl class="cpp macro">
@@ -408,7 +439,14 @@ The following code sets up a simple falling edge detector to catch this.</p>
 <span class="p">}</span>
 </pre></div>
 </div>
- <dl class="simple">
+</p>
+<p>Likewise, you can test keys with the following general format: <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">kb_Data</span><span class="p">[</span><span class="n">group</span><span class="p">]</span> <span class="o">&amp;</span> <span class="n">kb_Name</span><span class="p">){</span>
+    <span class="o">...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</p>
+<p><dl class="simple">
 <dt><strong>See</strong></dt><dd><p><a class="reference internal" href="#keypadc_8h_1aefead9ca152e96406af497bb3f7a20e7"><span class="std std-ref">kb_On</span></a> </p>
 </dd>
 </dl>
