@@ -4,8 +4,7 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>Contributing to the CE C Toolchain &mdash; CE C Toolchain v9.0-devel documentation</title>
@@ -85,13 +84,13 @@
               
             
             
-              <p><span class="caption-text">Overview</span></p>
+              <p class="caption"><span class="caption-text">Overview</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Welcome to the CE C Toolchain!</a></li>
 <li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="faq.html">Frequently Asked Questions</a></li>
 </ul>
-<p><span class="caption-text">Toolchain Documentation</span></p>
+<p class="caption"><span class="caption-text">Toolchain Documentation</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="printf.html">Using printf Functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="fileio.html">Using File I/O Functions</a></li>
@@ -100,7 +99,7 @@
 <li class="toctree-l1"><a class="reference internal" href="debugging.html">Debugging</a></li>
 <li class="toctree-l1"><a class="reference internal" href="makefile-options.html">Makefile Options</a></li>
 </ul>
-<p><span class="caption-text">Contributing</span></p>
+<p class="caption"><span class="caption-text">Contributing</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Contributing to the CE C Toolchain</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#creating-prs-for-review">Creating PRs for review</a></li>
@@ -176,20 +175,20 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <section id="contributing-to-the-ce-c-toolchain">
+  <div class="section" id="contributing-to-the-ce-c-toolchain">
 <span id="contributing"></span><h1>Contributing to the CE C Toolchain<a class="headerlink" href="#contributing-to-the-ce-c-toolchain" title="Permalink to this headline">¶</a></h1>
 <p>If you are brave enough to contribute source to the CE C Toolchain, this page is for you!</p>
-<section id="creating-prs-for-review">
+<div class="section" id="creating-prs-for-review">
 <h2>Creating PRs for review<a class="headerlink" href="#creating-prs-for-review" title="Permalink to this headline">¶</a></h2>
 <p>Pull Requests (PRs) should branch from git <code class="code docutils literal notranslate"><span class="pre">master</span></code>.
 Before creating a PR, it is a good idea to get some feedback either from IRC or by creating a relevant issue.
 This will increase the chances of your PR being merged in a timely fashion.
 Please do not make large PRs; it is better to make smaller changes in different PRs.</p>
 <p>For information on how to fork a repo and create a PR using GitHub, see the <a class="reference external" href="https://docs.github.com/en/free-pro-team&#64;latest/github/getting-started-with-github/fork-a-repo">forking documentation</a>.</p>
-</section>
-<section id="building-the-ce-c-toolchain">
+</div>
+<div class="section" id="building-the-ce-c-toolchain">
 <h2>Building the CE C Toolchain<a class="headerlink" href="#building-the-ce-c-toolchain" title="Permalink to this headline">¶</a></h2>
-<section id="linux-and-macos">
+<div class="section" id="linux-and-macos">
 <h3>Linux and macOS<a class="headerlink" href="#linux-and-macos" title="Permalink to this headline">¶</a></h3>
 <p>Get the <a class="reference external" href="https://github.com/jacobly0/llvm-project/wiki">ez80-clang LLVM compiler</a>.
 Make sure the compiler is located in the system’s PATH environment variable.</p>
@@ -209,8 +208,8 @@ make install
 </div>
 <p>By default, the toolchain is installed into the home (<cite>~/CEdev</cite>) directory.</p>
 <p>This is configurable with <code class="code docutils literal notranslate"><span class="pre">make</span> <span class="pre">install</span> <span class="pre">PREFIX=[LOCATION]</span></code></p>
-</section>
-<section id="windows">
+</div>
+<div class="section" id="windows">
 <h3>Windows<a class="headerlink" href="#windows" title="Permalink to this headline">¶</a></h3>
 <p>Get <a class="reference external" href="http://www.mingw.org">MinGW</a>.
 The only required pacakges are <cite>mingw32-base</cite> and <cite>mingw32-gcc-g++</cite>.
@@ -233,9 +232,9 @@ mingw32-make install
 </div>
 <p>By default, the toolchain is installed into the root (C:\CEdev) directory.</p>
 <p>This is configurable with <code class="code docutils literal notranslate"><span class="pre">mingw32-make</span> <span class="pre">install</span> <span class="pre">PREFIX=[LOCATION]</span></code></p>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
            </div>
