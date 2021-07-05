@@ -20,10 +20,14 @@ LIBS := libload graphx fontlibc keypadc fileioc
 
 ifeq ($(OS),Windows_NT)
 RELEASE_CMD :=  cd $(INSTALL_PATH)\ && tar.exe -acf $(CURDIR)/release/$(RELEASE_NAME).zip $(CEDEV_DIR)
-WINDOWS_COPY := $(call COPY,tools\windows\make.exe,$(INSTALL_BIN)) && $(call COPY,tools\windows\cedev.bat,$(INSTALL_DIR))
+COPY_MAKE := $(call COPY,tools\windows\make.exe,$(INSTALL_BIN)) && $(call COPY,tools\windows\cedev.bat,$(INSTALL_DIR))
+COPY_EZ80_CLANG := $(call COPY,$(shell where ez80-clang),$(INSTALL_BIN))
+COPY_FASMG := $(call COPY,$(shell where fasmg),$(INSTALL_BIN))
 else
 RELEASE_CMD := cd $(INSTALL_PATH) && zip -r9 $(CURDIR)/release/$(RELEASE_NAME).zip $(CEDEV_DIR)
-WINDOWS_COPY :=
+COPY_MAKE :=
+COPY_EZ80_CLANG := $(call COPY,$(shell which ez80-clang),$(INSTALL_BIN))
+COPY_FASMG := $(call COPY,$(shell which fasmg),$(INSTALL_BIN))
 endif
 
 LIB_DIR = $(call NATIVEPATH,src/$1)
@@ -65,7 +69,9 @@ install: all $(addprefix install-,$(LIBS)) install-fasmg install-std install-ce
 	$(Q)$(call COPY,$(call NATIVEEXE,tools/convfont/convfont),$(INSTALL_BIN))
 	$(Q)$(call COPY,$(call NATIVEEXE,tools/convimg/bin/convimg),$(INSTALL_BIN))
 	$(Q)$(call COPY,$(call NATIVEEXE,tools/convbin/bin/convbin),$(INSTALL_BIN))
-	$(Q)$(WINDOWS_COPY)
+	$(Q)$(COPY_EZ80_CLANG)
+	$(Q)$(COPY_FASMG)
+	$(Q)$(COPY_MAKE)
 
 $(addprefix install-,$(LIBS)):
 	$(Q)$(MAKE) -C $(call LIB_DIR,$(patsubst install-%,%,$@)) install PREFIX=$(PREFIX) DESTDIR=$(DESTDIR)
