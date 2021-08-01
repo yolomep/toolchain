@@ -208,6 +208,7 @@
 <span id="coding-guidelines"></span><h1>General Coding Guidelines<a class="headerlink" href="#general-coding-guidelines" title="Permalink to this headline">¶</a></h1>
 <p>If you are new to the C language and are looking for some pointers to improve your coding style, this page is for you!
 These suggestions should help you avoid common pitfalls, and make your code easier to manage.</p>
+<img alt="../_images/code-review.jpg" class="align-center" src="../_images/code-review.jpg" />
 <div class="section" id="style-consistency">
 <h2>Style Consistency<a class="headerlink" href="#style-consistency" title="Permalink to this headline">¶</a></h2>
 <p>This is a big one.
@@ -369,7 +370,7 @@ For example, in the below code snippet a global variable is used, making it acce
 <h3>Using the static keyword<a class="headerlink" href="#using-the-static-keyword" title="Permalink to this headline">¶</a></h3>
 <p>The static keyword is helpful when trying to avoid dynamic allocation and avoiding global variables.
 The below example shows an array that is globally allocated by <code class="code docutils literal notranslate"><span class="pre">malloc</span></code>, which is not recommended.</p>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">char</span> <span class="n">big_text_array</span><span class="p">[</span><span class="mi">16000</span><span class="p">];</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">char</span> <span class="o">*</span><span class="n">big_text_array</span><span class="p">;</span>
 
 <span class="kt">char</span> <span class="o">*</span><span class="nf">alloc_array</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
     <span class="n">big_text_array</span> <span class="o">=</span> <span class="n">malloc</span><span class="p">(</span><span class="mi">16000</span><span class="p">);</span>
