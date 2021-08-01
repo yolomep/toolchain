@@ -89,7 +89,12 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Welcome to the CE C Toolchain!</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../static/getting-started.html">Getting Started</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Helpful Information</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="../static/faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../static/git.html">Using Git For Revision Control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../static/coding-guidelines.html">General Coding Guidelines</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Toolchain Documentation</span></p>
 <ul class="current">
@@ -1336,7 +1341,7 @@
 <dl class="cpp function">
 <dt id="_CPPv414os_SetFlagBytei7uint8_t">
 <span id="_CPPv314os_SetFlagBytei7uint8_t"></span><span id="_CPPv214os_SetFlagBytei7uint8_t"></span><span id="os_SetFlagByte__i.uint8_t"></span><span class="target" id="tice_8h_1ae4fc41906c9e93c4e1b64a2ba56e80c5"></span>void <code class="sig-name descname">os_SetFlagByte</code><span class="sig-paren">(</span>int <em>offset</em>, uint8_t <em>set</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv414os_SetFlagBytei7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Set a particular flag variable</p>
+<dd><p>Set a particular OS flag</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -1350,7 +1355,7 @@
 <dl class="cpp function">
 <dt id="_CPPv414os_GetFlagBytei">
 <span id="_CPPv314os_GetFlagBytei"></span><span id="_CPPv214os_GetFlagBytei"></span><span id="os_GetFlagByte__i"></span><span class="target" id="tice_8h_1a3b4341e60ac25d890127813aa441406d"></span>uint8_t <code class="sig-name descname">os_GetFlagByte</code><span class="sig-paren">(</span>int <em>offset</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv414os_GetFlagBytei" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Get a particular flag variable</p>
+<dd><p>Get a particular OS flag</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>offset</strong> – Offset to particular flag in list </p>
@@ -1364,13 +1369,13 @@
 <dl class="cpp function">
 <dt id="_CPPv49os_MemChkPPv">
 <span id="_CPPv39os_MemChkPPv"></span><span id="_CPPv29os_MemChkPPv"></span><span id="os_MemChk__voidPP"></span><span class="target" id="tice_8h_1ac8a018c90c6e1d6a922afe8f7b2a3c9b"></span>size_t <code class="sig-name descname">os_MemChk</code><span class="sig-paren">(</span>void **<em>free</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv49os_MemChkPPv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Get amount of free ram in order to allocate extra ram</p>
+<dd><p>Returns the size in bytes of free RAM that the user isn’t using. A pointer is also returned to the start of this region; you can use it for your own purposes but do not exceed the size returned. This function is useful if you are running out of space in the bss or heap and need a little extra memory.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>free</strong> – Set to start of free available ram </p>
+<dd class="field-odd"><p><strong>free</strong> – Set to start of free available RAM </p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Size of available ram </p>
+<dd class="field-even"><p>Size of available RAM </p>
 </dd>
 </dl>
 </dd></dl>
