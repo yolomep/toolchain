@@ -363,8 +363,32 @@ There are better alternatives to using global variables, described below:</p>
 <h3>Proper Scoping<a class="headerlink" href="#proper-scoping" title="Permalink to this headline">¶</a></h3>
 <p>“Scope” is an important part of C programming.
 Every opening brace <code class="code docutils literal notranslate"><span class="pre">{</span></code> is the start of a new scope, and every ending brace <code class="code docutils literal notranslate"><span class="pre">}</span></code> the end of the previous scope.
-You want to make sure that the variables you use only need to be in the scope they are in. The compiler will be able to provide better optimizations, too.
-For example, in the below code snippet a global variable is used, making it accessible everywhere in that file, while it likely should not be. It can also create pointless name shadowing issues.</p>
+Global variables, which are not inside any braces, are declared in what’s known as the global or file scope.
+Variables declared in one scope can only be accessed from the same scope, or from scopes inside of it.
+You want to make sure that you declare variables are in the narrowest scope possible.</p>
+<p>Properly scoping your code instead of using globals for everything makes it easier to think about. For example, the following code uses a global variable <code class="code docutils literal notranslate"><span class="pre">my_var</span></code>:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">my_func</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">my_var</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">do_some_thing</span><span class="p">();</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%u</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">my_var</span><span class="p">);</span>
+    <span class="n">do_some_other_thing</span><span class="p">();</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%u</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">my_var</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>What values of <code class="code docutils literal notranslate"><span class="pre">my_var</span></code> get printed? It might still be 0, or it could be 1, or 42, or -1, or the address of a string containing a proof of the Riemann hypothesis (though the latter is exceedingly unlikely). It’s impossible to tell without looking at the definitions for <code class="code docutils literal notranslate"><span class="pre">do_some_thing</span></code> and <code class="code docutils literal notranslate"><span class="pre">do_some_other_thing</span></code>. If each of these functions called several other functions, you might have to dig through dozens of functions to say for certain that <code class="code docutils literal notranslate"><span class="pre">my_var</span></code> is not modified. Compare this to the same code written using more proper scoping:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">my_func</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">int24_t</span> <span class="n">my_var</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">do_some_thing</span><span class="p">();</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%u</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">my_var</span><span class="p">);</span>
+    <span class="n">do_some_other_thing</span><span class="p">(</span><span class="n">my_var</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%u</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">my_var</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>In this code, it’s clear that the function will print 0 both times, as <code class="code docutils literal notranslate"><span class="pre">my_var</span></code> is not in scope for <code class="code docutils literal notranslate"><span class="pre">do_some_thing</span></code>, and is only passed by value to <code class="code docutils literal notranslate"><span class="pre">do_some_other_thing</span></code>. It’s also clear that <code class="code docutils literal notranslate"><span class="pre">do_some_other_thing</span></code> uses the value of <code class="code docutils literal notranslate"><span class="pre">my_var</span></code>.</p>
+<p>Sure, in real code, functions and variables will have more descriptive names that tell you what they do. But properly scoping your code allows you to only have to think about your program in small chunks, rather than having to think about every other function in the entire codebase that might be able to modify a variable.</p>
+<p>There are other benefits to proper scoping as well. It helps reduce namespace pollution, and the compiler will be able to provide better optimizations, too.</p>
 </div>
 <div class="section" id="using-the-static-keyword">
 <h3>Using the static keyword<a class="headerlink" href="#using-the-static-keyword" title="Permalink to this headline">¶</a></h3>
