@@ -250,8 +250,8 @@ Don’t write comments just because you’ve been told to at some point: the oth
 <p>As such, and especially for complex code, focus rather on explaning <strong>why</strong> something is written that way, and even <strong>why not</strong> written in another way (i.e. some edgecase may not work with an alternative algorithm, some usecase may have inferior performance, etc.). Time will be saved that way for future refactors, whether it’s done by you, or even more so by someone else that may now know the context of the code as much as you.</p>
 <p>And remember this: having too many comments leads to issues where <strong>a)</strong> the comments don’t match the code, <strong>b)</strong> they are either superfluous or useless, <strong>c)</strong> they are flat out incorrect or outdated, or <strong>d)</strong> they add noise to the code itself and make it more difficult to read.</p>
 <p>These are examples of bad comments that add no value: remember, good self-explanatory naming and simple code provide better information than comments do.</p>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="c1">// functions</span>
-<span class="kt">void</span> <span class="nf">optix_InitializeGUIState</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="c1">// locates the first occurance of the character in the string</span>
+<span class="kt">void</span> <span class="nf">findFirstChar</span><span class="p">(</span><span class="n">string_t</span><span class="o">*</span> <span class="n">str</span><span class="p">)</span> <span class="p">{</span>
     <span class="p">...</span>
 <span class="p">}</span>
 
